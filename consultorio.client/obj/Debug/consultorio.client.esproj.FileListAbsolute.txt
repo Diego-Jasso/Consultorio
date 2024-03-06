@@ -1,1 +1,2 @@
 C:\Users\Usuario\source\repos\Consultorio\consultorio.client\obj\Debug\consultorio.client.esproj.CoreCompileInputs.cache
+C:\Users\djasso\Source\Repos\Consultorio\consultorio.client\obj\Debug\consultorio.client.esproj.CoreCompileInputs.cache

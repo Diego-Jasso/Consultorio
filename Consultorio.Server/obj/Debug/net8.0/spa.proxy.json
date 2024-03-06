@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:4200",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\..\\consultorio.client",
+"WorkingDirectory": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\..\\consultorio.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

@@ -1,17 +1,17 @@
 export const navbarData = [
   {
     routeLink: 'dashboard',
-    icon: 'fa fa-home',
-    label: 'Dashboard'
+    icon: 'fa-solid fa-glasses',
+    label: 'Lentes'
   },
   {
     routeLink: 'products',
-    icon: 'fa fa-box-open',
-    label: 'Products'
+    icon: 'fa fa-bag-shopping',
+    label: 'Venta'
   },
   {
     routeLink: 'statistics',
-    icon: 'fa fa-chart-bar',
-    label: 'Statistics'
+    icon: 'fa fa-chart-simple',
+    label: 'Reportes'
   }
 ];
