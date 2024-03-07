@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj": {}
+    "C:\\Users\\TURNO TARDE\\Source\\Repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj": {
+    "C:\\Users\\TURNO TARDE\\Source\\Repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
+        "projectUniqueName": "C:\\Users\\TURNO TARDE\\Source\\Repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
         "projectName": "Consultorio.Server",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\obj\\",
+        "projectPath": "C:\\Users\\TURNO TARDE\\Source\\Repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
+        "packagesPath": "C:\\Users\\TURNO TARDE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TURNO TARDE\\Source\\Repos\\Consultorio\\Consultorio.Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\TURNO TARDE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

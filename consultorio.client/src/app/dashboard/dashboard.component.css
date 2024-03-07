@@ -10,13 +10,12 @@ table {
   width: 100%;
 }
 
-.table-container{
-    position:relative;
-    overflow: auto;
-
+.table-container {
+  position: relative;
+  overflow: auto;
 }
 
-button {
+.button-class {
   border-radius: 4px;
   padding: 16px 16px 16px;
   margin: 10px 10px 10px;
@@ -24,6 +23,10 @@ button {
   border-color: #f3f3f3;
 }
 
-.button-container {
-  padding-bottom: 16px;
+.boton-agregar {
+  background-color: #7da2d6;
+  color: #fff;
+  padding: 8px 8px 8px 8px;
+  border-radius: 8px;
+  border: 2px solid #ffff;
 }

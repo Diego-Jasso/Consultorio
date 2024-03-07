@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-
+import { MatIconModule } from '@angular/material/icon';
 export interface armazon {
   marca: string;
   modelo: string;
@@ -34,7 +34,7 @@ const Armazones: armazon[] = [
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
-  displayedColumns: string[] = ['marca', 'modelo', 'color', 'tipolente','material','precio'];
+  displayedColumns: string[] = ['actions','marca', 'modelo', 'color', 'tipolente','material','precio'];
   datasource = new MatTableDataSource(Armazones);
 
   applyFilter(event: Event) {
