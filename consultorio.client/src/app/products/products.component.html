@@ -1,23 +1,57 @@
-<h1>Products</h1>
-<table mat-table>
-  <thead>
-    <tr>
-      <th>MARCA</th>
-      <th>MODELO</th>
-      <th>COLOR</th>
-      <th>TIPO DE LENTE</th>
-      <th>MATERIAL</th>
-      <th>PRECIO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>AIDEFU 1</th>
-      <th>8838</th>
-      <th>NEGRO</th>
-      <th>Aro completo</th>
-      <th>Acetato/Metal</th>
-      <th>550</th>
-    </tr>
-  </tbody>
-</table>
+<h1>Venta</h1>
+
+<div class="button-container">
+  <button>
+    Finalizar venta
+  </button>
+  <button>
+    Cancelar venta
+  </button>
+</div>
+
+<div class="table-container">
+
+  <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="cantidad">
+      <th mat-header-cell *matHeaderCellDef>Cantidad</th>
+      <td mat-cell *matCellDef="let armazon">{{armazon.cantidad}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef>Marca</th>
+      <td mat-cell *matCellDef="let armazon">{{armazon.marca}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef>Modelo</th>
+      <td mat-cell *matCellDef="let armazon">{{armazon.modelo}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef>Color</th>
+      <td mat-cell *matCellDef="let armazon">{{armazon.color}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipolente">
+      <th mat-header-cell *matHeaderCellDef>Tipo de lente</th>
+      <td mat-cell *matCellDef="let armazon">{{armazon.tipolente}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="material">
+      <th mat-header-cell *matHeaderCellDef>Material</th>
+      <td mat-cell *matCellDef="let armazon">{{armazon.material}}</td>
+      <td mat-footer-cell *matFooterCellDef> Total </td>
+    </ng-container>
+
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef>Precio</th>
+      <td mat-cell *matCellDef="let armazon">{{armazon.precio}}</td>
+      <td mat-footer-cell *matFooterCellDef> {{getTotalCost()}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="footerColumns"></tr>
+  </table>
+</div>
