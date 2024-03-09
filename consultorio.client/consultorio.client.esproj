@@ -7,4 +7,8 @@
     <!-- Folder where production build objects will be placed -->
     <PublishAssetsDirectory>$(MSBuildProjectDirectory)\dist\consultorio.client\</PublishAssetsDirectory>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\ambientes\" />
+    <Folder Include="src\app\dashboard\servicios\" />
+  </ItemGroup>
 </Project>

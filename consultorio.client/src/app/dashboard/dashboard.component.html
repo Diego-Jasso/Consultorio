@@ -25,10 +25,10 @@
 
 
 <div class="table-container">
-  
+
   <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
 
-    <ng-container  matColumnDef="actions">
+    <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let row">
         <button mat-raised-button class="boton-agregar">Agregar</button>
@@ -50,9 +50,9 @@
       <td mat-cell *matCellDef="let armazon">{{armazon.color}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="tipolente">
+    <ng-container matColumnDef="tipo_de_lente">
       <th mat-header-cell *matHeaderCellDef>Tipo de lente</th>
-      <td mat-cell *matCellDef="let armazon">{{armazon.tipolente}}</td>
+      <td mat-cell *matCellDef="let armazon">{{armazon.tipo_de_lente}}</td>
     </ng-container>
 
     <ng-container matColumnDef="material">
@@ -72,4 +72,6 @@
       <td class="mat-cell" colspan="6">No hay coincidencias con la busqueda "{{input.value}}"</td>
     </tr>
   </table>
+
+  <mat-progress-bar mode="indeterminate" *ngIf="mostrarLoading"></mat-progress-bar>
 </div>
