@@ -12,14 +12,33 @@ namespace Consultorio.Server.Services.Impl
             return _repository.GetArmazones();
         }
 
-        public async Task<bool> Exists(string modelo)
+        public async Task<bool> ExistsModelo(string modelo)
         {
-            return await _repository.Exists(modelo);
+            return await _repository.ExistsModelo(modelo);
+        }
+        public async Task<bool> ExistsId(int armazonId)
+        {
+            return await _repository.ExistsId(armazonId);
         }
 
-        public async Task<Armazon> AddArmazon(Armazon armazon)
+        public async Task<int> AddArmazon(Armazon armazon)
         {
             return await _repository.AddArmazon(armazon);
+        }
+
+        public async Task<int> UpdateArmazon(Armazon armazon)
+        {
+            return await _repository.UpdateArmazon(armazon);
+        }
+
+        public async Task<int> DeleteArmazon(Armazon armazon)
+        {
+            return await _repository.DeleteArmazon(armazon);
+        }
+
+        public async Task<Armazon?> GetArmazon(int armazonId)
+        {
+            return await _repository.GetArmazon(armazonId);
         }
     }
 }

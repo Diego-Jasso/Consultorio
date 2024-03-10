@@ -6,8 +6,16 @@ namespace Consultorio.Server.Repositories
     { 
         Task<IEnumerable<Armazon>> GetArmazones();
 
-        Task<bool> Exists(string modelo);
+        Task<Armazon?> GetArmazon(int armazonId);
 
-        Task<Armazon> AddArmazon(Armazon armazon);
+        Task<bool> ExistsModelo(string modelo);
+
+        Task<bool> ExistsId(int armazonId);
+
+        Task<int> AddArmazon(Armazon armazon);
+
+        Task<int> DeleteArmazon(Armazon armazon);
+
+        Task<int> UpdateArmazon(Armazon armazon);
     }
 }

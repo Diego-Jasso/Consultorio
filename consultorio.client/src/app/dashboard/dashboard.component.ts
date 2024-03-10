@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { ArmazonService } from './servicios/armazon.service';
 export interface armazon {
+  armazonid: number;
   marca: string;
   modelo: string;
   color: string;
@@ -43,5 +44,9 @@ export class DashboardComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.datasource.filter = filterValue.trim().toLowerCase();
+  }
+
+  editRow(row: armazon) {
+    this.service.UpdateArmazon(row).subscribe();
   }
 }
