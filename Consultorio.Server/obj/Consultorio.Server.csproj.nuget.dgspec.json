@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj": {}
+    "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj": {
+    "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
+        "projectUniqueName": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
         "projectName": "Consultorio.Server",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\obj\\",
+        "projectPath": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
+        "packagesPath": "C:\\Users\\djasso\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\djasso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/c6rXhg1PWT1bDUUYnlncDwPe1nmUJmQ3uWk1VfREvaJVAEsiEu/api": {}
         },
         "frameworks": {
           "net8.0": {
@@ -34,6 +40,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -84,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

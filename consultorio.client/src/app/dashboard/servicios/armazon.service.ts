@@ -18,7 +18,7 @@ export class ArmazonService {
   }
 
   UpdateArmazon(armazon: armazon): Observable<armazon> {
-    return this.http.put<armazon>(`${this.baseUrl}/UpdateArmazon/${armazon.armazonid}`, armazon);
+    return this.http.put<armazon>(`${this.baseUrl}/${armazon.armazonid}`, armazon);
   }
   
 }

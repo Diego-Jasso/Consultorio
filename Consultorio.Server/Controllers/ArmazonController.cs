@@ -5,7 +5,7 @@ using System.Timers;
 
 namespace Consultorio.Server.Controllers
 {
-    public class ArmazonController(IArmazonService service): BaseApiController
+    public class ArmazonController(IArmazonService service) : BaseApiController
     {
         private readonly IArmazonService _service = service;
 
@@ -21,7 +21,7 @@ namespace Consultorio.Server.Controllers
 
         public async Task<ActionResult<Armazon>> ExistsModelo(string modelo)
         {
-            if(await _service.ExistsModelo(modelo))
+            if (await _service.ExistsModelo(modelo))
             {
                 return Ok("El modelo de armazon existe");
             }
@@ -29,7 +29,7 @@ namespace Consultorio.Server.Controllers
             {
                 return BadRequest("El modelo de armazon no existe");
             }
-            
+
         }
 
         [HttpGet]
@@ -37,7 +37,7 @@ namespace Consultorio.Server.Controllers
 
         public async Task<ActionResult<Armazon>> ExistsId(int armazonid)
         {
-            if(await _service.ExistsId(armazonid))
+            if (await _service.ExistsId(armazonid))
             {
                 return Ok("El armazon existe");
             }
@@ -61,7 +61,7 @@ namespace Consultorio.Server.Controllers
         [Route("AddArmazon")]
         public async Task<ActionResult<Armazon>> AddArmazon(Armazon armazon)
         {
-            if(await _service.ExistsModelo(armazon.modelo))
+            if (await _service.ExistsModelo(armazon.modelo))
             {
                 return BadRequest("El modelo de armazon ya existe");
             }
@@ -72,8 +72,7 @@ namespace Consultorio.Server.Controllers
             }
         }
 
-        [HttpPut]
-        [Route("UpdateArmazon/{id}")]
+        [HttpPut("{id}")]
         public async Task<ActionResult<Armazon>> UpdateArmazon(int id,Armazon armazon)
         {
             if(armazon.armazonid != id)
@@ -85,8 +84,7 @@ namespace Consultorio.Server.Controllers
             return NoContent();
         }
 
-        [HttpDelete]
-        [Route("DeleteArmazon")]
+        [HttpDelete("{armazonId}")]
         public async Task<ActionResult<Armazon>> DeleteArmazon(int armazonId)
         {
             var armazon = await _service.GetArmazon(armazonId);
