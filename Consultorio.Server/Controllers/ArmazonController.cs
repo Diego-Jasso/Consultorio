@@ -47,8 +47,7 @@ namespace Consultorio.Server.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("GetArmazon")]
+        [HttpGet("{armazonid}")]
 
         public async Task<ActionResult<Armazon>> GetArmazon(int armazonid)
         {

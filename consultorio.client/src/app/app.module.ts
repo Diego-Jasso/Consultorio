@@ -6,6 +6,7 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ProductsComponent,
     StatisticsComponent,
     LoginComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -38,6 +39,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatTableModule,
     MatInputModule, MatIconModule,
     MatProgressBarModule,
+    FormsModule, 
   ],
   providers: [
     provideAnimationsAsync('noop')
