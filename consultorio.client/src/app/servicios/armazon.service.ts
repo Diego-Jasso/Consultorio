@@ -21,6 +21,10 @@ export class ArmazonService {
     return this.http.get<armazon>(`${this.baseUrl}/${id}`)
   }
 
+  InsertArmazon(armazon: armazon): Observable<armazon> {
+    return this.http.post<armazon>(`${this.baseUrl}/AddArmazon`, armazon);
+  }
+
   UpdateArmazon(armazon: armazon): Observable<armazon> {
     return this.http.put<armazon>(`${this.baseUrl}/${armazon.armazonid}`, armazon);
   }

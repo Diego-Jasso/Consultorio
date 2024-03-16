@@ -38,13 +38,19 @@ export class DashboardComponent {
       
     })
   }
-  displayedColumns: string[] = ['actions','marca', 'modelo', 'color', 'tipo_de_lente','material','precio'];
+  displayedColumns: string[] = ['actions','cantidad_disponible','marca', 'modelo', 'color', 'tipo_de_lente','material','precio'];
 
   public onAgregar() {
+    this.editar = false;
     this.mostrarForm = true;
   }
-  public onGuardar(form: NgForm) {
-    console.log("form se va a guardar");
+  public onGuardar(armazon: armazon,form:NgForm) {
+    if (this.editar) {
+      this.updateArmazon(armazon);
+    } else {
+      this.InsertArmazon(armazon);
+    }
+    form.resetForm();
     this.mostrarForm = false;
   }
 
@@ -57,8 +63,6 @@ export class DashboardComponent {
     this.obtenerDatos(row.armazonid);
     this.editar = true;
     this.mostrarForm = true;
-    
-    //this.service.UpdateArmazon(row).subscribe();
   }
 
   public obtenerDatos(id: number) {
@@ -73,7 +77,7 @@ export class DashboardComponent {
 
   public updateArmazon(armazon: armazon) {
     this.service.UpdateArmazon(armazon).subscribe({
-      next: (armazon) => console.log("Se edito correctamente el acceso"),
+      next: (armazon) => console.log("Se edito correctamente el armazon"),
       complete: () => {
 
       },
@@ -81,5 +85,22 @@ export class DashboardComponent {
         console.log(err.error);
       }
     })
+  }
+
+  public InsertArmazon(armazon: armazon) {
+    this.service.InsertArmazon(armazon).subscribe({
+      next: (armazon) => console.log("Se agrego el armazon"),
+      complete: () => {
+
+      },
+      error: (err) => {
+        console.log(err.error);
+      }
+    })
+  }
+
+  public CloseForm(form:NgForm) {
+    form.resetForm();
+    this.mostrarForm = false;
   }
 }
