@@ -66,6 +66,7 @@ namespace Consultorio.Server.Controllers
             }
             else
             {
+
                 await _service.AddArmazon(armazon);
                 return armazon;
             }
