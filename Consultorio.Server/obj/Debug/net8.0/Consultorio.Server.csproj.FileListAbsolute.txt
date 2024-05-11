@@ -28,7 +28,6 @@ C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\st
 C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Consultorio.Server.props
 C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\scopedcss\bundle\Consultorio.Server.styles.css
-C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\Consultorio.Server.csproj.CopyComplete
 C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\Consultorio.Server.dll
 C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\refint\Consultorio.Server.dll
 C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\Consultorio.Server.pdb
@@ -214,3 +213,4 @@ C:\Users\djasso\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\ref
 C:\Users\djasso\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\Consultorio.Server.pdb
 C:\Users\djasso\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\Consultorio.Server.genruntimeconfig.cache
 C:\Users\djasso\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\ref\Consultorio.Server.dll
+C:\Users\Usuario\source\repos\Consultorio\Consultorio.Server\obj\Debug\net8.0\Consulto.BF147EBE.Up2Date

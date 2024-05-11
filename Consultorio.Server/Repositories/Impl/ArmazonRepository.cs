@@ -9,13 +9,13 @@ namespace Consultorio.Server.Repositories.Impl
     {
         private readonly AppDbContext _context = context;
 
-        public async Task<int> AddArmazon(Armazon armazon)
+        public async Task<int> Add(Armazon armazon)
         {
             _context.Add(armazon);
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Armazon>> GetArmazones()
+        public async Task<IEnumerable<Armazon>> GetAll()
         {
             var armazones = await _context.armazon.ToListAsync();
             return armazones;
@@ -31,20 +31,20 @@ namespace Consultorio.Server.Repositories.Impl
             return _context.armazon.AnyAsync(armazon => armazon.armazonid == armazonId);
         }
 
-        public async Task<int> DeleteArmazon(Armazon armazon)
+        public async Task<int> Delete(Armazon armazon)
         {
             _context.Remove(armazon);
             return await _context.SaveChangesAsync();
 
         }
 
-        public async Task<int> UpdateArmazon(Armazon armazon)
+        public async Task<int> Update(Armazon armazon)
         {
             _context.Update(armazon);
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<Armazon?> GetArmazon(int armazonId)
+        public async Task<Armazon?> GetById(int armazonId)
         {
             return await _context.armazon.FindAsync(armazonId);
         }

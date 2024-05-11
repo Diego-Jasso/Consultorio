@@ -7,9 +7,9 @@ namespace Consultorio.Server.Services.Impl
     {
         private readonly IArmazonRepository _repository = repository;
 
-        public Task<IEnumerable<Armazon>> GetArmazones() 
+        public Task<IEnumerable<Armazon>> GetAll() 
         { 
-            return _repository.GetArmazones();
+            return _repository.GetAll();
         }
 
         public async Task<bool> ExistsModelo(string modelo)
@@ -21,24 +21,24 @@ namespace Consultorio.Server.Services.Impl
             return await _repository.ExistsId(armazonId);
         }
 
-        public async Task<int> AddArmazon(Armazon armazon)
+        public async Task<int> Add(Armazon armazon)
         {
-            return await _repository.AddArmazon(armazon);
+            return await _repository.Add(armazon);
         }
 
-        public async Task<int> UpdateArmazon(Armazon armazon)
+        public async Task<int> Update(Armazon armazon)
         {
-            return await _repository.UpdateArmazon(armazon);
+            return await _repository.Update(armazon);
         }
 
-        public async Task<int> DeleteArmazon(Armazon armazon)
+        public async Task<int> Delete(Armazon armazon)
         {
-            return await _repository.DeleteArmazon(armazon);
+            return await _repository.Delete(armazon);
         }
 
-        public async Task<Armazon?> GetArmazon(int armazonId)
+        public async Task<Armazon?> GetById(int armazonId)
         {
-            return await _repository.GetArmazon(armazonId);
+            return await _repository.GetById(armazonId);
         }
     }
 }

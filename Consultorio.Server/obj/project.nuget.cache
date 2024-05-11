@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "c3kXCPp44eSz65zMg2ydYQtqCOll8L6r+RX80+vI3Sc1cctkNAEpA5vysKzA4QSKvQVgF4Y68iH+XpfBVTMK1A==",
+  "dgSpecHash": "2iel9n6U095JAGI6KMTOXnPNQuqFep4QUoMV8DbG4Ub/bxOtI0HQOQ2YyoMu3PnlxOscelouj4MT4o9FrAD8Uw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.3\\microsoft.aspnetcore.spaproxy.8.0.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.4\\microsoft.aspnetcore.spaproxy.8.0.4.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

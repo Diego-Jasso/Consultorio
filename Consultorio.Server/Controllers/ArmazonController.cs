@@ -10,10 +10,9 @@ namespace Consultorio.Server.Controllers
         private readonly IArmazonService _service = service;
 
         [HttpGet]
-        [Route("GetArmazones")]
-        public async Task<ActionResult<IEnumerable<Armazon>>> GetArmazones()
+        public async Task<ActionResult<IEnumerable<Armazon>>> GetAll()
         {
-            return Ok(await _service.GetArmazones());
+            return Ok(await _service.GetAll());
         }
 
         [HttpGet]
@@ -49,16 +48,15 @@ namespace Consultorio.Server.Controllers
 
         [HttpGet("{armazonid}")]
 
-        public async Task<ActionResult<Armazon>> GetArmazon(int armazonid)
+        public async Task<ActionResult<Armazon>> GetById(int armazonid)
         {
-            var armazon = await _service.GetArmazon(armazonid);
+            var armazon = await _service.GetById(armazonid);
             if (armazon == null) return BadRequest();
             return armazon;
         }
 
         [HttpPost]
-        [Route("AddArmazon")]
-        public async Task<ActionResult<Armazon>> AddArmazon(Armazon armazon)
+        public async Task<ActionResult<Armazon>> Add(Armazon armazon)
         {
             if (await _service.ExistsModelo(armazon.modelo))
             {
@@ -67,29 +65,29 @@ namespace Consultorio.Server.Controllers
             else
             {
 
-                await _service.AddArmazon(armazon);
+                await _service.Add(armazon);
                 return armazon;
             }
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Armazon>> UpdateArmazon(int id,Armazon armazon)
+        public async Task<ActionResult<Armazon>> Update(int id,Armazon armazon)
         {
             if(armazon.armazonid != id)
             {
                 return BadRequest();
             }
 
-            await _service.UpdateArmazon(armazon);
+            await _service.Update(armazon);
             return NoContent();
         }
 
         [HttpDelete("{armazonId}")]
-        public async Task<ActionResult<Armazon>> DeleteArmazon(int armazonId)
+        public async Task<ActionResult<Armazon>> Delete(int armazonId)
         {
-            var armazon = await _service.GetArmazon(armazonId);
+            var armazon = await _service.GetById(armazonId);
             if (armazon == null) return BadRequest();
-            await _service.DeleteArmazon(armazon);
+            await _service.Delete(armazon);
             return NoContent();
         }
     }

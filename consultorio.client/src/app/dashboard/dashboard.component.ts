@@ -21,7 +21,8 @@ export class DashboardComponent {
   editar: boolean = false;
   mostrarForm: boolean = false;
 
-  armazon: Iarmazon = new armazon();
+  armazon: armazon = new armazon();
+  Iarmazon: Iarmazon = new armazon();
   constructor(private service: ArmazonService) {
 
   }
@@ -87,7 +88,7 @@ export class DashboardComponent {
     })
   }
 
-  public InsertArmazon(armazon: armazon) {
+  public InsertArmazon(armazon: Iarmazon) {
     this.service.InsertArmazon(armazon).subscribe({
       next: (armazon) => console.log("Se agrego el armazon"),
       complete: () => {

@@ -22,6 +22,7 @@ table {
   margin: 10px 10px 10px;
   background-color: #fff;
   border-color: #f3f3f3;
+  cursor: pointer;
 }
 
 .boton-agregar {

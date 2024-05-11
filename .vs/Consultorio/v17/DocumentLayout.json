@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\djasso\\source\\repos\\Consultorio\\",
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\dashboard\\dashboard.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\dashboard\\dashboard.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\models\\mica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\models\\mica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\dashboard\\dashboard.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\dashboard\\dashboard.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\models\\armazon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\models\\armazon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\servicios\\armazon.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\servicios\\armazon.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\controllers\\armazoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.server\\controllers\\armazoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\controllers\\armazoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\models\\armazon.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\models\\armazon.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\services\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\services\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\services\\iarmazonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\services\\iarmazonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\controllers\\baseapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\controllers\\baseapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,10 +42,6 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
@@ -46,75 +50,109 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "armazon.ts",
-              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\models\\armazon.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\models\\armazon.ts",
-              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\models\\armazon.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\models\\armazon.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-03-13T22:29:35.191Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "dashboard.component.ts",
-              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\dashboard\\dashboard.component.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\dashboard\\dashboard.component.ts",
-              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\dashboard\\dashboard.component.ts*",
-              "RelativeToolTip": "consultorio.client\\src\\app\\dashboard\\dashboard.component.ts*",
-              "ViewState": "AQIAACsAAAAAAAAAAAAIwE0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-03-13T22:18:41.098Z",
+              "Title": "Armazon.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Models\\Armazon.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Models\\Armazon.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Models\\Armazon.cs",
+              "RelativeToolTip": "Consultorio.Server\\Models\\Armazon.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T05:35:43.828Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dashboard.component.html",
-              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\dashboard\\dashboard.component.html",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\dashboard\\dashboard.component.html",
-              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\dashboard\\dashboard.component.html*",
-              "RelativeToolTip": "consultorio.client\\src\\app\\dashboard\\dashboard.component.html*",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAACoAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-03-13T22:15:20.342Z",
+              "Title": "Mica.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Models\\Mica.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Models\\Mica.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Models\\Mica.cs",
+              "RelativeToolTip": "Consultorio.Server\\Models\\Mica.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T05:35:41.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ArmazonController.cs",
-              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\ArmazonController.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Controllers\\ArmazonController.cs",
-              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\ArmazonController.cs",
-              "RelativeToolTip": "Consultorio.Server\\Controllers\\ArmazonController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowDQAAAAJAAAA",
+              "Title": "IBaseService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\IBaseService.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Services\\IBaseService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\IBaseService.cs",
+              "RelativeToolTip": "Consultorio.Server\\Services\\IBaseService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T22:13:01.224Z",
+              "WhenOpened": "2024-05-11T05:17:15.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IArmazonService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\IArmazonService.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Services\\IArmazonService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\IArmazonService.cs",
+              "RelativeToolTip": "Consultorio.Server\\Services\\IArmazonService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T05:17:00.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IBaseRepository.cs",
+              "RelativeToolTip": "Consultorio.Server\\Repositories\\IBaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T04:43:21.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseApiController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\BaseApiController.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Controllers\\BaseApiController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\BaseApiController.cs",
+              "RelativeToolTip": "Consultorio.Server\\Controllers\\BaseApiController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T04:40:08.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "armazon.service.ts",
-              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\servicios\\armazon.service.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\servicios\\armazon.service.ts",
-              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\servicios\\armazon.service.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\servicios\\armazon.service.ts",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBQAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-03-12T20:32:59.554Z",
+              "Title": "ArmazonController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\ArmazonController.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Controllers\\ArmazonController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\ArmazonController.cs",
+              "RelativeToolTip": "Consultorio.Server\\Controllers\\ArmazonController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T22:13:01.224Z",
               "EditorCaption": ""
             }
           ]

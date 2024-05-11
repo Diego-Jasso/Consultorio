@@ -4,15 +4,15 @@
     {
         public int armazonid { get; set; }
 
-        public string marca { get; set; }
+        public string marca { get; set; } = string.Empty;
 
-        public string modelo { get; set; }
+        public string modelo { get; set; } = string.Empty;
 
-        public string color { get; set; }
+        public string color { get; set; } = string.Empty;
 
-        public string tipo_de_lente { get; set; }
+        public string tipo_de_lente { get; set; } = string.Empty;
 
-        public string material { get; set; }
+        public string material { get; set; } = string.Empty;
 
         public float precio { get; set; }
 
