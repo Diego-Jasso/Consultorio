@@ -2,12 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Consultorio.Server.Models;
 using System.Timers;
+using AutoMapper;
+using Consultorio.Server.DTOs;
 
 namespace Consultorio.Server.Controllers
 {
-    public class ArmazonController(IArmazonService service) : BaseApiController
+    public class ArmazonController(IArmazonService service,IMapper mapper) : BaseApiController
     {
         private readonly IArmazonService _service = service;
+        private readonly IMapper _mapper = mapper;
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Armazon>>> GetAll()
@@ -56,17 +59,17 @@ namespace Consultorio.Server.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Armazon>> Add(Armazon armazon)
+        public async Task<ActionResult<ArmazonDTO>> Add(ArmazonDTO armazonDTO)
         {
+            var armazon = _mapper.Map<Armazon>(armazonDTO);
             if (await _service.ExistsModelo(armazon.modelo))
             {
                 return BadRequest("El modelo de armazon ya existe");
             }
             else
             {
-
                 await _service.Add(armazon);
-                return armazon;
+                return Ok(armazon);
             }
         }
 

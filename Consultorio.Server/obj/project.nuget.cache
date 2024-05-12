@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2iel9n6U095JAGI6KMTOXnPNQuqFep4QUoMV8DbG4Ub/bxOtI0HQOQ2YyoMu3PnlxOscelouj4MT4o9FrAD8Uw==",
+  "dgSpecHash": "q0VTtcg1uA3mi01wa48DXh8qAgb/Zqvpp1Imd1NFUUlaSF2eEnWLhNPX+ejm1KyQjP1UFAVjX2PT7s9IX9eP/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.4\\microsoft.aspnetcore.spaproxy.8.0.4.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

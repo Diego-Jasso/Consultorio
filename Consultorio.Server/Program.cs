@@ -3,6 +3,7 @@ using Consultorio.Server.Repositories.Impl;
 using Consultorio.Server.Services;
 using Consultorio.Server.Services.Impl;
 using Microsoft.EntityFrameworkCore;
+using Consultorio.Server.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ builder.Services.AddSwaggerGen();
 string corsConfiguration = "_corsConfiguration";
 string url = "https://localhost:4200";
 
+builder.Services.AddAutoMapper(typeof(MapperCode));
 
 builder.Services.AddCors(options =>
     options.AddPolicy(name: corsConfiguration,

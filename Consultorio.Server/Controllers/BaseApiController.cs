@@ -1,4 +1,5 @@
-﻿using Consultorio.Server.Models;
+﻿using AutoMapper;
+using Consultorio.Server.Models;
 using Consultorio.Server.Repositories;
 using Consultorio.Server.Services;
 using Microsoft.AspNetCore.Http;
