@@ -10,24 +10,24 @@ import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BodyComponent } from './body/body.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsComponent } from './products/products.component';
+import { ArmazonesComponent } from './armazon/armazon.component';
+import { MicasComponent } from './mica/mica.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BodyComponent,
     SidenavComponent,
-    DashboardComponent,
-    ProductsComponent,
+    ArmazonesComponent,
+    MicasComponent,
     StatisticsComponent,
+    BodyComponent,
     LoginComponent,
     LayoutComponent,
   ],
@@ -39,7 +39,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatTableModule,
     MatInputModule, MatIconModule,
     MatProgressBarModule,
-    FormsModule, 
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync('noop')

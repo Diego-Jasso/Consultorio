@@ -23,6 +23,10 @@ builder.Services.AddScoped<IArmazonRepository, ArmazonRepository>();
 
 builder.Services.AddScoped<IArmazonService, ArmazonService>();
 
+builder.Services.AddScoped<IMicaRepository,MicaRepository>();
+
+builder.Services.AddScoped<IMicaService, MicaService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

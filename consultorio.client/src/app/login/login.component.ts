@@ -22,6 +22,6 @@ export class LoginComponent {
   
 
   login(): void  {
-    this.router.navigate(['layout/dashboard']);
+    this.router.navigate(['layout/armazon']);
   }
 }

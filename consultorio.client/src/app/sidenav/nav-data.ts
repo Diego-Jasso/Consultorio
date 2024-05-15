@@ -1,13 +1,13 @@
 export const navbarData = [
   {
-    routeLink: 'dashboard',
+    routeLink: 'armazon',
     icon: 'fa-solid fa-glasses',
-    label: 'Lentes'
+    label: 'Armazones'
   },
   {
-    routeLink: 'products',
-    icon: 'fa fa-bag-shopping',
-    label: 'Venta'
+    routeLink: 'mica',
+    icon: 'fa fa-eye',
+    label: 'Micas'
   },
   {
     routeLink: 'statistics',

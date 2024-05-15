@@ -8,15 +8,15 @@ import { Iarmazon, armazon } from '../models/armazon';
 //@ViewChild('addForm', null) contactForm: NgForm;
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css',
+  selector: 'app-armazon',
+  templateUrl: './armazon.component.html',
+  styleUrl: './armazon.component.css',
 })
-export class DashboardComponent {
+export class ArmazonesComponent {
 
   readonly titulo_agregar = "Agregar armazon";
   readonly titulo_editar = "Editar armazon";
-  Armazones!: armazon[];
+  Armazones: armazon[] = [];
   mostrarLoading: boolean = false;
   editar: boolean = false;
   mostrarForm: boolean = false;
@@ -53,6 +53,7 @@ export class DashboardComponent {
     }
     form.resetForm();
     this.mostrarForm = false;
+    this.fetchArmazones();
   }
 
   applyFilter(event: Event) {
@@ -66,6 +67,10 @@ export class DashboardComponent {
     this.mostrarForm = true;
   }
 
+  delete(row: armazon) {
+    this.Delete(row);
+    this.fetchArmazones();
+  }
   public obtenerDatos(id: number) {
     this.service.GetId(id).subscribe({
       next: (armazon) => { this.armazon = armazon},
@@ -98,6 +103,18 @@ export class DashboardComponent {
         console.log(err.error);
       }
     })
+  }
+
+  public Delete(armazon: armazon) {
+    this.service.DeleteArmazon(armazon.armazonid).subscribe({
+      next: (armazon) => console.log("Se elimino el armazon"),
+      complete: () => {
+
+      },
+      error: (err) => {
+        console.log(err.error);
+      }
+    });
   }
 
   public CloseForm(form:NgForm) {

@@ -37,7 +37,7 @@ namespace Consultorio.Server.Controllers
 
         public async Task<ActionResult<Mica>> Update(int id,Mica mica)
         {
-            if (mica.id != id)
+            if (mica.micaid != id)
             {
                 return BadRequest();
             }
