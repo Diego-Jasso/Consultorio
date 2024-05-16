@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { ambiente } from '../../ambientes/ambiente';
+import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Imica, mica } from '../models/mica';
@@ -9,7 +9,7 @@ import { Imica, mica } from '../models/mica';
 })
 export class MicaService {
 
-  baseUrl: string = ambiente.aprUrl + 'Mica'
+  baseUrl: string = environment.baseUrl + 'Mica'
 
   constructor(private http: HttpClient) { }
 

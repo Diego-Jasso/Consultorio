@@ -10,7 +10,7 @@ form h1{
     border-bottom: 1px solid #ccc;
 }
 
-.form-control{
+.form-field{
     margin-bottom: 16px;
 }
 
@@ -19,7 +19,7 @@ form h1{
 }
 
 
-.form-control input{
+.form-field input{
     padding:8px;
     height: 35px;
     border-radius: 6px;

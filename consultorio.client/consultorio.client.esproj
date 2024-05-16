@@ -8,6 +8,7 @@
     <PublishAssetsDirectory>$(MSBuildProjectDirectory)\dist\consultorio.client\</PublishAssetsDirectory>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\ambientes\" />
+    <Folder Include="src\app\auth\interfaces\" />
+    <Folder Include="src\app\auth\services\" />
   </ItemGroup>
 </Project>

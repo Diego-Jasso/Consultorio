@@ -10,15 +10,15 @@ import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { ArmazonesComponent } from './armazon/armazon.component';
-import { MicasComponent } from './mica/mica.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { LoginComponent } from './login/login.component';
+import { SidenavComponent } from './protected-app/sidenav/sidenav.component';
+import { ArmazonesComponent } from './protected-app/armazon/armazon.component';
+import { MicasComponent } from './protected-app/mica/mica.component';
+import { StatisticsComponent } from './protected-app/statistics/statistics.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LayoutComponent } from './layout/layout.component';
+import { LayoutComponent } from './protected-app/layout/layout.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { BodyComponent } from './body/body.component';
+import { BodyComponent } from './protected-app/body/body.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,12 +28,12 @@ import { BodyComponent } from './body/body.component';
     MicasComponent,
     StatisticsComponent,
     BodyComponent,
-    LoginComponent,
     LayoutComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatTableModule,

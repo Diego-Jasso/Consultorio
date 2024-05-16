@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { ambiente } from '../../ambientes/ambiente';
+import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Iarmazon, armazon } from '../models/armazon';
@@ -9,7 +9,7 @@ import { Iarmazon, armazon } from '../models/armazon';
 })
 export class ArmazonService {
 
-  baseUrl: string = ambiente.aprUrl + 'Armazon'
+  baseUrl: string = environment.baseUrl + 'Armazon'
 
   constructor(private http: HttpClient) { }
 
