@@ -19,6 +19,7 @@ import { LayoutComponent } from './protected-app/layout/layout.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BodyComponent } from './protected-app/body/body.component';
 import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { RouterModule } from '@angular/router';
     MatInputModule, MatIconModule,
     MatProgressBarModule,
     FormsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     provideAnimationsAsync('noop')

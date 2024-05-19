@@ -6,14 +6,14 @@
     <div class="formulario">
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="form-field">
-          <input placeholder="Usuario" formControlName="usname" required/>
+          <input placeholder="Id" formControlName="id" required/>
         </div>
 
         <div class="form-field">
           <input type="password" placeholder="Contraseña" formControlName="pass"  required/>
         </div>
 
-        <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesion &#8594;</button>
+        <button type="submit">Iniciar Sesion &#8594;</button>
         <button routerLink="/auth/register">Registrarse &#8594;</button>
       </form>
     </div>
