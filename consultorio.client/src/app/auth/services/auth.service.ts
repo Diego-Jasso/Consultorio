@@ -34,7 +34,7 @@ export class AuthService {
             }
           }
         }),
-        map(res => res.ok),
+        map(res => res),
         catchError(err => of(err.error.message))
       );
   }
@@ -54,7 +54,7 @@ export class AuthService {
             }
           } 
         }),
-        map(res => res.ok),
+        map(res => res),
         catchError(err => of(err.error.message))
       );
   }

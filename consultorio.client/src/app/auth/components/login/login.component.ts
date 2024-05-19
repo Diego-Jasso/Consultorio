@@ -26,13 +26,11 @@ export class LoginComponent {
       const { id, pass } = this.loginForm.value;
       this.authService.login(id, pass)
         .subscribe(res => {
-          console.log(res);
-          if (res === true) {
-            this.router.navigateByUrl('/layout');
+          if (res.ok === true) {
+            this.router.navigateByUrl('layout');
             this.toastr.success(id, 'Ingreso correcto');
           } else {
-            console.log(res);
-            this.toastr.error(res, 'Error', {
+            this.toastr.error(res.message, 'Error', {
               timeOut: 4000,
               progressAnimation: 'increasing'
             })

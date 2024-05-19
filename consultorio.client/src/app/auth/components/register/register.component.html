@@ -1,1 +1,35 @@
-<p>register works!</p>
+<body>
+  <div class="container">
+    <div class="image">
+      <img class="img" src="assets/logoultra.png" />
+    </div>
+    <div class="formulario">
+      <form [formGroup]="loginForm" (ngSubmit)="register()">
+        <div class="form-field">
+          <input placeholder="Nombre" formControlName="nombre" required />
+        </div>
+        <div class="form-field">
+          <input placeholder="Apellido Paterno" formControlName="aPaterno" required />
+        </div>
+        <div class="form-field">
+          <input placeholder="Apellido Materno" formControlName="aMaterno" required />
+        </div>
+        <div class="form-field">
+          <input placeholder="Nombre de usuario" formControlName="usname" required />
+        </div>
+        <div class="form-field">
+          <input placeholder="Telefono" formControlName="telefono" required />
+        </div>
+        <div class="form-field">
+          <input placeholder="Correo" formControlName="correo" required />
+        </div>
+
+        <div class="form-field">
+          <input type="password" placeholder="Contraseña" formControlName="pass" required />
+        </div>
+
+        <button type="submit">Registrarse &#8594;</button>
+      </form>
+    </div>
+  </div>
+</body>

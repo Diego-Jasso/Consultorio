@@ -7,13 +7,17 @@ import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'layout/armazon', pathMatch: 'full'
-  },
-  {
-    path: 'layout', component: LayoutComponent, children: [
-      { path: 'armazon', component: ArmazonesComponent },
-      { path: 'mica', component: MicasComponent },
-      { path: 'statistics', component: StatisticsComponent }
+    path: ''
+    , children: [
+      {
+        path: '', component: LayoutComponent, children: [
+          { path: '', component: ArmazonesComponent, },
+          { path: 'armazon', component: ArmazonesComponent },
+          { path: 'mica', component: MicasComponent },
+          { path: 'statistics', component: StatisticsComponent }
+        ]
+      },
+      { path:'**', redirectTo:''}
     ]
   }
 ];
