@@ -1,38 +1,32 @@
-﻿using Consultorio.Server.Models;
+﻿using Consultorio.Server.Base.Impl;
+using Consultorio.Server.DTOs;
+using Consultorio.Server.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Consultorio.Server.Repositories.Impl
 {
-    public class MicaRepository(AppDbContext context) : IMicaRepository
+    public class MicaRepository(AppDbContext context) : BaseRepository<Mica>(context),IMicaRepository
     {
         private readonly AppDbContext _context = context;
-        public async Task<int> Add(Mica mica)
+       
+
+        public IEnumerable<MicaDTO> ConsultarDTO()
         {
-            _context.Add(mica);
-            return await _context.SaveChangesAsync();
+            IEnumerable<Mica> query = context.mica.ToList();
+            return from ta in query
+                   select new MicaDTO
+                   {
+                       micaid = ta.micaid,
+                       nombre = ta.nombre,
+                       descripcion = ta.descripcion,
+                       precio = ta.precio,
+                       cantidad_disponible = ta.cantidad_disponible
+                   };
         }
 
-        public async Task<int> Delete(Mica mica)
+        public Mica ConsultarPorId(int id)
         {
-            _context.Remove(mica);
-            return await _context.SaveChangesAsync();
-        }
-
-        public async Task<IEnumerable<Mica>> GetAll()
-        {
-            var micas = await _context.mica.ToListAsync();
-            return micas;
-        }
-
-        public async Task<Mica?> GetById(int id)
-        {
-            return await _context.mica.FindAsync(id);
-        }
-
-        public async Task<int> Update(Mica mica)
-        {
-            _context.Update(mica);
-            return await _context.SaveChangesAsync();
+            return _context.mica.Find(id);
         }
     }
 }

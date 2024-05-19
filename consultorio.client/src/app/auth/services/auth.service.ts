@@ -18,7 +18,7 @@ export class AuthService {
   }
   constructor(private http: HttpClient) { }
 
-  register(usname: string, id: string, pass: string) {
+  register(usname: string, id: number, pass: string) {
     const URL = `${this.baseUrl}auth/new`;
     const body = { usname, id, pass };
 
@@ -39,7 +39,7 @@ export class AuthService {
       );
   }
 
-  login(id: string, pass: string) {
+  login(id: number, pass: string) {
     const URL = `${this.baseUrl}auth`;
     const body = { id, pass };
 

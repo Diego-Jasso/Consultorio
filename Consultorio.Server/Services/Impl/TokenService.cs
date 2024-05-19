@@ -1,6 +1,9 @@
-﻿using Consultorio.Server.Models;
+﻿using AutoMapper;
+using Consultorio.Server.DTOs;
+using Consultorio.Server.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using System.Text;
 
@@ -9,13 +12,17 @@ namespace Consultorio.Server.Services.Impl
     public class TokenService : ITokenServices
     {
         private readonly SymmetricSecurityKey _key;
-
-        public TokenService(IConfiguration config)
+        
+        private readonly IMapper _mapper;
+        public TokenService(IConfiguration config,IMapper mapper)
         {
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
+            _mapper = mapper;
+
         }
-        public string CrearToken(Usuario usuario)
+        public string CrearToken(UsuarioDTO dto)
         {
+            Usuario usuario = _mapper.Map<Usuario>(dto);
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.NameId, usuario.nombreUsuario)

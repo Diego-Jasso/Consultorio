@@ -1,34 +1,86 @@
-﻿using Consultorio.Server.Models;
+﻿using AutoMapper;
+using Consultorio.Server.Base;
+using Consultorio.Server.DTOs;
+using Consultorio.Server.Models;
 using Consultorio.Server.Repositories;
+using Consultorio.Server.Utilerias;
+using FluentValidation;
+using FluentValidation.Results;
+using System.Runtime.CompilerServices;
 
 namespace Consultorio.Server.Services.Impl
 {
-    public class MicaService(IMicaRepository repository) : IMicaService
+    public class MicaService(IMicaRepository repository,IMapper mapper) : IMicaService
     {
         private readonly IMicaRepository _repository = repository;
-        public async Task<int> Add(Mica obj)
+        private readonly IMapper _mapper = mapper;
+        public List<MicaDTO> ConsultarDTO()
         {
-            return await _repository.Add(obj);
+            return _repository.ConsultarDTO().ToList();
         }
 
-        public async Task<int> Delete(Mica obj)
+        public MicaDTO ConsultarPorId(int id)
         {
-            return await _repository.Delete(obj);
+            Mica mica = _repository.ConsultarPorId(id);
+            return mapper.Map<MicaDTO>(mica);
         }
 
-        public async Task<IEnumerable<Mica>> GetAll()
+        public MicaDTO Agregar(MicaNewDTO micaDto)
         {
-            return await _repository.GetAll();
+            Mica mica = mapper.Map<Mica>(micaDto);
+            MicaValidatorService validator = new();
+            ValidationResult result = validator.Validate(mica); 
+            if (result.IsValid)
+            {
+                _repository.Agregar(mica);
+                return mapper.Map<MicaDTO>(mica);
+            }
+            else
+            {
+                return MicaDTO.ToError(
+                    result.ToString(Constantes.COMA));
+            }
         }
 
-        public async Task<Mica?> GetById(int id)
+        public MicaDTO Editar(MicaDTO micaDto)
         {
-            return await _repository.GetById(id);
+            Mica mica = mapper.Map<Mica>(micaDto);
+            MicaValidatorService validator = new();
+            ValidationResult result = validator.Validate(mica);
+            if (result.IsValid)
+            {
+                _repository.Editar(mica);
+                return mapper.Map<MicaDTO>(mica);
+            }
+            else
+            {
+                return MicaDTO.ToError(
+                    result.ToString(Constantes.COMA));
+            }
+
         }
 
-        public async Task<int> Update(Mica obj)
+        public MicaDTO EliminarDTO(int id)
         {
-            return await _repository.Update(obj);
+            Mica mica = repository.ConsultarPorId(id);
+            MicaValidatorService validator = new();
+            ValidationResult result = validator.Validate(mica);
+            if (result.IsValid)
+            {
+                _repository.Eliminar(mica);
+                return mapper.Map<MicaDTO>(mica);
+            }
+            else
+            {
+                return MicaDTO.ToError(
+                    result.ToString(Constantes.COMA));
+            }
+
+        }
+
+        public int Eliminar(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

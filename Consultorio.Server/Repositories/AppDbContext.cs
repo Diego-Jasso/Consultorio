@@ -8,5 +8,7 @@ namespace Consultorio.Server.Repositories
         public DbSet<Armazon> armazon { get; set; } = default!;
 
         public DbSet<Mica> mica { get; set; } = default!;
+
+        public DbSet<Usuario> usuario { get; set; } = default!;
     }
 }

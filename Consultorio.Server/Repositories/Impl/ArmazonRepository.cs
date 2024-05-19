@@ -2,51 +2,40 @@
 using Microsoft.EntityFrameworkCore;
 using Consultorio.Server.Repositories;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Consultorio.Server.DTOs;
+using Consultorio.Server.Base.Impl;
 
 namespace Consultorio.Server.Repositories.Impl
 {
-    public class ArmazonRepository(AppDbContext context): IArmazonRepository
+    public class ArmazonRepository(AppDbContext context): BaseRepository<Armazon>(context), IArmazonRepository
     {
         private readonly AppDbContext _context = context;
 
-        public async Task<int> Add(Armazon armazon)
+        
+        public IEnumerable<ArmazonDTO> ConsultarDTO()
         {
-            _context.Add(armazon);
-            return await _context.SaveChangesAsync();
+            return from arma in _context.armazon
+                   select new ArmazonDTO
+                   {
+                       armazonid = arma.armazonid,
+                       marca = arma.marca,
+                       modelo = arma.modelo,
+                       color = arma.color,
+                       cantidad_disponible = arma.cantidad_disponible,
+                       precio = arma.precio,
+                       material = arma.material,
+                       tipo_de_lente = arma.tipo_de_lente
+                   };
         }
 
-        public async Task<IEnumerable<Armazon>> GetAll()
+       public Armazon ConsultarPorId(int id)
         {
-            var armazones = await _context.armazon.ToListAsync();
-            return armazones;
+            return _context.armazon.Find(id);
         }
 
-        public Task<bool> ExistsModelo(string modelo)
+        public bool ExisteModelo(string modelo)
         {
-            return _context.armazon.AnyAsync(armazon => armazon.modelo == modelo.ToLower());
-        }
-
-        public Task<bool> ExistsId(int armazonId)
-        {
-            return _context.armazon.AnyAsync(armazon => armazon.armazonid == armazonId);
-        }
-
-        public async Task<int> Delete(Armazon armazon)
-        {
-            _context.Remove(armazon);
-            return await _context.SaveChangesAsync();
-
-        }
-
-        public async Task<int> Update(Armazon armazon)
-        {
-            _context.Update(armazon);
-            return await _context.SaveChangesAsync();
-        }
-
-        public async Task<Armazon?> GetById(int armazonId)
-        {
-            return await _context.armazon.FindAsync(armazonId);
+            return _context.armazon.Any(armazon => armazon.modelo == modelo.ToLower());
         }
     }
 }

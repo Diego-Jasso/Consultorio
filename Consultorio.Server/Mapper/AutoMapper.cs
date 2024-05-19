@@ -8,8 +8,12 @@ namespace Consultorio.Server.Mapper
     {
         public MapperCode() 
         {
-            CreateMap<ArmazonDTO,Armazon>();
-            CreateMap<MicaDTO, Mica>();
+            CreateMap<ArmazonNewDTO, Armazon>();
+            CreateMap<ArmazonDTO,Armazon>().ReverseMap();
+            CreateMap<MicaNewDTO, Mica>();
+            CreateMap<MicaDTO, Mica>().ReverseMap();
+            CreateMap<UsuarioNewDTO, Usuario>();
+            CreateMap<UsuarioDTO,Usuario>().ReverseMap();
         }
     }
 }

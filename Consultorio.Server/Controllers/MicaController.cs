@@ -1,4 +1,6 @@
-﻿using Consultorio.Server.Models;
+﻿using Consultorio.Server.Base.Impl;
+using Consultorio.Server.DTOs;
+using Consultorio.Server.Models;
 using Consultorio.Server.Repositories;
 using Consultorio.Server.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -7,51 +9,51 @@ namespace Consultorio.Server.Controllers
 {
     public class MicaController(IMicaService service) : BaseApiController
     {
-        private readonly IMicaService _service = service;
 
         [HttpGet]
 
-        public async Task<ActionResult<IEnumerable<Mica>>> GetAll()
+        public ActionResult<List<MicaDTO>> ConsultarDTO()
         {
-            return Ok(await _service.GetAll());
+            return service.ConsultarDTO();
         }
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<Mica>> GetById(int id)
+        public ActionResult<MicaDTO> ConsultarPorId(int id)
         {
-            var mica = await _service.GetById(id);
-            if (mica == null) return BadRequest();
-            return mica;
+            return service.ConsultarPorId(id);
         }
 
         [HttpPost]
 
-        public async Task<ActionResult<Mica>> Add(Mica mica)
+        public ActionResult<MicaDTO> Agregar(MicaNewDTO dto)
         {
-            await _service.Add(mica);
-            return mica;
+            var result = service.Agregar(dto);
+            if (result.Success)
+                return Ok();
+            else
+                return BadRequest(result.Error);
         }
 
         [HttpPut("{id}")]
 
-        public async Task<ActionResult<Mica>> Update(int id,Mica mica)
+        public ActionResult<MicaDTO> Editar(MicaDTO dto)
         {
-            if (mica.micaid != id)
-            {
-                return BadRequest();
-            }
-            await _service.Update(mica);
-            return NoContent();
+            var result = service.Editar(dto);
+            if (result.Success)
+                return Ok();
+            else
+                return BadRequest(result.Error);
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Mica>> Delete(int id)
+        public ActionResult<MicaDTO> Eliminar(int id)
         {
-            var mica = await _service.GetById(id);
-            if (mica ==null) return BadRequest();
-            await _service.Delete(mica);
-            return NoContent();
+            var result = service.EliminarDTO(id);
+            if (result.Success)
+                return NoContent();
+            else
+                return BadRequest(result.Error);
         }
     }
 }

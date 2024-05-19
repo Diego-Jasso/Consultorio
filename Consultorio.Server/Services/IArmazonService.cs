@@ -1,11 +1,12 @@
-﻿using Consultorio.Server.Models;
+﻿using Consultorio.Server.Base;
+using Consultorio.Server.DTOs;
+using Consultorio.Server.Models;
 
 namespace Consultorio.Server.Services
 {
-    public interface IArmazonService : IBaseService<Armazon>
+    public interface IArmazonService : IBaseService<ArmazonDTO,ArmazonNewDTO>
     {
-        Task<bool> ExistsModelo(string modelo);
+        ArmazonDTO EliminarDTO(int id);
 
-        Task<bool> ExistsId(int armazonId);
     }
 }

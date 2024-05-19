@@ -5,7 +5,7 @@ namespace Consultorio.Server.Models
     public class Usuario
     {
         [Key]
-        public int Idusuario { get; set; }
+        public int usuarioid { get; set; }
 
         public string nombre { get; set; } = string.Empty;
 
@@ -19,8 +19,8 @@ namespace Consultorio.Server.Models
 
         public string correo { get; set; } = string.Empty;
 
-        public byte[] passwordHasH { get; set; }
+        public byte[] passwordHasH { get; set; } = [];
 
-        public byte[] passwordSalt { get; set; } 
+        public byte[] passwordSalt { get; set; } = [];
     }
 }

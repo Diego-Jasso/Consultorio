@@ -1,44 +1,86 @@
 ﻿using Consultorio.Server.Repositories;
 using Consultorio.Server.Models;
+using AutoMapper;
+using Consultorio.Server.DTOs;
+using Consultorio.Server.Utilerias;
+using FluentValidation.Results;
+using FluentValidation;
 
 namespace Consultorio.Server.Services.Impl
 {
-    public class ArmazonService(IArmazonRepository repository) : IArmazonService
+    public class ArmazonService(IArmazonRepository repository,IMapper mapper) : IArmazonService
     {
         private readonly IArmazonRepository _repository = repository;
+        private readonly IMapper _mapper = mapper;
 
-        public Task<IEnumerable<Armazon>> GetAll() 
+        public List<ArmazonDTO> ConsultarDTO() 
         { 
-            return _repository.GetAll();
+            return _repository.ConsultarDTO().ToList();
         }
 
-        public async Task<bool> ExistsModelo(string modelo)
+        public ArmazonDTO ConsultarPorId(int id)
         {
-            return await _repository.ExistsModelo(modelo);
-        }
-        public async Task<bool> ExistsId(int armazonId)
-        {
-            return await _repository.ExistsId(armazonId);
+            Armazon armazon = _repository.ConsultarPorId(id);
+            return _mapper.Map<ArmazonDTO>(armazon);
         }
 
-        public async Task<int> Add(Armazon armazon)
+        public ArmazonDTO Agregar(ArmazonNewDTO armazonDto)
         {
-            return await _repository.Add(armazon);
+            Armazon armazon = _mapper.Map<Armazon>(armazonDto);
+            ArmazonValidatorService validator = new(_repository);
+            ValidationResult result = validator.Validate(armazon);
+            if (result.IsValid)
+            {
+                _repository.Agregar(armazon);
+                return _mapper.Map<ArmazonDTO>(armazon);
+            }
+            else
+            {
+                return ArmazonDTO.ToError(
+                    result.ToString(Constantes.COMA));
+            }
         }
 
-        public async Task<int> Update(Armazon armazon)
+        public ArmazonDTO Editar(ArmazonDTO armazonDto)
         {
-            return await _repository.Update(armazon);
+            Armazon armazon = _mapper.Map<Armazon>(armazonDto);
+            ArmazonValidatorService validator = new(_repository);
+            ValidationResult result = validator.Validate(armazon);
+            if (result.IsValid)
+            {
+                _repository.Editar(armazon);
+                return _mapper.Map<ArmazonDTO>(armazon);
+            }
+            else
+            {
+                return ArmazonDTO.ToError(
+                    result.ToString(Constantes.COMA));
+            }
+
         }
 
-        public async Task<int> Delete(Armazon armazon)
+        public ArmazonDTO EliminarDTO(int id)
         {
-            return await _repository.Delete(armazon);
+            Armazon armazon = _repository.ConsultarPorId(id);
+            ArmazonValidatorService validator = new(_repository);
+            ValidationResult result = validator.Validate(armazon);
+            if (result.IsValid)
+            {
+                _repository.Eliminar(armazon);
+                return _mapper.Map<ArmazonDTO>(armazon);
+            }
+            else
+            {
+                return ArmazonDTO.ToError(
+                    result.ToString(Constantes.COMA));
+            }
+
         }
 
-        public async Task<Armazon?> GetById(int armazonId)
+        public int Eliminar(int id)
         {
-            return await _repository.GetById(armazonId);
+            throw new NotImplementedException();
         }
+
     }
 }

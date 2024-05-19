@@ -5,11 +5,11 @@ using Consultorio.Server.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Consultorio.Server.Controllers
+namespace Consultorio.Server.Base.Impl
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseApiController : ControllerBase 
+    public class BaseApiController : ControllerBase
     {
     }
 }

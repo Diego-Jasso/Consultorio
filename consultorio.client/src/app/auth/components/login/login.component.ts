@@ -22,13 +22,11 @@ export class LoginComponent {
   }
 
   login() {
-    //console.log(this.loginForm.value);
-    console.log(this.loginForm.valid);
-    //this.router.navigateByUrl('/layout');
     if (this.loginForm.valid) {
       const { id, pass } = this.loginForm.value;
       this.authService.login(id, pass)
         .subscribe(res => {
+          console.log(res);
           if (res === true) {
             this.router.navigateByUrl('/layout');
             this.toastr.success(id, 'Ingreso correcto');

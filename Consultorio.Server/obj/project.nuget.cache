@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "cTEEU3OEJsLIW67vteUwWi2FqW76AoCVxAVWC1y+vj4bUTCUsFnhly4e3m+lA465gnTdK+zd/0UU4pG3EBGCcQ==",
+  "dgSpecHash": "RB3/CyTULjH7LX/hj10X2RIbxAXY2XzgQ192GpET4sAE7kDUUnnbbaEiJV5G3kBip82cKjKFBjUShwgFYX+l9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Consultorio.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\fluentvalidation\\11.9.1\\fluentvalidation.11.9.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.5\\microsoft.aspnetcore.authentication.jwtbearer.8.0.5.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.5\\microsoft.aspnetcore.spaproxy.8.0.5.nupkg.sha512",

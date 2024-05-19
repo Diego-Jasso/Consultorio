@@ -4,94 +4,53 @@ using Consultorio.Server.Models;
 using System.Timers;
 using AutoMapper;
 using Consultorio.Server.DTOs;
+using Consultorio.Server.Base.Impl;
 
 namespace Consultorio.Server.Controllers
 {
-    public class ArmazonController(IArmazonService service,IMapper mapper) : BaseApiController
+    public class ArmazonController(IArmazonService service) : BaseApiController
     {
-        private readonly IArmazonService _service = service;
-        private readonly IMapper _mapper = mapper;
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Armazon>>> GetAll()
+        public ActionResult<List<ArmazonDTO>> ConsultarDTO()
         {
-            return Ok(await _service.GetAll());
+            return service.ConsultarDTO();
         }
 
-        [HttpGet]
-        [Route("ExistsModelo")]
+        [HttpGet("{id}")]
 
-        public async Task<ActionResult<Armazon>> ExistsModelo(string modelo)
+        public async Task<ActionResult<ArmazonDTO>> ConsultarPorId(int id)
         {
-            if (await _service.ExistsModelo(modelo))
-            {
-                return Ok("El modelo de armazon existe");
-            }
-            else
-            {
-                return BadRequest("El modelo de armazon no existe");
-            }
-
-        }
-
-        [HttpGet]
-        [Route("ExistsId")]
-
-        public async Task<ActionResult<Armazon>> ExistsId(int armazonid)
-        {
-            if (await _service.ExistsId(armazonid))
-            {
-                return Ok("El armazon existe");
-            }
-            else
-            {
-                return BadRequest("El armazon no existe");
-            }
-        }
-
-        [HttpGet("{armazonid}")]
-
-        public async Task<ActionResult<Armazon>> GetById(int armazonid)
-        {
-            var armazon = await _service.GetById(armazonid);
-            if (armazon == null) return BadRequest();
-            return armazon;
+            return service.ConsultarPorId(id);
         }
 
         [HttpPost]
-        public async Task<ActionResult<ArmazonDTO>> Add(ArmazonDTO armazonDTO)
+        public ActionResult<ArmazonDTO> Agregar(ArmazonNewDTO dto)
         {
-            var armazon = _mapper.Map<Armazon>(armazonDTO);
-            if (await _service.ExistsModelo(armazon.modelo))
-            {
-                return BadRequest("El modelo de armazon ya existe");
-            }
+            var result = service.Agregar(dto);
+            if (result.Success)
+                return Ok();
             else
-            {
-                await _service.Add(armazon);
-                return Ok(armazon);
-            }
+                return BadRequest(result.Error);
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Armazon>> Update(int id,Armazon armazon)
+        public ActionResult<ArmazonDTO> Editar(ArmazonDTO dto)
         {
-            if(armazon.armazonid != id)
-            {
-                return BadRequest();
-            }
-
-            await _service.Update(armazon);
-            return NoContent();
+            var result = service.Editar(dto);
+            if (result.Success)
+                return Ok();
+            else
+                return BadRequest(result.Error);
         }
 
-        [HttpDelete("{armazonId}")]
-        public async Task<ActionResult<Armazon>> Delete(int armazonId)
+        [HttpDelete("{id}")]
+        public ActionResult<ArmazonDTO> Delete(int id)
         {
-            var armazon = await _service.GetById(armazonId);
-            if (armazon == null) return BadRequest();
-            await _service.Delete(armazon);
-            return NoContent();
+            var result = service.EliminarDTO(id);
+            if (result.Success)
+                return NoContent();
+            else
+                return BadRequest(result.Error);
         }
     }
 }
