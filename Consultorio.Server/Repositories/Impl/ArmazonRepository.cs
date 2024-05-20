@@ -14,7 +14,7 @@ namespace Consultorio.Server.Repositories.Impl
         
         public IEnumerable<ArmazonDTO> ConsultarDTO()
         {
-            return from arma in _context.armazon
+            return from arma in _context.Armazon
                    select new ArmazonDTO
                    {
                        armazonid = arma.armazonid,
@@ -30,12 +30,12 @@ namespace Consultorio.Server.Repositories.Impl
 
        public Armazon ConsultarPorId(int id)
         {
-            return _context.armazon.Find(id);
+            return _context.Armazon.Find(id);
         }
 
         public bool ExisteModelo(string modelo)
         {
-            return _context.armazon.Any(armazon => armazon.modelo == modelo.ToLower());
+            return _context.Armazon.Any(armazon => armazon.modelo == modelo.ToLower());
         }
     }
 }

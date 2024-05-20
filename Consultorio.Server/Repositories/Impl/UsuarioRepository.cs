@@ -15,7 +15,7 @@ namespace Consultorio.Server.Repositories.Impl
 
         public IEnumerable<UsuarioDTO> ConsultarDTO()
         {
-            IEnumerable<Usuario> query = context.usuario.ToList();
+            IEnumerable<Usuario> query = context.Usuario.ToList();
             return from ta in query
                    select new UsuarioDTO
                    {
@@ -31,12 +31,12 @@ namespace Consultorio.Server.Repositories.Impl
 
         public Usuario ConsultarPorId(int id)
         {
-            return _context.usuario.Find(id);
+            return _context.Usuario.Find(id);
         }
 
-        bool IUsuarioRepository.ExisteNombreUsuario(int id, string nombreUsuario)
+        public bool ExisteNombreUsuario(int id, string nombreUsuario)
         {
-            return _context.usuario.Any(x => x.usuarioid != id && x.nombreUsuario == nombreUsuario);
+            return _context.Usuario.Any(x => x.usuarioid != id && x.nombreUsuario == nombreUsuario);
         }
     }
 }

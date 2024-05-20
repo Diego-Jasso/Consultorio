@@ -27,12 +27,12 @@ export class RegisterComponent {
   }
 
   register() {
-    const { usname, id, pass } = this.loginForm.value;
-    this.authService.register(usname, id, pass)
+    const { nombre, aPaterno, aMaterno, usname, telefono, correo, pass } = this.loginForm.value;
+    this.authService.register(nombre, aPaterno, aMaterno, usname, telefono,correo,pass)
       .subscribe(res => {
         if (res.ok === true) {
-          this.router.navigateByUrl('/layout');
-          this.toastr.success(id + " " + usname, "Registro Correcto");
+          this.router.navigateByUrl('layout');
+          this.toastr.success(res.id + " " + usname, "Registro Correcto");
         } else {
           console.log(res);
           this.toastr.error(res.message, 'Error', {

@@ -4,7 +4,10 @@ using Consultorio.Server.Models;
 using Consultorio.Server.Services;
 using Consultorio.Server.Services.Impl;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http.Headers;
 
 namespace Consultorio.Server.Controllers
 {
@@ -53,17 +56,85 @@ namespace Consultorio.Server.Controllers
 
             return Ok(usuarioDto);
         }
+        [HttpGet]
+        public ActionResult<AuthResponseDTO> Renovar()
+        {
+            string token = Request.Headers["TokenKey"];
 
-        //[HttpPost("new")]
-        //public async Task<ActionResult<Usuario>> Registro(RegistroDTO registro)
-        //{
-        //    if (await _service.UsuarioExiste(registro.nombreUsuario))
-        //    {
-        //        return BadRequest("El Nombre de Usuario ya esta registrado");
+            if(string.IsNullOrWhiteSpace(token))
+            {
+                return new AuthResponseDTO
+                {
+                    status = "error",
+                    message = "No se pudo renovar su token",
+                    ok = false
+                };
+            }
 
-        //    }
+            var tokenHandler = new JwtSecurityTokenHandler();
 
-        //    return Ok(await _service.Registro(registro));
-        //}
+            var jwtToken = tokenHandler.ReadJwtToken(token);
+
+            int id = Convert.ToInt32(jwtToken.Claims.FirstOrDefault(claim => claim.Type == JwtRegisteredClaimNames.Sub)?.Value);
+            string nombreUsuario = jwtToken.Claims.FirstOrDefault(claim => claim.Type == JwtRegisteredClaimNames.NameId)?.Value;
+
+            if (nombreUsuario == null)
+            {
+                return new AuthResponseDTO 
+                { status = "error", 
+                    message = "No se pudo renovar su token", 
+                    ok = false 
+                };
+            }
+
+            UsuarioDTO? usuario = _service.ConsultarPorId(id);
+
+            if(usuario == null)
+            {
+                return new AuthResponseDTO
+                {
+                    status = "error",
+                    message = "No se pudo renovar su token",
+                    ok = false
+                };
+            }
+
+            return new AuthResponseTrueDTO
+            {
+                status = "success",
+                message = "log in success",
+                ok = true,
+                id = usuario.usuarioid,
+                usname = nombreUsuario,
+                token = _tokenService.CrearToken(usuario)
+            };
+        }
+        [HttpPost("new")]
+        public ActionResult<AuthResponseDTO> Registro(UsuarioNewDTO dto)
+        {
+            var result = _service.Agregar(dto);
+            if (result.Success)
+            {
+                return new AuthResponseTrueDTO
+                {
+                    status = "success",
+                    message = "log in success",
+                    ok = true,
+                    id = result.usuarioid,
+                    usname = result.nombreUsuario,
+                    token = _tokenService.CrearToken(result)
+                };
+            }
+            else
+            {
+                return new AuthResponseDTO
+                {
+                    status = "error",
+                    message = result.Error,
+                    ok = false
+                };
+            }
+        }
+                
     }
 }

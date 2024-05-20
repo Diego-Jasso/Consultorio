@@ -9,5 +9,7 @@ namespace Consultorio.Server.Services
         UsuarioDTO EliminarDTO(int id);
 
         bool LoginExitoso(LoginDTO login);
+
+
     }
 }

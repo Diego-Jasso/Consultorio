@@ -25,13 +25,14 @@ namespace Consultorio.Server.Services.Impl
             Usuario usuario = _mapper.Map<Usuario>(dto);
             var claims = new List<Claim>
             {
+                new Claim(JwtRegisteredClaimNames.Sub,usuario.usuarioid.ToString()),
                 new Claim(JwtRegisteredClaimNames.NameId, usuario.nombreUsuario)
             };
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(7),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = creds
             };
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { canMatch, validateTokenGuard } from './guards/validate-token.guard';
 
 const routes: Routes = [
   {
@@ -8,7 +9,9 @@ const routes: Routes = [
   },
   {
     path: 'layout',
-    loadChildren: () => import('./protected-app/protected-app.module').then(m => m.ProtectedAppModule)
+    loadChildren: () => import('./protected-app/protected-app.module').then(m => m.ProtectedAppModule),
+    canActivate: [validateTokenGuard],
+    canMatch: [canMatch]
   },
   {
     path: '**',

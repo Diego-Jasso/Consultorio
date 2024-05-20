@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { user } from '../interfaces/us-interface';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthResponse } from '../interfaces/res-interface';
-import { catchError, map, of, tap } from 'rxjs';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +18,9 @@ export class AuthService {
   }
   constructor(private http: HttpClient) { }
 
-  register(usname: string, id: number, pass: string) {
+  register(nombre: string, aPaterno: string,aMaterno:string,nombreUsuario:string,telefono:string,correo:string, pass: string) {
     const URL = `${this.baseUrl}auth/new`;
-    const body = { usname, id, pass };
+    const body = { nombre, aPaterno, aMaterno, nombreUsuario, telefono,correo,pass };
 
     return this.http.post<AuthResponse>(URL, body)
       .pipe(
@@ -59,7 +59,21 @@ export class AuthService {
       );
   }
 
-  validateToken() {
-
+  validateToken(): Observable<boolean> {
+    const url = `${this.baseUrl}auth`;
+    const headers = new HttpHeaders()
+      .set('TokenKey', localStorage.getItem('token') || '');
+    return this.http.get<AuthResponse>(url, { headers })
+      .pipe(
+        map(res => {
+          localStorage.setItem('token', res.token!);
+          this._user = {
+            id: res.id!,
+            usname: res.usname!
+          }
+          return res.ok;
+        }),
+        catchError(err => of(false))
+        )
   }
 }

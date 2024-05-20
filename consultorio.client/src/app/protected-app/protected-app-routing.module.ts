@@ -14,7 +14,8 @@ const routes: Routes = [
           { path: '', component: ArmazonesComponent, },
           { path: 'armazon', component: ArmazonesComponent },
           { path: 'mica', component: MicasComponent },
-          { path: 'statistics', component: StatisticsComponent }
+          { path: 'statistics', component: StatisticsComponent },
+          { path: '**', redirectTo: ''}
         ]
       },
       { path:'**', redirectTo:''}

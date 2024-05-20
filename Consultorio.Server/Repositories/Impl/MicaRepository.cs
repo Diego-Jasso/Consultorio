@@ -12,7 +12,7 @@ namespace Consultorio.Server.Repositories.Impl
 
         public IEnumerable<MicaDTO> ConsultarDTO()
         {
-            IEnumerable<Mica> query = context.mica.ToList();
+            IEnumerable<Mica> query = context.Mica.ToList();
             return from ta in query
                    select new MicaDTO
                    {
@@ -26,7 +26,7 @@ namespace Consultorio.Server.Repositories.Impl
 
         public Mica ConsultarPorId(int id)
         {
-            return _context.mica.Find(id);
+            return _context.Mica.Find(id);
         }
     }
 }
