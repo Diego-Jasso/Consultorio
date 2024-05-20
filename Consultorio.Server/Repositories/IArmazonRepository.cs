@@ -7,7 +7,7 @@ namespace Consultorio.Server.Repositories
     public interface IArmazonRepository : IBaseRepository<Armazon>
     {
         IEnumerable<ArmazonDTO> ConsultarDTO();
-        bool ExisteModelo(string modelo);
+        bool ExisteModelo(int id,string modelo);
         Armazon ConsultarPorId(int id);
     }
 }

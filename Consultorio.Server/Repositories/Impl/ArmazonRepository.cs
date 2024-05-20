@@ -33,9 +33,9 @@ namespace Consultorio.Server.Repositories.Impl
             return _context.Armazon.Find(id);
         }
 
-        public bool ExisteModelo(string modelo)
+        public bool ExisteModelo(int id,string modelo)
         {
-            return _context.Armazon.Any(armazon => armazon.modelo == modelo.ToLower());
+            return _context.Armazon.Any(x => x.armazonid != id && x.modelo == modelo.ToLower());
         }
     }
 }

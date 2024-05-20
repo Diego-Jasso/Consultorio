@@ -27,7 +27,7 @@ namespace Consultorio.Server.Services.Impl
         }
         public bool ValidaModeloUnico(Armazon armazon)
         {
-            return !_repository.ExisteModelo(armazon.modelo);
+            return !_repository.ExisteModelo(armazon.armazonid,armazon.modelo);
         }
     }
 }

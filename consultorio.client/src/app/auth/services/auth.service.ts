@@ -14,13 +14,13 @@ export class AuthService {
   private _user!: user;
 
   get user() {
-    return {...this._user}
+    return { ...this._user }
   }
   constructor(private http: HttpClient) { }
 
-  register(nombre: string, aPaterno: string,aMaterno:string,nombreUsuario:string,telefono:string,correo:string, pass: string) {
+  register(nombre: string, aPaterno: string, aMaterno: string, nombreUsuario: string, telefono: string, correo: string, pass: string) {
     const URL = `${this.baseUrl}auth/new`;
-    const body = { nombre, aPaterno, aMaterno, nombreUsuario, telefono,correo,pass };
+    const body = { nombre, aPaterno, aMaterno, nombreUsuario, telefono, correo, pass };
 
     return this.http.post<AuthResponse>(URL, body)
       .pipe(
@@ -52,7 +52,7 @@ export class AuthService {
               id: res.id!,
               usname: res.usname!
             }
-          } 
+          }
         }),
         map(res => res),
         catchError(err => of(err.error.message))
@@ -74,6 +74,11 @@ export class AuthService {
           return res.ok;
         }),
         catchError(err => of(false))
-        )
+      )
   }
+
+  logOut() {
+    localStorage.clear();
+  }
+
 }
