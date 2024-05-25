@@ -14,9 +14,9 @@ export class RegisterComponent {
     nombre: ['', Validators.required],
     aPaterno: ['', Validators.required],
     aMaterno: ['', Validators.required],
-    usname: ['', Validators.required],
     telefono: ['', Validators.required],
     correo: ['', Validators.required],
+    usname: ['', Validators.required],
     pass: ['', Validators.required]
   });
 
@@ -27,12 +27,12 @@ export class RegisterComponent {
   }
 
   register() {
-    const { nombre, aPaterno, aMaterno, usname, telefono, correo, pass } = this.loginForm.value;
-    this.authService.register(nombre, aPaterno, aMaterno, usname, telefono,correo,pass)
+    const { nombre, aPaterno, aMaterno, telefono, correo, usname, pass } = this.loginForm.value;
+    this.authService.register(nombre, aPaterno, aMaterno, telefono, correo, usname, pass)
       .subscribe(res => {
         if (res.ok === true) {
           this.router.navigateByUrl('layout');
-          this.toastr.success(res.id + " " + usname, "Registro Correcto");
+          this.toastr.success(usname, "registrado correctamente");
         } else {
           console.log(res);
           this.toastr.error(res.message, 'Error', {

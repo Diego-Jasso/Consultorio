@@ -72,8 +72,4 @@ export class SidenavComponent implements OnInit {
     this.collapsed = false;
     this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
   }
-
-  logOut() {
-    this.authService.logOut();
-  }
 }

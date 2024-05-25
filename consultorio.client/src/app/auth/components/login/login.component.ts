@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent {
   loginForm : FormGroup = this.fb.group({
-    id: ['',Validators.required],
+    usname: ['',Validators.required],
     pass: ['', Validators.required]
   });
   
@@ -23,12 +23,12 @@ export class LoginComponent {
 
   login() {
     if (this.loginForm.valid) {
-      const { id, pass } = this.loginForm.value;
-      this.authService.login(id, pass)
+      const { usname, pass } = this.loginForm.value;
+      this.authService.login(usname, pass)
         .subscribe(res => {
           if (res.ok === true) {
             this.router.navigateByUrl('layout');
-            this.toastr.success(id, 'Ingreso correcto');
+            this.toastr.success(usname, 'Ingreso correcto');
           } else {
             this.toastr.error(res.message, 'Error', {
               timeOut: 4000,

@@ -2,7 +2,7 @@
 {
     public class LoginDTO
     {
-        public int id { get; set; }
+        public string usname { get; set; } = string.Empty;
         public string pass { get; set; } = string.Empty;
     }
 }

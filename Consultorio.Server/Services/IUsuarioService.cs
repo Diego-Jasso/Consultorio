@@ -10,6 +10,7 @@ namespace Consultorio.Server.Services
 
         bool LoginExitoso(LoginDTO login);
 
+        UsuarioDTO ConsultarPorUsuario(string nombreUsuario);
 
     }
 }

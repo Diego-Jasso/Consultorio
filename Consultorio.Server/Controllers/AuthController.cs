@@ -21,7 +21,7 @@ namespace Consultorio.Server.Controllers
         public ActionResult<AuthResponseDTO> Login(LoginDTO login)
         {
             var usuarioDto = new AuthResponseDTO();
-            var usuario = _service.ConsultarPorId(login.id);
+            var usuario = _service.ConsultarPorUsuario(login.usname);
             if (usuario == null)
             {
                 usuarioDto = new AuthResponseDTO
@@ -49,7 +49,7 @@ namespace Consultorio.Server.Controllers
                 status = "success",
                 message = "log in success",
                 ok = true,
-                id = login.id,
+                id = usuario.usuarioid,
                 usname = usuario.nombreUsuario,
                 token = _tokenService.CrearToken(usuario)
             };
@@ -59,7 +59,7 @@ namespace Consultorio.Server.Controllers
         [HttpGet]
         public ActionResult<AuthResponseDTO> Renovar()
         {
-            string token = Request.Headers["TokenKey"];
+            string? token = Request.Headers["TokenKey"];
 
             if(string.IsNullOrWhiteSpace(token))
             {
@@ -76,7 +76,7 @@ namespace Consultorio.Server.Controllers
             var jwtToken = tokenHandler.ReadJwtToken(token);
 
             int id = Convert.ToInt32(jwtToken.Claims.FirstOrDefault(claim => claim.Type == JwtRegisteredClaimNames.Sub)?.Value);
-            string nombreUsuario = jwtToken.Claims.FirstOrDefault(claim => claim.Type == JwtRegisteredClaimNames.NameId)?.Value;
+            string? nombreUsuario = jwtToken.Claims.FirstOrDefault(claim => claim.Type == JwtRegisteredClaimNames.NameId)?.Value;
 
             if (nombreUsuario == null)
             {

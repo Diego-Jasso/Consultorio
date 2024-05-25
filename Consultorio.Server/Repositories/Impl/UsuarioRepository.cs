@@ -38,5 +38,26 @@ namespace Consultorio.Server.Repositories.Impl
         {
             return _context.Usuario.Any(x => x.usuarioid != id && x.nombreUsuario == nombreUsuario);
         }
+
+        public Usuario ConsultarPorUsuario(string nombreUsuario)
+        {
+
+            Usuario? usuario = (from user in context.Usuario
+                               where user.nombreUsuario == nombreUsuario
+                               select new Usuario
+                               {
+                                   usuarioid = user.usuarioid,
+                                   nombre = user.nombre,
+                                   aPaterno = user.aPaterno,
+                                   aMaterno = user.aMaterno,
+                                   telefono = user.telefono,
+                                   correo = user.correo,
+                                   nombreUsuario = user.nombreUsuario,
+                                   passwordHasH = user.passwordHasH,
+                                   passwordSalt = user.passwordSalt
+                               }).FirstOrDefault();
+            return usuario;
+
+        }
     }
 }

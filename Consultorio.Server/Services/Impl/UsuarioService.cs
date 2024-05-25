@@ -27,6 +27,12 @@ namespace Consultorio.Server.Services.Impl
             return _mapper.Map<UsuarioDTO>(usuario);
         }
 
+        public UsuarioDTO ConsultarPorUsuario(string nombreUsuario)
+        {
+            Usuario usuario = _repository.ConsultarPorUsuario(nombreUsuario);
+            return _mapper.Map<UsuarioDTO>(usuario);
+        }
+
         public UsuarioDTO Agregar(UsuarioNewDTO usuarioDto)
         {
             Usuario usuario = _mapper.Map<Usuario>(usuarioDto);
@@ -86,7 +92,7 @@ namespace Consultorio.Server.Services.Impl
         {
             bool esExitosoLogin = false;
             
-            Usuario usuarioTemp =  _repository.ConsultarPorId(login.id);
+            Usuario usuarioTemp =  _repository.ConsultarPorUsuario(login.usname);
 
             if (usuarioTemp != null){
                 using var hmac = new HMACSHA512(usuarioTemp.passwordSalt);

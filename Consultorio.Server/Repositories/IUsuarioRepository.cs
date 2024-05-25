@@ -10,5 +10,6 @@ namespace Consultorio.Server.Repositories
 
         bool ExisteNombreUsuario(int id, string nombreUsuario);
         Usuario ConsultarPorId(int id);
+        Usuario ConsultarPorUsuario(string nombreUsuario);
     }
 }

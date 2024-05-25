@@ -10,26 +10,14 @@ import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './protected-app/sidenav/sidenav.component';
-import { ArmazonesComponent } from './protected-app/armazon/armazon.component';
-import { MicasComponent } from './protected-app/mica/mica.component';
-import { StatisticsComponent } from './protected-app/statistics/statistics.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LayoutComponent } from './protected-app/layout/layout.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { BodyComponent } from './protected-app/body/body.component';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
-    ArmazonesComponent,
-    MicasComponent,
-    StatisticsComponent,
-    BodyComponent,
-    LayoutComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
@@ -41,7 +29,9 @@ import { ToastrModule } from 'ngx-toastr';
     MatInputModule, MatIconModule,
     MatProgressBarModule,
     FormsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      "positionClass": "toast-top-center",
+    }),
   ],
   providers: [
     provideAnimationsAsync('noop')

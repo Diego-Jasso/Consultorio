@@ -13,10 +13,5 @@ export const navbarData = [
     routeLink: 'statistics',
     icon: 'fa fa-chart-simple',
     label: 'Reportes'
-  },
-  {
-    routeLink: '/auth',
-    icon: 'fa fa-times-circle',
-    label: 'Salir'
   }
 ];

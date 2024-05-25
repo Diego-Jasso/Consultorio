@@ -22,18 +22,18 @@ namespace Consultorio.Server.Services.Impl
         public MicaDTO ConsultarPorId(int id)
         {
             Mica mica = _repository.ConsultarPorId(id);
-            return mapper.Map<MicaDTO>(mica);
+            return _mapper.Map<MicaDTO>(mica);
         }
 
         public MicaDTO Agregar(MicaNewDTO micaDto)
         {
-            Mica mica = mapper.Map<Mica>(micaDto);
+            Mica mica = _mapper.Map<Mica>(micaDto);
             MicaValidatorService validator = new();
             ValidationResult result = validator.Validate(mica); 
             if (result.IsValid)
             {
                 _repository.Agregar(mica);
-                return mapper.Map<MicaDTO>(mica);
+                return _mapper.Map<MicaDTO>(mica);
             }
             else
             {
@@ -44,13 +44,13 @@ namespace Consultorio.Server.Services.Impl
 
         public MicaDTO Editar(MicaDTO micaDto)
         {
-            Mica mica = mapper.Map<Mica>(micaDto);
+            Mica mica = _mapper.Map<Mica>(micaDto);
             MicaValidatorService validator = new();
             ValidationResult result = validator.Validate(mica);
             if (result.IsValid)
             {
                 _repository.Editar(mica);
-                return mapper.Map<MicaDTO>(mica);
+                return _mapper.Map<MicaDTO>(mica);
             }
             else
             {
@@ -62,13 +62,13 @@ namespace Consultorio.Server.Services.Impl
 
         public MicaDTO EliminarDTO(int id)
         {
-            Mica mica = repository.ConsultarPorId(id);
+            Mica mica = _repository.ConsultarPorId(id);
             MicaValidatorService validator = new();
             ValidationResult result = validator.Validate(mica);
             if (result.IsValid)
             {
                 _repository.Eliminar(mica);
-                return mapper.Map<MicaDTO>(mica);
+                return _mapper.Map<MicaDTO>(mica);
             }
             else
             {

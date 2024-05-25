@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "BeAo1BUikakpo0KN0hOyXfsRh9CCqNEvzCNQMUULVWo=",
+  "Hash": "hLBFRUYDZQJbbHqt7eL8ziaQuWMrQn7qEU69z1IUN0g=",
   "Source": "Consultorio.Server",
   "BasePath": "_content/Consultorio.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\consultorio.client.esproj",
+      "Identity": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\consultorio.client.esproj",
       "Version": 2,
       "Source": "consultorio.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

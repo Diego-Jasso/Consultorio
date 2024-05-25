@@ -18,9 +18,9 @@ export class AuthService {
   }
   constructor(private http: HttpClient) { }
 
-  register(nombre: string, aPaterno: string, aMaterno: string, nombreUsuario: string, telefono: string, correo: string, password: string) {
+  register(nombre: string, aPaterno: string, aMaterno: string, telefono: string, correo: string, nombreUsuario: string, password: string) {
     const URL = `${this.baseUrl}auth/new`;
-    const body = { nombre, aPaterno, aMaterno, nombreUsuario, telefono, correo, password };
+    const body = { nombre, aPaterno, aMaterno, telefono, correo, nombreUsuario, password };
 
     return this.http.post<AuthResponse>(URL, body)
       .pipe(
@@ -39,9 +39,9 @@ export class AuthService {
       );
   }
 
-  login(id: number, pass: string) {
+  login(usname: string, pass: string) {
     const URL = `${this.baseUrl}auth`;
-    const body = { id, pass };
+    const body = { usname, pass };
 
     return this.http.post<AuthResponse>(URL, body)
       .pipe(
@@ -66,10 +66,12 @@ export class AuthService {
     return this.http.get<AuthResponse>(url, { headers })
       .pipe(
         map(res => {
-          localStorage.setItem('token', res.token!);
-          this._user = {
-            id: res.id!,
-            usname: res.usname!
+          if (res.ok) {
+            localStorage.setItem('token', res.token!);
+            this._user = {
+              id: res.id!,
+              usname: res.usname!
+            }
           }
           return res.ok;
         }),

@@ -18,7 +18,7 @@ namespace Consultorio.Server.Controllers
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<ArmazonDTO>> ConsultarPorId(int id)
+        public ActionResult<ArmazonDTO> ConsultarPorId(int id)
         {
             return service.ConsultarPorId(id);
         }
