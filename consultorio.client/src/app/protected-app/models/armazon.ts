@@ -9,6 +9,4 @@ export interface IArmazon {
   cantidad_disponible: number;
 }
 
-export enum Estatus {
-  Cargando, Procesado, Vacio, Error
-}
+

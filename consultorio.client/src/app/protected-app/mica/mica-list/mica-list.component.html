@@ -1,5 +1,5 @@
 <div class="card">
-  <h3 class="card-header">Armazones</h3>
+  <h3 class="card-header">Micas</h3>
   <input class="form-control" type="text" placeholder="Buscar..." [(ngModel)]="busquedaTexto">
   <div class="card-body">
     <table class="table">
@@ -13,45 +13,33 @@
             </button>
           </th>
           <th scope="col">Cantidad disponible</th>
-          <th scope="col">Marca</th>
-          <th scope="col">Modelo</th>
-          <th scope="col">Color</th>
-          <th scope="col">Tipo de Lente</th>
-          <th scope="col">Material</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
           <th scope="col">Precio</th>
         </tr>
       </thead>
       @switch(estado){
       @case (Estatus.Procesado){
       <tbody>
-        @for(armazon of armazonList | busqueda: busquedaTexto; track armazon.armazonid ){
+        @for(mica of micaList | busqueda: busquedaTexto; track mica.micaid ){
         <tr>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminar(armazon)"><i class="fa fa-trash"></i></button>
+            <button class="boton-agregar" (click)="onEliminar(mica)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditar(armazon)"><i class="fa fa-pen-to-square"></i></button>
+            <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            {{armazon.cantidad_disponible}}
+            {{mica.cantidad_disponible}}
           </td>
           <td style="vertical-align: middle;">
-            {{armazon.marca}}
+            {{mica.nombre}}
           </td>
           <td style="vertical-align: middle;">
-            {{armazon.modelo}}
+            {{mica.descripcion}}
           </td>
           <td style="vertical-align: middle;">
-            {{armazon.color}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{armazon.tipo_de_lente}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{armazon.material}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{armazon.precio}}
+            {{mica.precio}}
           </td>
         </tr>
         }

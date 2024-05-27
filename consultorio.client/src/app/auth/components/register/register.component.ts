@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { IUsuario } from '../../interfaces/user-interface';
+import { validarCamposRequeridos } from '../../../compartido/utilerias';
 
 @Component({
   selector: 'app-register',
@@ -20,17 +21,9 @@ export class RegisterComponent implements OnInit{
 
   ngOnInit(): void { }
 
- validaCampos(form: NgForm) {
-    Object.keys(form.controls).forEach((input) => {
-      const control = form.controls[input];
-      control.markAsTouched({ onlySelf: true });
-      control.markAsDirty({ onlySelf: true });
-    });
-  }
-
   register(form:NgForm) {
     if (!form.valid) {
-      this.validaCampos(form);
+      validarCamposRequeridos(form);
       return;
     }
     this.authService.register(this.usuario)

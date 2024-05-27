@@ -4,6 +4,8 @@ import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angula
 import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { ILogin } from '../../interfaces/login-interface';
+import { validarCamposRequeridos } from '../../../compartido/utilerias';
+
 
 @Component({
   selector: 'app-login',
@@ -18,17 +20,9 @@ export class LoginComponent {
 
   logform: ILogin = {} as ILogin;
 
-  validaCampos(form: NgForm) {
-    Object.keys(form.controls).forEach((input) => {
-      const control = form.controls[input];
-      control.markAsTouched({ onlySelf: true });
-      control.markAsDirty({ onlySelf: true });
-    });
-  }
-
   login(form: NgForm) {
     if (!form.valid) {
-      this.validaCampos(form);
+      validarCamposRequeridos(form);
       return;
     }
     this.authService.login(this.logform)

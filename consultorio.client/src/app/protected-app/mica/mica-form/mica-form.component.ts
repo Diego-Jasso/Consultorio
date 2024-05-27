@@ -1,32 +1,30 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { ArmazonService } from '../../servicios/armazon.service';
-import { IArmazon } from '../../models/armazon';
 import { NgForm } from '@angular/forms';
+import { Imica } from '../../models/mica';
+import { MicaService } from '../../servicios/mica.service';
+import { ToastrService } from 'ngx-toastr';
 import { validarCamposRequeridos } from '../../../compartido/utilerias';
-import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-armazon-form',
-  templateUrl: './armazon-form.component.html',
-  styleUrl: './armazon-form.component.css'
+  selector: 'app-mica-form',
+  templateUrl: './mica-form.component.html',
+  styleUrl: './mica-form.component.css'
 })
-export class ArmazonFormComponent {
-
+export class MicaFormComponent {
   @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @ViewChild('addForm') addForm!: NgForm;
 
-  readonly titulo_agregar = "Agregar armazon";
-  readonly titulo_editar = "Editar armazon";
+  readonly titulo_agregar = "Agregar mica";
+  readonly titulo_editar = "Editar mica";
   mostrarForm: boolean = false;
 
-  armazon: IArmazon = {} as IArmazon;
+  mica: Imica = {} as Imica;
   isEdit = false;
-  constructor(private service: ArmazonService,
+  constructor(private service: MicaService,
     private toastr: ToastrService) { }
 
-  cerrarForm(form:NgForm) {
+  cerrarForm(form: NgForm) {
     this.limpiar(form);
     this.mostrarForm = false;
   }
@@ -48,8 +46,8 @@ export class ArmazonFormComponent {
       validarCamposRequeridos(form);
       return;
     }
-    this.service.Agregar(this.armazon).subscribe({
-      next: (armazon) => this.toastr.success('El registro fue agregado correctamente'),
+    this.service.Agregar(this.mica).subscribe({
+      next: (mica) => this.toastr.success('El registro fue agregado correctamente'),
       complete: () => {
         this.actualizarTabla();
         this.limpiar(form);
@@ -70,7 +68,7 @@ export class ArmazonFormComponent {
   limpiar(form: NgForm): void {
     form.reset();
     this.isEdit = false;
-    this.armazon = {} as IArmazon;
+    this.mica = {} as Imica;
   }
 
   cargarDatos(id: number): void {
@@ -81,7 +79,7 @@ export class ArmazonFormComponent {
 
   obtenerPorId(id: number): void {
     this.service.GetById(id).subscribe({
-      next: (armazon) => { this.armazon = armazon },
+      next: (mica) => { this.mica = mica },
       complete: () => { },
       error: (err) => {
         console.log(err.error);
@@ -94,7 +92,7 @@ export class ArmazonFormComponent {
       validarCamposRequeridos(form);
       return;
     }
-    this.service.Editar(this.armazon).subscribe({
+    this.service.Editar(this.mica).subscribe({
       next: (tipoAcceso) => this.toastr.success('El registro fue actualizado correctamente'),
       complete: () => {
         this.actualizarTabla();

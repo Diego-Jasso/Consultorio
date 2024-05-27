@@ -1,8 +1,2 @@
-<!--<div class="button-container">
-  <button class="button-class" (click)="onAgregar()">
-    Agregar nuevo armazon
-  </button>
-</div>-->
-
 <app-armazon-form #form (actualizar)="onActualizar($event)"></app-armazon-form>
 <app-armazon-list #list (editar)="onEditar($event)" (eliminar)="onCerrar($event)" (agregar)="onAgregar($event)"></app-armazon-list>

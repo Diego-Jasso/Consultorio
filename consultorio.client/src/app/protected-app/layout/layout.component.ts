@@ -25,8 +25,4 @@ export class LayoutComponent {
     this.isSideNavCollapsed = data.collapsed;
   }
 
-  get usuario() {
-    var us = this.authService.user
-    return us;
-  }
 }

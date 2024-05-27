@@ -15,7 +15,10 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ArmazonListComponent } from './armazon/armazon-list/armazon-list.component';
-import { ArmazonFormComponent } from './armazon/armazon-form/armazon-form.component'
+import { ArmazonFormComponent } from './armazon/armazon-form/armazon-form.component';
+import { BusquedaPipe } from '../compartido/Pipe/busqueda.pipe';
+import { MicaListComponent } from './mica/mica-list/mica-list.component';
+import { MicaFormComponent } from './mica/mica-form/mica-form.component';
 
 
 @NgModule({
@@ -30,6 +33,9 @@ import { ArmazonFormComponent } from './armazon/armazon-form/armazon-form.compon
     PerfilComponent,
     ArmazonListComponent,
     ArmazonFormComponent,
+    BusquedaPipe,
+    MicaListComponent,
+    MicaFormComponent,
   ],
   imports: [
     CommonModule,

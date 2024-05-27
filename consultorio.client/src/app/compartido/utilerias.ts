@@ -7,3 +7,7 @@ export function validarCamposRequeridos(formulario: NgForm): void {
     control.markAsDirty({ onlySelf: true });
   });
 }
+
+export enum Estatus {
+  Cargando, Procesado, Vacio, Error
+}

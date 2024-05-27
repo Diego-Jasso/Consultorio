@@ -7,7 +7,6 @@ import { IArmazon } from '../models/armazon';
 import { ArmazonListComponent } from './armazon-list/armazon-list.component';
 import { ArmazonFormComponent } from './armazon-form/armazon-form.component';
 
-//@ViewChild('addForm', null) contactForm: NgForm;
 
 @Component({
   selector: 'app-armazon',

@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Imica, mica } from '../models/mica';
+import { Imica } from '../models/mica';
 
 @Injectable({
   providedIn: 'root'
@@ -13,23 +13,23 @@ export class MicaService {
 
   constructor(private http: HttpClient) { }
 
-  GetAll(): Observable<mica[]> {
-    return this.http.get<mica[]>(`${this.baseUrl}`);
+  GetAll(): Observable<Imica[]> {
+    return this.http.get<Imica[]>(`${this.baseUrl}`);
   }
 
-  GetById(id:number): Observable<mica> {
-    return this.http.get<mica>(`${this.baseUrl}/${id}`)
+  GetById(id: number): Observable<Imica> {
+    return this.http.get<Imica>(`${this.baseUrl}/${id}`)
   }
 
-  Insert(mica: Imica): Observable<mica> {
-    return this.http.post<mica>(`${this.baseUrl}`, mica);
+  Agregar(mica: Imica): Observable<Imica> {
+    return this.http.post<Imica>(`${this.baseUrl}`, mica);
   }
 
-  Update(mica: mica): Observable<mica> {
-    return this.http.put<mica>(`${this.baseUrl}/${mica.micaid}`, mica);
+  Editar(mica: Imica): Observable<Imica> {
+    return this.http.put<Imica>(`${this.baseUrl}/${mica.micaid}`, mica);
   }
 
-  Delete(id: number): Observable<mica> {
-    return this.http.delete<mica>(`${this.baseUrl}/${id}`);
+  Eliminar(id: number): Observable<Imica> {
+    return this.http.delete<Imica>(`${this.baseUrl}/${id}`);
   }
 }

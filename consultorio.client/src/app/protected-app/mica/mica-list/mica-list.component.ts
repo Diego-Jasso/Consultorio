@@ -1,17 +1,15 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { IArmazon } from '../../models/armazon';
-import { ArmazonService } from '../../servicios/armazon.service';
-import { ToastrService } from 'ngx-toastr';
 import { Estatus } from '../../../compartido/utilerias';
-
+import { Imica } from '../../models/mica';
+import { MicaService } from '../../servicios/mica.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-armazon-list',
-  templateUrl: './armazon-list.component.html',
-  styleUrl: './armazon-list.component.css'
+  selector: 'app-mica-list',
+  templateUrl: './mica-list.component.html',
+  styleUrl: './mica-list.component.css'
 })
-export class ArmazonListComponent {
-
+export class MicaListComponent {
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -22,22 +20,24 @@ export class ArmazonListComponent {
   readonly Estatus = Estatus;
 
   estado: Estatus = Estatus.Cargando;
-  armazonList: IArmazon[] = [];
+  micaList: Imica[] = [];
   busquedaTexto = '';
 
-  constructor(private service: ArmazonService,
+  constructor(private service: MicaService,
     private toastr: ToastrService) { }
 
   ngOnInit() {
     this.fetchLista();
   }
 
+
   fetchLista(): void {
     this.estado = Estatus.Cargando;
     var observable = this.service.GetAll();
     observable.subscribe({
-      next: (_armazon: IArmazon[]) => this.armazonList = _armazon,
-      complete: () => this.estado = Estatus.Procesado,
+      next: (_mica: Imica[]) => this.micaList = _mica,
+      complete: () => 
+          this.estado = Estatus.Procesado,
       error: (err) => {
         this.estado = Estatus.Error;
         this.toastr.error(err.error, 'Error', {
@@ -46,12 +46,15 @@ export class ArmazonListComponent {
         });
       }
     });
+    if (this.micaList = []) {
+      this.estado = Estatus.Vacio;
+    }
   }
 
-  onEliminar(armazon: IArmazon) {
+  onEliminar(mica: Imica) {
     this.limpiarFormulario();
-    this.service.Eliminar(armazon.armazonid).subscribe({
-      next: (armazon) => this.fetchLista(),
+    this.service.Eliminar(mica.micaid).subscribe({
+      next: (mica) => this.fetchLista(),
       complete: () => {
         this.toastr.success('El registro fue eliminado correctamente')
       },
@@ -68,8 +71,8 @@ export class ArmazonListComponent {
     this.agregar.emit(true);
   }
 
-  onEditar(armazon: IArmazon) {
-    this.editar.emit(armazon.armazonid);
+  onEditar(mica: Imica) {
+    this.editar.emit(mica.micaid);
   }
 
   limpiarFormulario() {
