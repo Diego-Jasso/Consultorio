@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Iarmazon, armazon } from '../models/armazon';
+import { IArmazon} from '../models/armazon';
 
 @Injectable({
   providedIn: 'root'
@@ -13,23 +13,23 @@ export class ArmazonService {
 
   constructor(private http: HttpClient) { }
 
-  GetArmazones(): Observable<armazon[]> {
-    return this.http.get<armazon[]>(`${this.baseUrl}`);
+  GetAll(): Observable<IArmazon[]> {
+    return this.http.get<IArmazon[]>(`${this.baseUrl}`);
   }
 
-  GetId(id:number): Observable<armazon> {
-    return this.http.get<armazon>(`${this.baseUrl}/${id}`)
+  GetById(id: number): Observable<IArmazon> {
+    return this.http.get<IArmazon>(`${this.baseUrl}/${id}`)
   }
 
-  InsertArmazon(armazon: Iarmazon): Observable<armazon> {
-    return this.http.post<armazon>(`${this.baseUrl}`, armazon);
+  Agregar(armazon: IArmazon): Observable<IArmazon> {
+    return this.http.post<IArmazon>(`${this.baseUrl}`, armazon);
   }
 
-  UpdateArmazon(armazon: armazon): Observable<armazon> {
-    return this.http.put<armazon>(`${this.baseUrl}/${armazon.armazonid}`, armazon);
+  Editar(armazon: IArmazon): Observable<IArmazon> {
+    return this.http.put<IArmazon>(`${this.baseUrl}/${armazon.armazonid}`, armazon);
   }
 
-  DeleteArmazon(id: number): Observable<armazon> {
-    return this.http.delete<armazon>(`${this.baseUrl}/${id}`);
+  Eliminar(id: number): Observable<IArmazon> {
+    return this.http.delete<IArmazon>(`${this.baseUrl}/${id}`);
   }
 }

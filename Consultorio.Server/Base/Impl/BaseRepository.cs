@@ -20,7 +20,7 @@ namespace Consultorio.Server.Base.Impl
 
         public void Editar(T obj)
         {
-            context.Attach(obj);
+            context.Update(obj);
             context.SaveChanges();
         }
 

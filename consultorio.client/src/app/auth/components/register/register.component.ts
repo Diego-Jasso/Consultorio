@@ -1,38 +1,43 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { IUsuario } from '../../interfaces/user-interface';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent {
-  loginForm: FormGroup = this.fb.group({
-    nombre: ['', Validators.required],
-    aPaterno: ['', Validators.required],
-    aMaterno: ['', Validators.required],
-    telefono: ['', Validators.required],
-    correo: ['', Validators.required],
-    usname: ['', Validators.required],
-    pass: ['', Validators.required]
-  });
+export class RegisterComponent implements OnInit{
 
-  constructor(private fb: FormBuilder,
-    private router: Router,
+  usuario: IUsuario = {} as IUsuario;
+  constructor(private router: Router,
     private authService: AuthService,
     private toastr: ToastrService) {
   }
 
-  register() {
-    const { nombre, aPaterno, aMaterno, telefono, correo, usname, pass } = this.loginForm.value;
-    this.authService.register(nombre, aPaterno, aMaterno, telefono, correo, usname, pass)
+  ngOnInit(): void { }
+
+ validaCampos(form: NgForm) {
+    Object.keys(form.controls).forEach((input) => {
+      const control = form.controls[input];
+      control.markAsTouched({ onlySelf: true });
+      control.markAsDirty({ onlySelf: true });
+    });
+  }
+
+  register(form:NgForm) {
+    if (!form.valid) {
+      this.validaCampos(form);
+      return;
+    }
+    this.authService.register(this.usuario)
       .subscribe(res => {
         if (res.ok === true) {
           this.router.navigateByUrl('layout');
-          this.toastr.success(usname, "registrado correctamente");
+          this.toastr.success(this.usuario.nombreUsuario, "Registrado Correctamente");
         } else {
           console.log(res);
           this.toastr.error(res.message, 'Error', {

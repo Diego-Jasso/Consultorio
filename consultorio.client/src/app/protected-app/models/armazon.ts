@@ -1,4 +1,5 @@
-export interface Iarmazon {
+export interface IArmazon {
+  armazonid: number;
   marca: string;
   modelo: string;
   color: string;
@@ -8,16 +9,6 @@ export interface Iarmazon {
   cantidad_disponible: number;
 }
 
-export class armazon implements Iarmazon {
-  armazonid!: number;
-  marca!: string;
-  modelo!: string;
-  color!: string;
-  tipo_de_lente!: string;
-  material!: string;
-  precio!: number;
-  cantidad_disponible!: number;
-
-  constructor() { }
-
+export enum Estatus {
+  Cargando, Procesado, Vacio, Error
 }

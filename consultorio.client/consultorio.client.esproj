@@ -11,5 +11,6 @@
     <Folder Include="src\app\auth\interfaces\" />
     <Folder Include="src\app\guards\" />
     <Folder Include="src\app\auth\services\" />
+    <Folder Include="src\app\protected-app\compartido\" />
   </ItemGroup>
 </Project>

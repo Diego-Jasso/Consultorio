@@ -4,32 +4,45 @@
       <img class="img" src="assets/logoultra.png" />
     </div>
     <div class="formulario">
-      <form [formGroup]="loginForm" (ngSubmit)="register()">
-        <div class="form-field">
-          <input placeholder="Nombre" formControlName="nombre" required />
+      <form #loginForm="ngForm" (ngSubmit)="register(loginForm)">
+        <div class="input-group mb-2">
+          <span class="input-group-text"><i class="fa fa-user"></i></span>
+          <input class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" type="text" placeholder="Nombre(s)" required />
         </div>
-        <div class="form-field">
-          <input placeholder="Apellido Paterno" formControlName="aPaterno" required />
+        <div *ngIf="!nombre?.valid && (nombre?.dirty || nombre?.touched)" class="error">
+          <div *ngIf="nombre?.errors?.['required']">El nombre  es requerido</div>
         </div>
-        <div class="form-field">
-          <input placeholder="Apellido Materno" formControlName="aMaterno" required />
+        <div class="input-group mb-2">
+          <span class="input-group-text"><i class="fa fa-user"></i></span>
+          <input class="form-control" id="aPat" name="aPat" #aPat="ngModel" [(ngModel)]="usuario.aPaterno" type="text" placeholder="Apellido Paterno" required />
         </div>
-        <div class="form-field">
-          <input placeholder="Telefono" formControlName="telefono" required />
+        <div *ngIf="!aPat?.valid && (aPat?.dirty || aPat?.touched)" class="error">
+          <div *ngIf="aPat?.errors?.['required']">El apellido paterno es requerido</div>
         </div>
-        <div class="form-field">
-          <input placeholder="Correo" formControlName="correo" required />
+        <div class="input-group mb-2">
+          <span class="input-group-text"><i class="fa fa-user"></i></span>
+          <input class="form-control" id="aMat" name="aMat" #aMat="ngModel" [(ngModel)]="usuario.aMaterno" type="text" placeholder="Apellido Materno" required />
         </div>
-        <a>Con estos datos iniciaras sesión:</a>
-        <div class="form-field">
-          <input placeholder="Nombre de usuario" formControlName="usname" required />
+        <div *ngIf="!aMat?.valid && (aMat?.dirty || aMat?.touched)" class="error">
+          <div *ngIf="aMat?.errors?.['required']">El apellido materno es requerido</div>
         </div>
-        <div class="form-field">
-          <input type="password" placeholder="Contraseña" formControlName="pass" required />
+        <small class="form-text text-muted">Con estos datos iniciaras sesión:</small>
+        <div class="input-group mb-2">
+          <span class="input-group-text"><i class="fa fa-user"></i></span>
+          <input class="form-control" id="usname" name="usname" #usname="ngModel" [(ngModel)]="usuario.nombreUsuario" type="text" placeholder="Nombre de usuario" required />
         </div>
-
+        <div *ngIf="!usname?.valid && (usname?.dirty || usname?.touched)" class="error">
+          <div *ngIf="usname?.errors?.['required']">El nombre de usuario es requerido</div>
+        </div>
+        <div class="input-group mb-2">
+          <span class="input-group-text"><i class="fa fa-key"></i></span>
+          <input class="form-control" id="pass" name="pass" #pass="ngModel" [(ngModel)]="usuario.password" type="password" placeholder="Contraseña" required />
+        </div>
+        <div *ngIf="!pass?.valid && (pass?.dirty || pass?.touched)" class="error">
+          <div *ngIf="pass?.errors?.['required']">La contraseña es requerida</div>
+        </div>
         <button type="submit">Registrarse &#8594;</button>
-        <button routerLink="">Regresar &#8592;</button>
+        <button type="button" routerLink="">Regresar &#8592;</button>
       </form>
     </div>
   </div>

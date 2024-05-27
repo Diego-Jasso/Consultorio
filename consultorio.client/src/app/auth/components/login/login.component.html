@@ -4,17 +4,23 @@
       <img class="img" src="assets/logoultra.png" />
     </div>
     <div class="formulario">
-      <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="form-field">
-          <input placeholder="Usuario" formControlName="usname" required/>
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div class="input-group mb-2">
+          <span class="input-group-text"><i class="fa fa-user"></i></span>
+          <input class="form-control" id="usname" name="usname" #usname="ngModel" [(ngModel)]="logform.usname" placeholder="Usuario" required />
         </div>
-
-        <div class="form-field">
-          <input type="password" placeholder="Contraseña" formControlName="pass"  required/>
+        <div *ngIf="!usname?.valid && (usname?.dirty || usname?.touched)" class="error">
+          <div *ngIf="usname?.errors?.['required']">El nombre de usuario es requerido</div>
         </div>
-
+        <div class="input-group mb-2">
+          <span class="input-group-text"><i class="fa fa-key"></i></span>
+          <input class="form-control" id="pass" name="pass" #pass="ngModel" [(ngModel)]="logform.pass" type="password" placeholder="Contraseña" required />
+        </div>
+        <div *ngIf="!pass?.valid && (pass?.dirty || pass?.touched)" class="error">
+          <div *ngIf="pass?.errors?.['required']">La contraseña es requerida</div>
+        </div>
         <button type="submit">Iniciar Sesion &#8594;</button>
-        <button routerLink="/auth/register">Registrarse &#8594;</button>
+        <button type="button" routerLink="/auth/register">Registrarse &#8594;</button>
       </form>
     </div>
   </div>

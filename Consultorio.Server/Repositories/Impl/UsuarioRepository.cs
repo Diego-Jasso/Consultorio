@@ -23,9 +23,7 @@ namespace Consultorio.Server.Repositories.Impl
                        nombreUsuario = ta.nombreUsuario,
                        nombre = ta.nombre,
                        aPaterno = ta.aPaterno,
-                       aMaterno = ta.aMaterno,
-                       telefono = ta.telefono,
-                       correo = ta.correo
+                       aMaterno = ta.aMaterno
                    };
         }
 
@@ -50,8 +48,6 @@ namespace Consultorio.Server.Repositories.Impl
                                    nombre = user.nombre,
                                    aPaterno = user.aPaterno,
                                    aMaterno = user.aMaterno,
-                                   telefono = user.telefono,
-                                   correo = user.correo,
                                    nombreUsuario = user.nombreUsuario,
                                    passwordHasH = user.passwordHasH,
                                    passwordSalt = user.passwordSalt

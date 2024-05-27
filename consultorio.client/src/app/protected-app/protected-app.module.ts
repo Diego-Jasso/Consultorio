@@ -13,7 +13,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
-import { PerfilComponent } from './perfil/perfil.component'
+import { PerfilComponent } from './perfil/perfil.component';
+import { ArmazonListComponent } from './armazon/armazon-list/armazon-list.component';
+import { ArmazonFormComponent } from './armazon/armazon-form/armazon-form.component'
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { PerfilComponent } from './perfil/perfil.component'
     LayoutComponent,
     HeaderComponent,
     PerfilComponent,
+    ArmazonListComponent,
+    ArmazonFormComponent,
   ],
   imports: [
     CommonModule,

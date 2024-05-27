@@ -4,6 +4,8 @@ import { user } from '../interfaces/us-interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthResponse } from '../interfaces/res-interface';
 import { Observable, catchError, map, of, tap } from 'rxjs';
+import { IUsuario } from '../interfaces/user-interface';
+import { ILogin } from '../interfaces/login-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +20,10 @@ export class AuthService {
   }
   constructor(private http: HttpClient) { }
 
-  register(nombre: string, aPaterno: string, aMaterno: string, telefono: string, correo: string, nombreUsuario: string, password: string) {
+  register(usuario: IUsuario) {
     const URL = `${this.baseUrl}auth/new`;
-    const body = { nombre, aPaterno, aMaterno, telefono, correo, nombreUsuario, password };
 
-    return this.http.post<AuthResponse>(URL, body)
+    return this.http.post<AuthResponse>(URL, usuario)
       .pipe(
         tap(res => {
           console.log(res);
@@ -39,11 +40,10 @@ export class AuthService {
       );
   }
 
-  login(usname: string, pass: string) {
+  login(log: ILogin) {
     const URL = `${this.baseUrl}auth`;
-    const body = { usname, pass };
 
-    return this.http.post<AuthResponse>(URL, body)
+    return this.http.post<AuthResponse>(URL, log)
       .pipe(
         tap(res => {
           if (res.ok) {

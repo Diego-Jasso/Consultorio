@@ -3,20 +3,11 @@ table {
   background-color: #fff;
   border-radius: 0.5rem;
   max-height: 100vh;
-  position: relative;
-  max-height: 600px;
-  overflow-y: auto;
 }
 
 .mat-mdc-form-field {
   font-size: 14px;
   width: 100%;
-}
-
-.table-container {
-  position: relative;
-  max-height: 600px;
-  overflow-y: auto;
 }
 
 .button-class {
@@ -36,7 +27,7 @@ table {
   border: 2px solid #ffff;
 }
 
- .button-close {
+.button-close {
   margin-left: auto;
   cursor: pointer;
   width: 2rem;

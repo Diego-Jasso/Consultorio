@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');s
 * {
     margin: 0;
     padding:0;
@@ -30,7 +29,21 @@ body {
 
   .card .card-body {
     padding: 1rem 1.5rem;
+    position: relative;
+    max-height: 600px;
+    overflow-y: auto;
   }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.error {
+  color: #C00000;
+}
+
+input.ng-touched.ng-invalid:not(:focus),
+mat-select.ng-touched.ng-invalid:not(:focus),
+textarea.ng-touched.ng-invalid:not(:focus),
+.ng-select.ng-invalid.ng-touched:not(.ng-select-focused) .ng-select-container {
+  border: 1px solid #C00000;
+}

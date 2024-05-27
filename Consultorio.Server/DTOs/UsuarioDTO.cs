@@ -12,9 +12,6 @@ namespace Consultorio.Server.DTOs
 
         public string nombreUsuario { get; set; } = string.Empty;
 
-        public string telefono { get; set; } = string.Empty;
-
-        public string correo { get; set; } = string.Empty;
 
         public string password { get; set; } = string.Empty ;
     }

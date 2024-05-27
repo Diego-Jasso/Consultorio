@@ -1,8 +1,9 @@
 import { Component, EventEmitter,Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { ILogin } from '../../interfaces/login-interface';
 
 @Component({
   selector: 'app-login',
@@ -10,34 +11,37 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  loginForm : FormGroup = this.fb.group({
-    usname: ['',Validators.required],
-    pass: ['', Validators.required]
-  });
-  
-  constructor(private fb: FormBuilder,
-    private router: Router,
+  constructor(private router: Router,
     private authService: AuthService,
   private toastr: ToastrService) {
   }
 
-  login() {
-    if (this.loginForm.valid) {
-      const { usname, pass } = this.loginForm.value;
-      this.authService.login(usname, pass)
-        .subscribe(res => {
-          if (res.ok === true) {
-            this.router.navigateByUrl('layout');
-            this.toastr.success(usname, 'Ingreso correcto');
-          } else {
-            this.toastr.error(res.message, 'Error', {
-              timeOut: 4000,
-              progressAnimation: 'increasing'
-            })
-          }
-        })
-    } else {
-      this.toastr.error('Verifique sus datos', 'Error');
+  logform: ILogin = {} as ILogin;
+
+  validaCampos(form: NgForm) {
+    Object.keys(form.controls).forEach((input) => {
+      const control = form.controls[input];
+      control.markAsTouched({ onlySelf: true });
+      control.markAsDirty({ onlySelf: true });
+    });
+  }
+
+  login(form: NgForm) {
+    if (!form.valid) {
+      this.validaCampos(form);
+      return;
     }
+    this.authService.login(this.logform)
+      .subscribe(res => {
+        if (res.ok === true) {
+          this.router.navigateByUrl('layout');
+          this.toastr.success(this.logform.usname, 'Ingreso correcto');
+        } else {
+          this.toastr.error(res.message, 'Error', {
+            timeOut: 4000,
+            progressAnimation: 'increasing'
+          })
+        }
+      })
   }
 }
