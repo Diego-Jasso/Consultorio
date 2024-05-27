@@ -1,0 +1,32 @@
+create database consultorio;
+
+use consultorio;
+
+create table armazon (
+armazonid int not null auto_increment primary key,
+marca varchar(100),
+modelo varchar(100),
+color varchar(100),
+tipo_de_lente varchar(100),
+material varchar(100),
+precio float,
+cantidad_disponible int
+);
+
+create table mica(
+ micaid int not null auto_increment primary key,
+ nombre varchar(100),
+ descripcion varchar(100),
+ precio float,
+ cantidad_disponible int
+);
+
+create table usuario(
+usuarioid int not null auto_increment primary key,
+nombre varchar(100),
+aPaterno varchar(100),
+aMaterno varchar(100),
+nombreUsuario varchar(100),
+passwordHasH BLOB,
+passwordSalt BLOB
+);
