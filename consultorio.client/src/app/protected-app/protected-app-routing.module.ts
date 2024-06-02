@@ -6,6 +6,8 @@ import { MicasComponent } from './mica/mica.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { CotizacionComponent } from './cotizacion/cotizacion.component';
+import { CotizacionFormComponent } from './cotizacion/cotizacion-form/cotizacion-form.component';
+import { CotizacionListComponent } from './cotizacion/cotizacion-list/cotizacion-list.component';
 
 const routes: Routes = [
   {
@@ -18,7 +20,20 @@ const routes: Routes = [
           { path: 'mica', component: MicasComponent },
           { path: 'statistics', component: StatisticsComponent },
           { path: 'perfil', component: PerfilComponent },
-          { path: 'cotizacion', component: CotizacionComponent },
+          {
+            path: 'cotizacion', component: CotizacionComponent, children: [
+              {
+                path: '', component:CotizacionListComponent,
+              },
+              {
+                path: 'cotizacionlist',component:CotizacionListComponent
+              },
+              {
+                path: 'cotizacionform',component: CotizacionFormComponent
+              },
+              { path: '**', redirectTo: '' }
+            ]
+          },
           { path: '**', redirectTo: ''}
         ]
       },

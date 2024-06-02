@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\djasso\\source\\repos\\Consultorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\protected-app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\sidenav\\nav-data.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\sidenav\\nav-data.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +42,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "protected-app-routing.module.ts",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app-routing.module.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\protected-app-routing.module.ts",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app-routing.module.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\protected-app-routing.module.ts",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAABkAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-06-02T03:38:11.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cotizacion-list.component.ts",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.ts",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.ts*",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.ts*",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAACIAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-06-02T03:32:58.658Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
@@ -42,28 +92,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "cotizacion.component.html",
-              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html",
-              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "cotizacion-list.component.html",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.html",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.html",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.html*",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-list\\cotizacion-list.component.html*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-06-02T01:49:37.519Z",
+              "WhenOpened": "2024-06-02T03:27:21.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "nav-data.ts",
-              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\sidenav\\nav-data.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\sidenav\\nav-data.ts",
-              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\sidenav\\nav-data.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\sidenav\\nav-data.ts",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAaAAAA",
+              "DocumentIndex": 3,
+              "Title": "armazon.component.html",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-06-02T03:26:48.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "cotizacion-form.component.ts",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.ts",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-06-02T01:16:51.351Z",
+              "WhenOpened": "2024-06-02T03:26:38.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "cotizacion.component.ts",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-06-02T03:25:52.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "cotizacion-form.component.html",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.html",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.html",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.html",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion-form\\cotizacion-form.component.html",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAUwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-06-02T03:25:28.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "cotizacion.component.html",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html*",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.html*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-06-02T01:49:37.519Z",
               "EditorCaption": ""
             }
           ]

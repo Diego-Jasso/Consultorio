@@ -3,7 +3,7 @@ export interface ICotizacion {
   folio: number;
   tipo: number;
   paciente: string;
-  fecha: Date;
+  fecha_creacion: Date;
   ultima_modificion: Date;
   total: number;
 }

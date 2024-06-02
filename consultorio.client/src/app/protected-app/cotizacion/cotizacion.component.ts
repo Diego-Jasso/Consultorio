@@ -8,5 +8,4 @@ import { ICotizacion } from '../models/cotizacion';
 })
 export class CotizacionComponent {
 
-  cotizacion: ICotizacion = {} as ICotizacion;
 }

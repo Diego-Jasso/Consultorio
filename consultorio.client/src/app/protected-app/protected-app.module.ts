@@ -20,6 +20,8 @@ import { BusquedaPipe } from '../compartido/Pipe/busqueda.pipe';
 import { MicaListComponent } from './mica/mica-list/mica-list.component';
 import { MicaFormComponent } from './mica/mica-form/mica-form.component';
 import { CotizacionComponent } from './cotizacion/cotizacion.component';
+import { CotizacionFormComponent } from './cotizacion/cotizacion-form/cotizacion-form.component';
+import { CotizacionListComponent } from './cotizacion/cotizacion-list/cotizacion-list.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { CotizacionComponent } from './cotizacion/cotizacion.component';
     MicaListComponent,
     MicaFormComponent,
     CotizacionComponent,
+    CotizacionFormComponent,
+    CotizacionListComponent,
   ],
   imports: [
     CommonModule,
