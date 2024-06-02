@@ -10,6 +10,11 @@ export const navbarData = [
     label: 'Micas'
   },
   {
+    routeLink: 'cotizacion',
+    icon: 'fa fa-basket-shopping',
+    label: 'Cotizaciones/Ventas'
+  },
+  {
     routeLink: 'statistics',
     icon: 'fa fa-chart-simple',
     label: 'Reportes'

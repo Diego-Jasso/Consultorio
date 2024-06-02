@@ -19,6 +19,7 @@ import { ArmazonFormComponent } from './armazon/armazon-form/armazon-form.compon
 import { BusquedaPipe } from '../compartido/Pipe/busqueda.pipe';
 import { MicaListComponent } from './mica/mica-list/mica-list.component';
 import { MicaFormComponent } from './mica/mica-form/mica-form.component';
+import { CotizacionComponent } from './cotizacion/cotizacion.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MicaFormComponent } from './mica/mica-form/mica-form.component';
     BusquedaPipe,
     MicaListComponent,
     MicaFormComponent,
+    CotizacionComponent,
   ],
   imports: [
     CommonModule,

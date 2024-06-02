@@ -5,6 +5,7 @@ import { ArmazonesComponent } from './armazon/armazon.component';
 import { MicasComponent } from './mica/mica.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { CotizacionComponent } from './cotizacion/cotizacion.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
           { path: 'armazon', component: ArmazonesComponent },
           { path: 'mica', component: MicasComponent },
           { path: 'statistics', component: StatisticsComponent },
-          { path : 'perfil', component: PerfilComponent},
+          { path: 'perfil', component: PerfilComponent },
+          { path: 'cotizacion', component: CotizacionComponent },
           { path: '**', redirectTo: ''}
         ]
       },
