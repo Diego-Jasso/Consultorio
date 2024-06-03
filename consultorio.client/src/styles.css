@@ -47,3 +47,11 @@ textarea.ng-touched.ng-invalid:not(:focus),
 .ng-select.ng-invalid.ng-touched:not(.ng-select-focused) .ng-select-container {
   border: 1px solid #C00000;
 }
+
+.boton-agregar {
+  background-color: #7da2d6;
+  color: #fff;
+  padding: 8px 8px 8px 8px;
+  border-radius: 8px;
+  border: 2px solid #ffff;
+}

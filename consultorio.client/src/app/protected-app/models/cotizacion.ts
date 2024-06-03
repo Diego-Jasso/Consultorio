@@ -4,6 +4,8 @@ export interface ICotizacion {
   tipo: number;
   paciente: string;
   fecha_creacion: Date;
+  creador: string;
   ultima_modificion: Date;
+  usuario_modificacion: string;
   total: number;
 }

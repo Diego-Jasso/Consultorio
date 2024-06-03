@@ -1,11 +1,20 @@
+<div s> 
+  <button type="button" routerLink="cotizacionlist">Salir</button>
+</div>
 <div ng-app>
   <form #userForm="ngForm">
     <table style="width:100%">
       <tr>
-        <td colspan="2">
+        <td>
           Folio
           <div class="input-group mb-3">
             <input class="form-control" id="folio" name="folio" #folio="ngModel" [(ngModel)]="cotizacion.folio" disabled />
+          </div>
+        </td>
+        <td>
+          Creador 
+          <div class="input-group mb-3">
+            <input class="form-control" id="creador" name="creador" #creador="ngModel" [(ngModel)]="cotizacion.creador" disabled />
           </div>
         </td>
         <td>
@@ -21,11 +30,27 @@
         <td style="width:50%">
           Tipo
           <div class="input-group mb-3">
-            <select class="form-control" id="tipo" name="tipo" #tipo="ngModel" [(ngModel)]="cotizacion.tipo">
-              <option value="cotizacion">Cotización</option>
+            <select class="form-select" id="tipo" name="tipo" #tipo="ngModel" [(ngModel)]="cotizacion.tipo">
+              <option selected>Cotización</option>
               <option value="venta">Venta</option>
             </select>
           </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Fecha
+          <input type="date" class="form-control" id="fecha_creacion" name="fecha_creacion" #fecha_creacion="ngModel" [(ngModel)]="cotizacion.fecha_creacion"/>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <app-armazon-list [isCotizacionList]="true"></app-armazon-list>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <app-mica-list></app-mica-list>
         </td>
       </tr>
     </table>

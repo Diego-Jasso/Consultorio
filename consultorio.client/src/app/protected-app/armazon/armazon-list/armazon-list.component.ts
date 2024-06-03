@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IArmazon } from '../../models/armazon';
 import { ArmazonService } from '../../servicios/armazon.service';
 import { ToastrService } from 'ngx-toastr';
@@ -11,7 +11,7 @@ import { Estatus } from '../../../compartido/utilerias';
   styleUrl: './armazon-list.component.css'
 })
 export class ArmazonListComponent {
-
+  @Input() isCotizacionList = false;
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -29,7 +29,12 @@ export class ArmazonListComponent {
     private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.fetchLista();
+    if (this.isCotizacionList){
+      this.fetchListaCotizacion();
+    } else {
+
+      this.fetchLista();
+    }
   }
 
   fetchLista(): void {
@@ -46,6 +51,9 @@ export class ArmazonListComponent {
         });
       }
     });
+  }
+  fetchListaCotizacion(): void {
+    console.log("Cotizacion");
   }
 
   onEliminar(armazon: IArmazon) {
@@ -66,6 +74,10 @@ export class ArmazonListComponent {
 
   onAgregar(): void {
     this.agregar.emit(true);
+  }
+
+  onAgregarACotizacion(): void {
+    console.log("Agregar a cotizacion");
   }
 
   onEditar(armazon: IArmazon) {

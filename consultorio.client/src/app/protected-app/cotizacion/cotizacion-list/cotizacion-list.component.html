@@ -16,7 +16,9 @@
           <th scope="col">Paciente</th>
           <th scope="col">Tipo</th>
           <th scope="col">Fecha de Creación</th>
+          <th scope="col">Creado por</th>
           <th scope="col">Ultima Modificación</th>
+          <th scope="col">Modificado por</th>
           <th scope="col">Precio</th>
         </tr>
       </thead>
@@ -38,7 +40,13 @@
             {{cotizacion.fecha_creacion}}
           </td>
           <td style="vertical-align: middle;">
+            {{cotizacion.creador}}
+          </td>
+          <td style="vertical-align: middle;">
             {{cotizacion.fecha_modificacion}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{cotizacion.usuario_modificacion}}
           </td>
           <td style="vertical-align: middle;">
             {{cotizacion.precio}}
@@ -73,7 +81,7 @@
 <ng-template #footMessage let-message="message" let-cssClass="class ?? ''">
   <tfoot>
     <tr>
-      <td colspan="7" class="{{cssClass}}">
+      <td colspan="9" class="{{cssClass}}">
         {{message}}
       </td>
     </tr>
