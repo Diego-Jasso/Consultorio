@@ -6,6 +6,7 @@ import { ArmazonService } from '../servicios/armazon.service';
 import { IArmazon } from '../models/armazon';
 import { ArmazonListComponent } from './armazon-list/armazon-list.component';
 import { ArmazonFormComponent } from './armazon-form/armazon-form.component';
+import { EstatusList } from '../../compartido/utilerias';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class ArmazonesComponent {
   @ViewChild('form') form!: ArmazonFormComponent;
   @ViewChild('list') list!: ArmazonListComponent;
 
+  EstatusList = EstatusList;
 
   onActualizar(is: boolean) {
     this.list?.fetchLista();

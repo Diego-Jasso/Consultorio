@@ -22,6 +22,8 @@ import { MicaFormComponent } from './mica/mica-form/mica-form.component';
 import { CotizacionComponent } from './cotizacion/cotizacion.component';
 import { CotizacionFormComponent } from './cotizacion/cotizacion-form/cotizacion-form.component';
 import { CotizacionListComponent } from './cotizacion/cotizacion-list/cotizacion-list.component';
+import { ListDialogComponent } from './shared/list-dialog/list-dialog.component';
+import { MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { CotizacionListComponent } from './cotizacion/cotizacion-list/cotizacion
     CotizacionComponent,
     CotizacionFormComponent,
     CotizacionListComponent,
+    ListDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +54,10 @@ import { CotizacionListComponent } from './cotizacion/cotizacion-list/cotizacion
     FormsModule,
     MatInputModule,
     MatTableModule,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+    MatDialogTitle,
   ]
 })
 export class ProtectedAppModule { }

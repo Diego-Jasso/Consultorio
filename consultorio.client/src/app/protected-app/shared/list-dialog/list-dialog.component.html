@@ -1,0 +1,15 @@
+<mat-dialog-actions>
+  <button mat-button
+          [mat-dialog-close]="true"
+          cdkFocusInitial>
+    <i class="fa-solid fa-times close-icon"></i>
+  </button>
+</mat-dialog-actions>
+<mat-dialog-content>
+  @if(data.Lista == 'Armazon'){
+  <app-armazon-list [EstatusLista]="EstatusList.BusquedaCotizacion"></app-armazon-list>
+  }
+  @else if(data.Lista == 'Mica'){
+  <app-mica-list></app-mica-list>
+  }
+</mat-dialog-content>

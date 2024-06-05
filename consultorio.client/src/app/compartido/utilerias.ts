@@ -11,3 +11,7 @@ export function validarCamposRequeridos(formulario: NgForm): void {
 export enum Estatus {
   Cargando, Procesado, Vacio, Error
 }
+
+export enum EstatusList {
+  Catalogo,Cotizacion,BusquedaCotizacion
+} 

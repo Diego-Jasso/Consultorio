@@ -7,7 +7,8 @@
 
 
         <!--<th scope="col" class="">&emsp;</th>-->
-        @if (isCotizacionList){
+        @switch(EstatusLista){
+        @case (EstatusList.Cotizacion){
         <tr>
           <th colspan="2" scope="col" class="">
             <button class="boton-agregar" (click)="onAgregarACotizacion()">
@@ -22,7 +23,7 @@
           <th scope="col">Precio</th>
         </tr>
         }
-        @else{
+        @case (EstatusList.Catalogo){
         <tr>
           <th colspan="2" scope="col" class="">
             <button class="boton-agregar" (click)="onAgregar()">
@@ -38,13 +39,26 @@
           <th scope="col">Precio</th>
         </tr>
         }
-
+        @case (EstatusList.BusquedaCotizacion){
+        <tr>
+          <th colspan="2" scope="col" class="">&emsp;</th>
+          <th scope="col">Cantidad disponible</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Color</th>
+          <th scope="col">Tipo de Lente</th>
+          <th scope="col">Material</th>
+          <th scope="col">Precio</th>
+        </tr>
+        }
+        }
       </thead>
       @switch(estado){
       @case (Estatus.Procesado){
       <tbody>
         @for(armazon of armazonList | busqueda: busquedaTexto; track armazon.armazonid ){
-        @if (isCotizacionList){
+        @switch(EstatusLista){
+        @case (EstatusList.Cotizacion){
         <tr>
           <td style="vertical-align: middle;">
             <button class="boton-agregar" (click)="onEliminar(armazon)"><i class="fa fa-trash"></i></button>
@@ -71,7 +85,7 @@
             {{armazon.precio}}
           </td>
           }
-          @else{
+          @case (EstatusList.Catalogo){
         <tr>
           <td style="vertical-align: middle;">
             <button class="boton-agregar" (click)="onEliminar(armazon)"><i class="fa fa-trash"></i></button>
@@ -101,6 +115,38 @@
             {{armazon.precio}}
           </td>
         </tr>
+        }
+        @case (EstatusList.BusquedaCotizacion){
+        <tr>
+          <td style="vertical-align: middle;" >
+            <input type="number" value="1" style="width:65px" min="1"/>
+          </td>
+          <td style="vertical-align: middle;">
+            <button class="boton-agregar" (click)="onEditar(armazon)"><i class="fa fa-plus"></i></button>
+          </td>
+          <td style="vertical-align: middle;">
+            {{armazon.cantidad_disponible}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{armazon.marca}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{armazon.modelo}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{armazon.color}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{armazon.tipo_de_lente}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{armazon.material}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{armazon.precio}}
+          </td>
+        </tr>
+        }
         }
         }
       </tbody>

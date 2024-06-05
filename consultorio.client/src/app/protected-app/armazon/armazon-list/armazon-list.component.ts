@@ -2,7 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IArmazon } from '../../models/armazon';
 import { ArmazonService } from '../../servicios/armazon.service';
 import { ToastrService } from 'ngx-toastr';
-import { Estatus } from '../../../compartido/utilerias';
+import { Estatus, EstatusList } from '../../../compartido/utilerias';
+import { MatDialog } from '@angular/material/dialog';
+import { ListDialogComponent } from '../../shared/list-dialog/list-dialog.component';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { Estatus } from '../../../compartido/utilerias';
   styleUrl: './armazon-list.component.css'
 })
 export class ArmazonListComponent {
-  @Input() isCotizacionList = false;
+  @Input() EstatusLista:EstatusList = EstatusList.Catalogo;
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -24,16 +26,23 @@ export class ArmazonListComponent {
   estado: Estatus = Estatus.Cargando;
   armazonList: IArmazon[] = [];
   busquedaTexto = '';
+  EstatusList = EstatusList;
 
   constructor(private service: ArmazonService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
-    if (this.isCotizacionList){
-      this.fetchListaCotizacion();
-    } else {
-
-      this.fetchLista();
+    switch (this.EstatusLista) {
+      case EstatusList.Catalogo:
+        this.fetchLista();
+        break;
+      case EstatusList.Cotizacion:
+        this.fetchListaCotizacion();
+        break
+      case EstatusList.BusquedaCotizacion:
+        this.fetchLista();
+        break;
     }
   }
 
@@ -52,6 +61,7 @@ export class ArmazonListComponent {
       }
     });
   }
+
   fetchListaCotizacion(): void {
     console.log("Cotizacion");
   }
@@ -77,6 +87,18 @@ export class ArmazonListComponent {
   }
 
   onAgregarACotizacion(): void {
+    const dialogRef = this.dialog.open(
+      ListDialogComponent,
+      {
+        data: {
+          Lista: "Armazon"
+        }
+      });
+    dialogRef.afterClosed().subscribe(respuesta => {
+      if (respuesta) {
+        this.fetchListaCotizacion();
+      }
+    });
     console.log("Agregar a cotizacion");
   }
 
