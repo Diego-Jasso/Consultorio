@@ -20,8 +20,7 @@ import { BusquedaPipe } from '../compartido/Pipe/busqueda.pipe';
 import { MicaListComponent } from './mica/mica-list/mica-list.component';
 import { MicaFormComponent } from './mica/mica-form/mica-form.component';
 import { CotizacionComponent } from './cotizacion/cotizacion.component';
-import { CotizacionFormComponent } from './cotizacion/cotizacion-form/cotizacion-form.component';
-import { CotizacionListComponent } from './cotizacion/cotizacion-list/cotizacion-list.component';
+import { CotizacionFormComponent } from './cotizacion-form/cotizacion-form.component';
 import { ListDialogComponent } from './shared/list-dialog/list-dialog.component';
 import { MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } from '@angular/material/dialog';
 
@@ -43,7 +42,6 @@ import { MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } fr
     MicaFormComponent,
     CotizacionComponent,
     CotizacionFormComponent,
-    CotizacionListComponent,
     ListDialogComponent,
   ],
   imports: [

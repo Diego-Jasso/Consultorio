@@ -34,6 +34,12 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IUsuarioValidatorService, UsuarioValidatorService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<ITokenServices, TokenService>();
+builder.Services.AddScoped<ICotizacionRepository,CotizacionRepository>();
+builder.Services.AddScoped<ICotizacionService, CotizacionService>();
+builder.Services.AddScoped<ICotizacionValidatorService, CotizacionValidatorService>();
+builder.Services.AddScoped<IArmazonCotizacionRepository,ArmazonCotizacionRepository>();
+builder.Services.AddScoped<IArmazonCotizacionService,ArmazonCotizacionService>();
+builder.Services.AddScoped<IArmazonCotizacionValidatorService,ArmazonCotizacionValidatorService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

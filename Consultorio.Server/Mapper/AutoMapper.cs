@@ -14,6 +14,10 @@ namespace Consultorio.Server.Mapper
             CreateMap<MicaDTO, Mica>().ReverseMap();
             CreateMap<UsuarioNewDTO, Usuario>();
             CreateMap<UsuarioDTO,Usuario>().ReverseMap();
+            CreateMap<CotizacionNewDTO, Cotizacion>();
+            CreateMap<CotizacionDTO, Cotizacion>().ReverseMap();
+            CreateMap<ArmazonCotizacionNewDTO, ArmazonCotizacion>();
+            CreateMap<ArmazonCotizacionDTO, ArmazonCotizacion>().ReverseMap();
         }
     }
 }

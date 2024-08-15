@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Estatus, EstatusList } from '../../../compartido/utilerias';
 import { MatDialog } from '@angular/material/dialog';
 import { ListDialogComponent } from '../../shared/list-dialog/list-dialog.component';
+import { ArmazonCotizacionService } from '../../servicios/armazon.cotizacion.service';
 
 
 @Component({
@@ -30,7 +31,8 @@ export class ArmazonListComponent {
 
   constructor(private service: ArmazonService,
     private toastr: ToastrService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private artservice: ArmazonCotizacionService) { }
 
   ngOnInit() {
     switch (this.EstatusLista) {
@@ -63,7 +65,19 @@ export class ArmazonListComponent {
   }
 
   fetchListaCotizacion(): void {
-    console.log("Cotizacion");
+    this.estado = Estatus.Cargando;
+    var observable = this.artservice.GetAll();
+    observable.subscribe({
+      next: (_armazon: IArmazon[]) => this.armazonList = _armazon,
+      complete: () => this.estado = Estatus.Procesado,
+      error: (err) => {
+        this.estado = Estatus.Error;
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
   }
 
   onEliminar(armazon: IArmazon) {

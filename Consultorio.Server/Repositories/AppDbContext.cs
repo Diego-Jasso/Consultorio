@@ -10,5 +10,9 @@ namespace Consultorio.Server.Repositories
         public DbSet<Mica> Mica { get; set; } = default!;
 
         public DbSet<Usuario> Usuario { get; set; } = default!;
+
+        public DbSet<Cotizacion> Cotizacion { get; set; } = default!;
+        public DbSet<Status> Status { get; set; } = default!;
+        public DbSet<ArmazonCotizacion> ArmazonCotizacion { get; set; } = default!;
     }
 }

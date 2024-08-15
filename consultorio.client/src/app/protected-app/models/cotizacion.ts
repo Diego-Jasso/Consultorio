@@ -1,11 +1,16 @@
 export interface ICotizacion {
   cotizacionid: number;
   folio: number;
-  tipo: number;
+  statusid: number;
   paciente: string;
-  fecha_creacion: Date;
-  creador: string;
-  ultima_modificion: Date;
-  usuario_modificacion: string;
-  total: number;
+  fecha_de_creacion: Date;
+  usuarioid: number;
+  ultimaModificacion: Date;
+  usuarioModificacionid: number;
+  precio: number;
+  descripcionStatus: string;
+  nombreModificacionUsuario: string;
+  nombreUsuario: string;
+  success: boolean,
+  error: string
 }

@@ -4,6 +4,7 @@ namespace Consultorio.Server.Models
 {
     public class Usuario
     {
+
         [Key]
         public int usuarioid { get; set; }
 
