@@ -11,7 +11,7 @@ export class ListDialogComponent {
   EstatusList = EstatusList;
   constructor(
     public dialogRef: MatDialogRef<ListDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { Lista:string }
+    @Inject(MAT_DIALOG_DATA) public data: { Lista:string,Id:number }
   ) {
     dialogRef.disableClose = true;
   }

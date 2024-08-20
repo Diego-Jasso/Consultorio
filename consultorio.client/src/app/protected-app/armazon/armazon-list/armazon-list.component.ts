@@ -6,6 +6,8 @@ import { Estatus, EstatusList } from '../../../compartido/utilerias';
 import { MatDialog } from '@angular/material/dialog';
 import { ListDialogComponent } from '../../shared/list-dialog/list-dialog.component';
 import { ArmazonCotizacionService } from '../../servicios/armazon.cotizacion.service';
+import { SharedService } from '../../servicios/shared.service';
+import { IArmazonCotizacion,ArmazonCotizacionModel } from '../../models/armazon.cotizacion';
 
 
 @Component({
@@ -14,7 +16,8 @@ import { ArmazonCotizacionService } from '../../servicios/armazon.cotizacion.ser
   styleUrl: './armazon-list.component.css'
 })
 export class ArmazonListComponent {
-  @Input() EstatusLista:EstatusList = EstatusList.Catalogo;
+  @Input() EstatusLista: EstatusList = EstatusList.Catalogo;
+  @Input() CotId: number = 0;
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -26,13 +29,16 @@ export class ArmazonListComponent {
 
   estado: Estatus = Estatus.Cargando;
   armazonList: IArmazon[] = [];
+  armazonCotizacionList: IArmazonCotizacion[] = [];
   busquedaTexto = '';
   EstatusList = EstatusList;
+  cotArmazon: ArmazonCotizacionModel = {} as ArmazonCotizacionModel;
 
   constructor(private service: ArmazonService,
     private toastr: ToastrService,
     private dialog: MatDialog,
-    private artservice: ArmazonCotizacionService) { }
+    private artservice: ArmazonCotizacionService,
+    private sharedService: SharedService){ }
 
   ngOnInit() {
     switch (this.EstatusLista) {
@@ -40,7 +46,7 @@ export class ArmazonListComponent {
         this.fetchLista();
         break;
       case EstatusList.Cotizacion:
-        this.fetchListaCotizacion();
+        
         break
       case EstatusList.BusquedaCotizacion:
         this.fetchLista();
@@ -64,11 +70,11 @@ export class ArmazonListComponent {
     });
   }
 
-  fetchListaCotizacion(): void {
+  fetchListaCotizacion(id:number): void {
     this.estado = Estatus.Cargando;
-    var observable = this.artservice.GetAll();
+    var observable = this.artservice.GetAll(id);
     observable.subscribe({
-      next: (_armazon: IArmazon[]) => this.armazonList = _armazon,
+      next: (_armazon: IArmazonCotizacion[]) => this.armazonCotizacionList = _armazon,
       complete: () => this.estado = Estatus.Procesado,
       error: (err) => {
         this.estado = Estatus.Error;
@@ -100,20 +106,20 @@ export class ArmazonListComponent {
     this.agregar.emit(true);
   }
 
-  onAgregarACotizacion(): void {
+  onAbrirArmazones(): void {
     const dialogRef = this.dialog.open(
       ListDialogComponent,
       {
         data: {
-          Lista: "Armazon"
+          Lista: "Armazon",
+          Id:this.CotId
         }
       });
     dialogRef.afterClosed().subscribe(respuesta => {
       if (respuesta) {
-        this.fetchListaCotizacion();
+        this.fetchListaCotizacion(this.CotId);
       }
     });
-    console.log("Agregar a cotizacion");
   }
 
   onEditar(armazon: IArmazon) {
@@ -122,5 +128,37 @@ export class ArmazonListComponent {
 
   limpiarFormulario() {
     this.eliminar.emit(true);
+  }
+
+  onAgregarACotizacion(armazonId: number, cantidad: string) {
+
+    this.cotArmazon.armazonid = armazonId;
+    this.cotArmazon.cotizacionid = this.CotId;
+    this.cotArmazon.cantidad = parseInt(cantidad, 10);
+    this.artservice.Agregar(this.cotArmazon).subscribe({
+      next: (armazon) => this.toastr.success('El registro fue agregado correctamente'),
+      complete: () => {},
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onEliminarDeCotizacion(id: number) {
+    this.artservice.Eliminar(id).subscribe({
+      next: (armazon) => this.fetchListaCotizacion(this.CotId),
+      complete: () => {
+        this.toastr.success('El registro fue eliminado correctamente')
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
   }
 }

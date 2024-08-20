@@ -7,9 +7,10 @@
 </mat-dialog-actions>
 <mat-dialog-content>
   @if(data.Lista == 'Armazon'){
-  <app-armazon-list [EstatusLista]="EstatusList.BusquedaCotizacion"></app-armazon-list>
+  <app-armazon-list [CotId]="data.Id" [EstatusLista]="EstatusList.BusquedaCotizacion"></app-armazon-list>
   }
   @else if(data.Lista == 'Mica'){
   <app-mica-list></app-mica-list>
   }
 </mat-dialog-content>
+

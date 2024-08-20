@@ -3,7 +3,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IArmazon } from '../models/armazon';
-import { IArmazonCotizacion } from '../models/armazon.cotizacion';
+import { ArmazonCotizacionModel, IArmazonCotizacion } from '../models/armazon.cotizacion';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +15,15 @@ export class ArmazonCotizacionService {
   constructor(private http: HttpClient) { }
 
   GetAll(id:number): Observable<IArmazonCotizacion[]> {
-    return this.http.get<IArmazonCotizacion[]>(`${this.baseUrl}List/${id}`);
+    return this.http.get<IArmazonCotizacion[]>(`${this.baseUrl}/List/${id}`);
   }
 
   GetById(id: number): Observable<IArmazonCotizacion> {
     return this.http.get<IArmazonCotizacion>(`${this.baseUrl}/${id}`)
   }
 
-  Agregar(armazon: IArmazonCotizacion): Observable<IArmazonCotizacion> {
-    return this.http.post<IArmazonCotizacion>(`${this.baseUrl}`, armazon);
+  Agregar(armazon: ArmazonCotizacionModel): Observable<ArmazonCotizacionModel> {
+    return this.http.post<ArmazonCotizacionModel>(`${this.baseUrl}`, armazon);
   }
 
   Editar(armazon: IArmazonCotizacion): Observable<IArmazonCotizacion> {

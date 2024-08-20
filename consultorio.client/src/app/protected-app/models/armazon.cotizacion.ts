@@ -9,5 +9,9 @@ export interface IArmazonCotizacion {
   material: string;
   precio: number;
 }
-
+export interface ArmazonCotizacionModel {
+  cotizacionid: number;
+  armazonid: number;
+  cantidad: number;
+}
 

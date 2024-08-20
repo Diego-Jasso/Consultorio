@@ -6,6 +6,8 @@ import { ToastrService } from 'ngx-toastr';
 import { CotizacionService } from '../servicios/cotizacion.service';
 import { AuthService } from '../../auth/services/auth.service';
 import { formatDate } from '@angular/common';
+import { SharedService } from '../servicios/shared.service';
+import { ArmazonListComponent } from '../armazon/armazon-list/armazon-list.component';
 
 @Component({
   selector: 'app-cotizacion-form',
@@ -16,6 +18,7 @@ export class CotizacionFormComponent {
 
   @Input() id!: number;
   @ViewChild('addForm') userForm!: NgForm;
+  @ViewChild('armazonList') armazonList!: ArmazonListComponent;
 
   readonly titulo_agregar = "Crear cotización";
   readonly titulo_editar = "Editar cotización";
@@ -25,10 +28,14 @@ export class CotizacionFormComponent {
   isEdit = false;
   constructor(private service: CotizacionService,
     private toastr: ToastrService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private sharedService: SharedService) { }
 
   ngOnInit() {
     this.cargarDatos(this.id);
+  }
+  ngAfterViewInit() {
+    this.armazonList.fetchListaCotizacion(this.id);
   }
 
   onGuardar(form: NgForm): void {

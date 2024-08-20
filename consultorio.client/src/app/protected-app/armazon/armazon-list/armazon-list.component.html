@@ -10,11 +10,12 @@
         @switch(EstatusLista){
         @case (EstatusList.Cotizacion){
         <tr>
-          <th colspan="2" scope="col" class="">
-            <button class="boton-agregar" (click)="onAgregarACotizacion()">
+          <th scope="col" class="">
+            <button type="button" class="boton-agregar" (click)="onAbrirArmazones()">
               Agregar <i class="fa-solid fa-plus"></i>
             </button>
           </th>
+          <th scope="col">Cantidad</th>
           <th scope="col">Marca</th>
           <th scope="col">Modelo</th>
           <th scope="col">Color</th>
@@ -56,15 +57,16 @@
       @switch(estado){
       @case (Estatus.Procesado){
       <tbody>
-        @for(armazon of armazonList | busqueda: busquedaTexto; track armazon.armazonid ){
+
         @switch(EstatusLista){
         @case (EstatusList.Cotizacion){
+        @for(armazon of armazonCotizacionList | busqueda: busquedaTexto; track armazon.id ){
         <tr>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminar(armazon)"><i class="fa fa-trash"></i></button>
+            <button type="button" class="boton-agregar" (click)="onEliminarDeCotizacion(armazon.id)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            <input min="1" type="number" class="form-control" />
+            {{armazon.cantidad}}
           </td>
           <td style="vertical-align: middle;">
             {{armazon.marca}}
@@ -85,7 +87,9 @@
             {{armazon.precio}}
           </td>
           }
+          }
           @case (EstatusList.Catalogo){
+          @for(armazon of armazonList | busqueda: busquedaTexto; track armazon.armazonid ){
         <tr>
           <td style="vertical-align: middle;">
             <button class="boton-agregar" (click)="onEliminar(armazon)"><i class="fa fa-trash"></i></button>
@@ -116,13 +120,15 @@
           </td>
         </tr>
         }
+        }
         @case (EstatusList.BusquedaCotizacion){
+        @for(armazon of armazonList | busqueda: busquedaTexto; track armazon.armazonid ){
         <tr>
-          <td style="vertical-align: middle;" >
-            <input type="number" value="1" style="width:65px" min="1"/>
+          <td style="vertical-align: middle;">
+            <input #cantidad type="number" value="1" style="width:65px" min="1" />
           </td>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditar(armazon)"><i class="fa fa-plus"></i></button>
+            <button class="boton-agregar" (click)="onAgregarACotizacion(armazon.armazonid,cantidad.value)"><i class="fa fa-plus"></i></button>
           </td>
           <td style="vertical-align: middle;">
             {{armazon.cantidad_disponible}}

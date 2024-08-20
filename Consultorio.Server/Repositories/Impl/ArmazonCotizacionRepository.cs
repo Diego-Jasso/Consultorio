@@ -12,21 +12,28 @@ namespace Consultorio.Server.Repositories.Impl
         {
             IEnumerable<ArmazonCotizacion> query = context.ArmazonCotizacion.Include(a=>a.Armazon).Where(a => a.cotizacionid.Equals(id));
 
-            return from cot in query
+            return from a in query
                    select new ArmazonCotizacionDTO
                    {
-                       cotizacionid = cot.cotizacionid,
-                       armazonid = cot.armazonid,
-                       modelo = cot.Armazon.modelo,
-                       marca = cot.Armazon.marca,
-                       tipo_de_lente = cot.Armazon.tipo_de_lente,
-                       color = cot.Armazon.color,
-                       material = cot.Armazon.material,
-                       precio = cot.Armazon.precio,
-                       precioTotal = (cot.Armazon.precio * cot.cantidad),
-                       cantidad = cot.cantidad
+                       id= a.id,
+                       cotizacionid =a.cotizacionid,
+                       armazonid =a.armazonid,
+                       modelo = a.Armazon.modelo,
+                       marca = a.Armazon.marca,
+                       tipo_de_lente = a.Armazon.tipo_de_lente,
+                       color = a.Armazon.color,
+                       material = a.Armazon.material,
+                       precio = a.Armazon.precio,
+                       precioTotal = (a.Armazon.precio * a.cantidad),
+                       cantidad =a.cantidad
                    };
     
+        }
+
+        public double ConsultarPrecioTotal(int id)
+        {
+            double total =  context.ArmazonCotizacion.Include(a => a.Armazon).Where(a => a.cotizacionid.Equals(id)).Sum(a => a.Armazon.precio * a.cantidad);
+            return total;
         }
 
         public ArmazonCotizacion ConsultarPorId(int id)

@@ -9,5 +9,6 @@ namespace Consultorio.Server.Repositories
     {
         IEnumerable<ArmazonCotizacionDTO> ConsultarDTO(int cotizacionid);
         ArmazonCotizacion ConsultarPorId(int id);
+        double ConsultarPrecioTotal(int id);
     }
 }
