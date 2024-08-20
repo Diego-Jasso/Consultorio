@@ -61,7 +61,7 @@
       </tr>
       <tr>
         <td colspan="2">  
-          <app-armazon-list #armazonList [CotId]="cotizacion.cotizacionid" [EstatusLista]="EstatusList.Cotizacion"></app-armazon-list>
+          <app-armazon-list #armazonList [CotId]="cotizacion.cotizacionid" [EstatusLista]="EstatusList.Cotizacion" (precioActualizado)="onPrecioCambio()" ></app-armazon-list>
         </td>
       </tr>
       <tr>

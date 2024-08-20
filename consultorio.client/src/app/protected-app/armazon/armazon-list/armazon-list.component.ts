@@ -21,6 +21,7 @@ export class ArmazonListComponent {
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output('precioActualizado') precioActualizado: EventEmitter<void> = new EventEmitter<void>();
 
   readonly LOADING_MESSAGE = "Cargando...";
   readonly ERROR_MESSAGE = "Sucedio un error, intentelo más tarde";
@@ -118,6 +119,7 @@ export class ArmazonListComponent {
     dialogRef.afterClosed().subscribe(respuesta => {
       if (respuesta) {
         this.fetchListaCotizacion(this.CotId);
+        this.precioActualizado.emit(); 
       }
     });
   }

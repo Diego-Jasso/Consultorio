@@ -60,7 +60,12 @@ namespace Consultorio.Server.Repositories.Impl
 
         public int ConsultarFolio()
         {
-            return _context.Cotizacion.Max(c => c.folio) + 10;
+            int? maxFolio = _context.Cotizacion.Max(c => (int?)c.folio);
+
+            if (maxFolio.HasValue)
+                return maxFolio.Value + 10;
+            else
+                return 10;
         }
     }
 }

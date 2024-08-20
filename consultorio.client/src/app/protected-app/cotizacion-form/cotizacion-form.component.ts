@@ -42,6 +42,21 @@ export class CotizacionFormComponent {
     this.onEditar(form);
   }
 
+  onPrecioCambio() {
+    this.cotizacion.usuarioModificacionid = this.authService.user.id
+    this.service.Editar(this.cotizacion).subscribe({
+      next: (cotizacion) => this.toastr.success('Se actualizo la cotización correctamente'),
+      complete: () => {
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
   cargarDatos(id: number): void {
     this.isEdit = true;
     this.obtenerPorId(id);

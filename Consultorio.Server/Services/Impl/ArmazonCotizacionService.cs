@@ -3,7 +3,9 @@ using Consultorio.Server.DTOs;
 using Consultorio.Server.Models;
 using Consultorio.Server.Repositories;
 using Consultorio.Server.Utilerias;
+using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.JSInterop.Infrastructure;
 
 namespace Consultorio.Server.Services.Impl
 {
@@ -24,18 +26,39 @@ namespace Consultorio.Server.Services.Impl
 
         public ArmazonCotizacionDTO Agregar(ArmazonCotizacionNewDTO dto)
         {
-            ArmazonCotizacion articulo = _mapper.Map<ArmazonCotizacion>(dto);
-            ArmazonCotizacionValidatorService validator = new(_repository);
-            ValidationResult result = validator.Validate(articulo);
-            if (result.IsValid)
+            ArmazonCotizacion currentArmazon = _repository.ConsultarPorArmazonId(dto.armazonid,dto.cotizacionid);
+            if (currentArmazon == null)
             {
-                _repository.Agregar(articulo);
-                return _mapper.Map<ArmazonCotizacionDTO>(articulo);
+                ArmazonCotizacion articulo = _mapper.Map<ArmazonCotizacion>(dto);
+                ArmazonCotizacionValidatorService validator = new(_repository);
+                ValidationResult result = validator.Validate(articulo);
+                if (result.IsValid)
+                {
+                    _repository.Agregar(articulo);
+                    return _mapper.Map<ArmazonCotizacionDTO>(articulo);
+                }
+                else
+                {
+                    return ArmazonCotizacionDTO.ToError(
+                        result.ToString(Constantes.COMA));
+                }
             }
             else
             {
-                return ArmazonCotizacionDTO.ToError(
-                    result.ToString(Constantes.COMA));
+                ArmazonCotizacion articulo = _repository.ConsultarPorId(currentArmazon.id);
+                articulo.cantidad += dto.cantidad;
+                ArmazonCotizacionValidatorService validator = new(_repository);
+                ValidationResult result = validator.Validate(articulo);
+                if (result.IsValid)
+                {
+                    _repository.Editar(articulo);
+                    return _mapper.Map<ArmazonCotizacionDTO>(articulo);
+                }
+                else
+                {
+                    return ArmazonCotizacionDTO.ToError(
+                        result.ToString(Constantes.COMA));
+                }
             }
         }
 

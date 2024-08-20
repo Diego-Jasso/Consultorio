@@ -2,6 +2,7 @@
 using Consultorio.Server.DTOs;
 using Consultorio.Server.Models;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Consultorio.Server.Repositories.Impl
 {
@@ -39,6 +40,11 @@ namespace Consultorio.Server.Repositories.Impl
         public ArmazonCotizacion ConsultarPorId(int id)
         {
             return _context.ArmazonCotizacion.Find(id);
+        }
+
+        public ArmazonCotizacion ConsultarPorArmazonId(int id,int cotid)
+        {
+            return _context.ArmazonCotizacion.Where(ac => ac.armazonid == id && ac.cotizacionid == cotid).FirstOrDefault();
         }
     }
 }
