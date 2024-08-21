@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "BeAo1BUikakpo0KN0hOyXfsRh9CCqNEvzCNQMUULVWo=",
+  "Source": "Consultorio.Server",
+  "BasePath": "_content/Consultorio.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\consultorio.client.esproj",
+      "Version": 2,
+      "Source": "consultorio.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
