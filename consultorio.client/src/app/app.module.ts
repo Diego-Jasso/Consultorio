@@ -9,6 +9,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatTabsModule } from '@angular/material/tabs';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
@@ -27,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     MatInputModule, MatIconModule,
     MatProgressBarModule,
+    MatTabsModule,
     ToastrModule.forRoot({
       "positionClass": "toast-top-center",
     }),

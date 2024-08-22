@@ -1,10 +1,8 @@
 ﻿namespace Consultorio.Server.Models
 {
-    public class Mica
+    public class Accesorio
     {
-        public int micaid { get; set; }
-
-        public string nombre { get; set; } = string.Empty;
+        public int id { get; set; }
 
         public string descripcion { get; set; } = string.Empty;
 

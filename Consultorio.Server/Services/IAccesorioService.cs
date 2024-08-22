@@ -4,8 +4,8 @@ using Consultorio.Server.Models;
 
 namespace Consultorio.Server.Services
 {
-    public interface IMicaService : IBaseService<MicaDTO,MicaNewDTO>
+    public interface IAccesorioService : IBaseService<AccesorioDTO,AccesorioNewDTO>
     {
-        MicaDTO EliminarDTO(int id);
+        AccesorioDTO EliminarDTO(int id);
     }
 }

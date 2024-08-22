@@ -2,24 +2,22 @@
 
 namespace Consultorio.Server.DTOs
 {
-    public class MicaNewDTO
+    public class AccesorioNewDTO
     {
-        public string nombre { get; set; } = string.Empty;
-
         public string descripcion { get; set; } = string.Empty;
 
         public float precio { get; set; }
 
         public int cantidad_disponible { get; set; }
     }
-    public class MicaDTO : MicaNewDTO
+    public class AccesorioDTO : AccesorioNewDTO
     {
-        public int micaid { get; set; }
+        public int id { get; set; }
         public bool Success { get; set; } = Constantes.SUCCESS;
         public string Error { get; set; } = string.Empty;
-        public static MicaDTO ToError(string error)
+        public static AccesorioDTO ToError(string error)
         {
-            return new MicaDTO
+            return new AccesorioDTO
             {
                 Error = error,
                 Success = Constantes.FAILURE

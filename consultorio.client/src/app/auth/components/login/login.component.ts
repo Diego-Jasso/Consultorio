@@ -28,7 +28,7 @@ export class LoginComponent {
     this.authService.login(this.logform)
       .subscribe(res => {
         if (res.ok === true) {
-          this.router.navigateByUrl('layout');
+          this.router.navigateByUrl('layout/cotizacion');
           this.toastr.success(this.logform.usname, 'Ingreso correcto');
         } else {
           this.toastr.error(res.message, 'Error', {

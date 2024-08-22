@@ -1,6 +1,6 @@
 ﻿namespace Consultorio.Server.Services
 {
-    public interface IMicaValidatorService
+    public interface IAccesorioValidatorService
     {
     }
 }

@@ -7,26 +7,26 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Consultorio.Server.Controllers
 {
-    public class MicaController(IMicaService service) : BaseApiController
+    public class AccesorioController(IAccesorioService service) : BaseApiController
     {
 
         [HttpGet]
 
-        public ActionResult<List<MicaDTO>> ConsultarDTO()
+        public ActionResult<List<AccesorioDTO>> ConsultarDTO()
         {
             return service.ConsultarDTO();
         }
 
         [HttpGet("{id}")]
 
-        public ActionResult<MicaDTO> ConsultarPorId(int id)
+        public ActionResult<AccesorioDTO> ConsultarPorId(int id)
         {
             return service.ConsultarPorId(id);
         }
 
         [HttpPost]
 
-        public ActionResult<MicaDTO> Agregar(MicaNewDTO dto)
+        public ActionResult<AccesorioDTO> Agregar(AccesorioNewDTO dto)
         {
             var result = service.Agregar(dto);
             if (result.Success)
@@ -37,7 +37,7 @@ namespace Consultorio.Server.Controllers
 
         [HttpPut("{id}")]
 
-        public ActionResult<MicaDTO> Editar(MicaDTO dto)
+        public ActionResult<AccesorioDTO> Editar(AccesorioDTO dto)
         {
             var result = service.Editar(dto);
             if (result.Success)
@@ -47,7 +47,7 @@ namespace Consultorio.Server.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<MicaDTO> Eliminar(int id)
+        public ActionResult<AccesorioDTO> Eliminar(int id)
         {
             var result = service.EliminarDTO(id);
             if (result.Success)

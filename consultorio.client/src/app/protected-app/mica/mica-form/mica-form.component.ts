@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Imica } from '../../models/mica';
-import { MicaService } from '../../servicios/mica.service';
+import { IArmazon } from '../../models/armazon';
+import { ArmazonService } from '../../servicios/armazon.service';
 import { ToastrService } from 'ngx-toastr';
 import { validarCamposRequeridos } from '../../../compartido/utilerias';
 
@@ -11,17 +11,18 @@ import { validarCamposRequeridos } from '../../../compartido/utilerias';
   styleUrl: './mica-form.component.css'
 })
 export class MicaFormComponent {
+
   @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @ViewChild('addForm') addForm!: NgForm;
 
-  readonly titulo_agregar = "Agregar mica";
-  readonly titulo_editar = "Editar mica";
+  readonly titulo_agregar = "Agregar armazon";
+  readonly titulo_editar = "Editar armazon";
   mostrarForm: boolean = false;
 
-  mica: Imica = {} as Imica;
+  armazon: IArmazon = {} as IArmazon;
   isEdit = false;
-  constructor(private service: MicaService,
+  constructor(private service: ArmazonService,
     private toastr: ToastrService) { }
 
   cerrarForm(form: NgForm) {
@@ -46,8 +47,8 @@ export class MicaFormComponent {
       validarCamposRequeridos(form);
       return;
     }
-    this.service.Agregar(this.mica).subscribe({
-      next: (mica) => this.toastr.success('El registro fue agregado correctamente'),
+    this.service.Agregar(this.armazon).subscribe({
+      next: (armazon) => this.toastr.success('El registro fue agregado correctamente'),
       complete: () => {
         this.actualizarTabla();
         this.limpiar(form);
@@ -68,7 +69,7 @@ export class MicaFormComponent {
   limpiar(form: NgForm): void {
     form.reset();
     this.isEdit = false;
-    this.mica = {} as Imica;
+    this.armazon = {} as IArmazon;
   }
 
   cargarDatos(id: number): void {
@@ -79,7 +80,7 @@ export class MicaFormComponent {
 
   obtenerPorId(id: number): void {
     this.service.GetById(id).subscribe({
-      next: (mica) => { this.mica = mica },
+      next: (armazon) => { this.armazon = armazon },
       complete: () => { },
       error: (err) => {
         console.log(err.error);
@@ -92,7 +93,7 @@ export class MicaFormComponent {
       validarCamposRequeridos(form);
       return;
     }
-    this.service.Editar(this.mica).subscribe({
+    this.service.Editar(this.armazon).subscribe({
       next: (tipoAcceso) => this.toastr.success('El registro fue actualizado correctamente'),
       complete: () => {
         this.actualizarTabla();

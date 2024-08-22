@@ -5,28 +5,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Consultorio.Server.Repositories.Impl
 {
-    public class MicaRepository(AppDbContext context) : BaseRepository<Mica>(context),IMicaRepository
+    public class AccesorioRepository(AppDbContext context) : BaseRepository<Accesorio>(context),IAccesorioRepository
     {
         private readonly AppDbContext _context = context;
        
 
-        public IEnumerable<MicaDTO> ConsultarDTO()
+        public IEnumerable<AccesorioDTO> ConsultarDTO()
         {
-            IEnumerable<Mica> query = context.Mica.ToList();
+            IEnumerable<Accesorio> query = context.Accesorio.ToList();
             return from ta in query
-                   select new MicaDTO
+                   select new AccesorioDTO
                    {
-                       micaid = ta.micaid,
-                       nombre = ta.nombre,
+                       id = ta.id,
                        descripcion = ta.descripcion,
                        precio = ta.precio,
                        cantidad_disponible = ta.cantidad_disponible
                    };
         }
 
-        public Mica ConsultarPorId(int id)
+        public Accesorio ConsultarPorId(int id)
         {
-            return _context.Mica.Find(id);
+            return _context.Accesorio.Find(id);
         }
     }
 }

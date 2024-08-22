@@ -3,44 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\services\\impl\\cotizacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\services\\impl\\cotizacionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\protected-app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.server\\repositories\\impl\\armazoncotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\impl\\armazoncotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.server\\repositories\\iarmazoncotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\iarmazoncotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\servicios\\armazon.cotizacion.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\servicios\\armazon.cotizacion.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,8 +34,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "protected-app.module.ts",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAADIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-08-22T05:23:45.651Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -79,123 +76,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IArmazonCotizacionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IArmazonCotizacionRepository.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\IArmazonCotizacionRepository.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IArmazonCotizacionRepository.cs",
-              "RelativeToolTip": "Consultorio.Server\\Repositories\\IArmazonCotizacionRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T05:13:16.207Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ArmazonCotizacionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\Impl\\ArmazonCotizacionRepository.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\Impl\\ArmazonCotizacionRepository.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\Impl\\ArmazonCotizacionRepository.cs",
-              "RelativeToolTip": "Consultorio.Server\\Repositories\\Impl\\ArmazonCotizacionRepository.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAswCAAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T05:07:44.694Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CotizacionService.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\Impl\\CotizacionService.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Services\\Impl\\CotizacionService.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\Impl\\CotizacionService.cs",
-              "RelativeToolTip": "Consultorio.Server\\Services\\Impl\\CotizacionService.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAIwD0AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T05:06:27.113Z",
+              "Title": "app.module.ts",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\app.module.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\app.module.ts",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\app.module.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\app.module.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-08-22T05:22:49.353Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "armazon.component.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.ts",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-20T04:56:03.649Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "armazon.component.html",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-20T04:54:53.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "armazon.cotizacion.service.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\servicios\\armazon.cotizacion.service.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\servicios\\armazon.cotizacion.service.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\servicios\\armazon.cotizacion.service.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\servicios\\armazon.cotizacion.service.ts",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAqwBgAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-20T03:03:49.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "cotizacion-form.component.html",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAD8AAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-20T02:59:45.964Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "armazon-list.component.html",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.html",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.html",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.html",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.html",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-20T02:58:38.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "armazon-list.component.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAgwJwAAAAvAAAA",
+              "Title": "mica-form.component.ts",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAgwGwAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-15T03:16:32.274Z"
+              "WhenOpened": "2024-08-22T05:05:29.476Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "cotizacion-form.component.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwCUAAAAzAAAA",
+              "Title": "mica-form.component.html",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAYwBwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-22T05:04:36.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "mica-list.component.ts",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
+              "ViewState": "AQIAADoAAAAAAAAAAAAgwFAAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-15T02:25:45.453Z"
+              "WhenOpened": "2024-08-22T04:47:27.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "mica-list.component.html",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-22T04:44:29.293Z",
+              "EditorCaption": ""
             }
           ]
         }

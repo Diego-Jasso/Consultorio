@@ -4,8 +4,8 @@ using Consultorio.Server.Repositories;
 
 namespace Consultorio.Server.Services.Impl
 {
-    public class MicaValidatorService:AbstractValidator<Mica>,IMicaValidatorService
+    public class AccesorioValidatorService:AbstractValidator<Accesorio>,IAccesorioValidatorService
     {
-        public MicaValidatorService() { }
+        public AccesorioValidatorService() { }
     }
 }

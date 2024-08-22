@@ -27,9 +27,9 @@ builder.Services.AddScoped<IArmazonRepository, ArmazonRepository>();
 
 builder.Services.AddScoped<IArmazonService, ArmazonService>();
 
-builder.Services.AddScoped<IMicaRepository,MicaRepository>();
+builder.Services.AddScoped<IAccesorioRepository,AccesorioRepository>();
 
-builder.Services.AddScoped<IMicaService, MicaService>();
+builder.Services.AddScoped<IAccesorioService, AccesorioService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IUsuarioValidatorService, UsuarioValidatorService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();

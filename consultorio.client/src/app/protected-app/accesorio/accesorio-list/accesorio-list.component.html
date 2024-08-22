@@ -1,0 +1,76 @@
+<div class="card">
+  <h3 class="card-header">Accesorios</h3>
+  <input class="form-control" type="text" placeholder="Buscar..." [(ngModel)]="busquedaTexto">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+
+          <!--<th scope="col" class="">&emsp;</th>-->
+          <th colspan="2" scope="col" class="">
+            <button class="boton-agregar" (click)="onAgregar()">
+              Agregar <i class="fa-solid fa-plus"></i>
+            </button>
+          </th>
+          <th scope="col">Cantidad disponible</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+      @switch(estado){
+      @case (Estatus.Procesado){
+      <tbody>
+        @for(accesorio of accesorioList | busqueda: busquedaTexto; track accesorio.id ){
+        <tr>
+          <td style="vertical-align: middle;">
+            <button class="boton-agregar" (click)="onEliminar(accesorio)"><i class="fa fa-trash"></i></button>
+          </td>
+          <td style="vertical-align: middle;">
+            <button class="boton-agregar" (click)="onEditar(accesorio)"><i class="fa fa-pen-to-square"></i></button>
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.cantidad_disponible}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.descripcion}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.precio}}
+          </td>
+        </tr>
+        }
+      </tbody>
+      }
+      @case (Estatus.Cargando){
+      <ng-container [ngTemplateOutlet]="footMessage"
+                    [ngTemplateOutletContext]="{message: LOADING_MESSAGE}">
+      </ng-container>
+      }
+      @case (Estatus.Vacio) {
+      <ng-container [ngTemplateOutlet]="footMessage"
+                    [ngTemplateOutletContext]="{message: ZERO_RESULTS}">
+      </ng-container>
+      }
+      @default {
+      <ng-container [ngTemplateOutlet]="footMessage"
+                    [ngTemplateOutletContext]="{
+          message: ERROR_MESSAGE,
+          class: 'bg-danger-subtle text-danger-emphasis'
+        }">
+      </ng-container>
+      }
+      }
+    </table>
+  </div>
+</div>
+
+<ng-template #footMessage let-message="message" let-cssClass="class ?? ''">
+  <tfoot>
+    <tr>
+      <td colspan="8" class="{{cssClass}}">
+        {{message}}
+      </td>
+    </tr>
+  </tfoot>
+</ng-template>
+

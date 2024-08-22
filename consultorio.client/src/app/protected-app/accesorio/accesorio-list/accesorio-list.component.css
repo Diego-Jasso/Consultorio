@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  max-height: 100vh;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.button-class {
+  border-radius: 4px;
+  padding: 16px 16px 16px;
+  margin: 10px 10px 10px;
+  background-color: #fff;
+  border-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.boton-agregar {
+  background-color: #7da2d6;
+  color: #fff;
+  padding: 8px 8px 8px 8px;
+  border-radius: 8px;
+  border: 2px solid #ffff;
+}
+
+.button-close {
+  margin-left: auto;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+}

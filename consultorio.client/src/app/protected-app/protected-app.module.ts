@@ -5,7 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { LayoutComponent } from './layout/layout.component';
 import { BodyComponent } from './body/body.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { MicasComponent } from './mica/mica.component';
+import { AccesoriosComponent } from './accesorio/accesorio.component';
 import { ArmazonesComponent } from './armazon/armazon.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
@@ -17,19 +17,23 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { ArmazonListComponent } from './armazon/armazon-list/armazon-list.component';
 import { ArmazonFormComponent } from './armazon/armazon-form/armazon-form.component';
 import { BusquedaPipe } from '../compartido/Pipe/busqueda.pipe';
-import { MicaListComponent } from './mica/mica-list/mica-list.component';
-import { MicaFormComponent } from './mica/mica-form/mica-form.component';
+import { AccesorioListComponent } from './accesorio/accesorio-list/accesorio-list.component';
+import { AccesorioFormComponent } from './accesorio/accesorio-form/accesorio-form.component';
 import { CotizacionComponent } from './cotizacion/cotizacion.component';
 import { CotizacionFormComponent } from './cotizacion-form/cotizacion-form.component';
 import { ListDialogComponent } from './shared/list-dialog/list-dialog.component';
 import { MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } from '@angular/material/dialog';
+import { MicasComponent } from './mica/mica.component';
+import { MicaListComponent } from './mica/mica-list/mica-list.component';
+import { MicaFormComponent } from './mica/mica-form/mica-form.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
   declarations: [
     SidenavComponent,
     ArmazonesComponent,
-    MicasComponent,
+    AccesoriosComponent,
     StatisticsComponent,
     BodyComponent,
     LayoutComponent,
@@ -38,11 +42,14 @@ import { MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } fr
     ArmazonListComponent,
     ArmazonFormComponent,
     BusquedaPipe,
-    MicaListComponent,
-    MicaFormComponent,
+    AccesorioListComponent,
+    AccesorioFormComponent,
     CotizacionComponent,
     CotizacionFormComponent,
     ListDialogComponent,
+    MicasComponent,
+    MicaListComponent,
+    MicaFormComponent,
   ],
   imports: [
     CommonModule,
@@ -56,6 +63,7 @@ import { MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent } fr
     MatDialogActions,
     MatDialogClose,
     MatDialogTitle,
+    MatTabsModule,
   ]
 })
 export class ProtectedAppModule { }

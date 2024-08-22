@@ -6,15 +6,18 @@
     @else{
     <h2 class="card-header">{{titulo_agregar}}</h2>
     }
-    <button class="button-close" (click)="cerrarForm(addform)"> <i class="fa-solid fa-times close-icon"></i></button>
+    <button class="button-close" (click)="cerrarForm(addform)"><i class="fa-solid fa-times close-icon"></i></button>
   </div>
   <div class="card-body">
     <form #addform="ngForm" (ngSubmit)="onGuardar(addform)">
       <div>
-        <input type="number" id="cantidad_disponible" name="cantidad_disponible" #cantidad_disponible="ngModel" [(ngModel)]="mica.cantidad_disponible" placeholder="Cantidad disponible" required />
-        <input type="text" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="mica.nombre" placeholder="Nombre" required />
-        <input type="text" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="mica.descripcion" placeholder="Descripción" required />
-        <input type="number" id="precio" name="precio" #precio="ngModel" [(ngModel)]="mica.precio" placeholder="Precio" required />
+        <input class="form-control form-control-sm" type="number" id="cantidad_disponible" name="cantidad_disponible" #cantidad_disponible="ngModel" [(ngModel)]="armazon.cantidad_disponible" placeholder="Cantidad disponible" required />
+        <input class="form-control form-control-sm" type="text" id="marca" name="marca" #marca="ngModel" [(ngModel)]="armazon.marca" placeholder="Marca" required />
+        <input class="form-control form-control-sm" type="text" id="modelo" name="modelo" #modelo="ngModel" [(ngModel)]="armazon.modelo" placeholder="Modelo" required />
+        <input class="form-control form-control-sm" type="text" id="color" name="color" #color="ngModel" [(ngModel)]="armazon.color" placeholder="Color" required />
+        <input class="form-control form-control-sm" type="text" id="tipo_de_lente" name="tipo_de_lente" #tipo_de_lente="ngModel" [(ngModel)]="armazon.tipo_de_lente" placeholder="Tipo de lente" required />
+        <input class="form-control form-control-sm" type="text" id="material" name="material" #material="ngModel" [(ngModel)]="armazon.material" placeholder="Material" required />
+        <input class="form-control form-control-sm" type="number" id="precio" name="precio" #precio="ngModel" [(ngModel)]="armazon.precio" placeholder="Precio" required />
         @if (isEdit){
         <button type="submit">{{titulo_editar}}</button>
         }
@@ -25,3 +28,4 @@
     </form>
   </div>
 </div>
+

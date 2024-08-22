@@ -15,3 +15,7 @@ export enum Estatus {
 export enum EstatusList {
   Catalogo,Cotizacion,BusquedaCotizacion
 } 
+
+export enum TipoMica {
+  LenteDeContacto, Monofocal, Progresivo, Bifocal, Tratamiento
+} 
