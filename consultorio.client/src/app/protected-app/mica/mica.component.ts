@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { EstatusList } from '../../compartido/utilerias';
+import { EstatusList, TipoMica } from '../../compartido/utilerias';
 import { MicaFormComponent } from './mica-form/mica-form.component';
 import { MicaListComponent } from './mica-list/mica-list.component';
 
@@ -26,7 +26,7 @@ export class MicasComponent {
     this.form?.cerrarForm(this.form.addForm);
   }
 
-  onAgregar(is: boolean) {
-    this.form?.abrirForm();
+  onAgregar(mica: TipoMica) {
+    this.form?.abrirForm(mica);
   }
 }

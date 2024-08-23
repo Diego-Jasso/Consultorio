@@ -1,24 +1,24 @@
 <div class="card" *ngIf="mostrarForm">
   <div class="card-head" style="display:flex; flex-direction:row;">
     @if (isEdit){
-    <h2 class="card-header">{{titulo_editar}}</h2>
+    <h3>{{titulo_editar}}</h3>
     }
     @else{
-    <h2 class="card-header">{{titulo_agregar}}</h2>
+    <h3>{{titulo_agregar}}</h3>
     }
     <button class="button-close" (click)="cerrarForm(addform)"> <i class="fa-solid fa-times close-icon"></i></button>
   </div>
   <div class="card-body">
     <form #addform="ngForm" (ngSubmit)="onGuardar(addform)">
-      <div>
+      <div class="formulario">
         <input class="form-control form-control-sm" type="number" id="cantidad_disponible" name="cantidad_disponible" #cantidad_disponible="ngModel" [(ngModel)]="accesorio.cantidad_disponible" placeholder="Cantidad disponible" required />
         <input class="form-control form-control-sm" type="text" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="accesorio.descripcion" placeholder="Descripción" required />
         <input class="form-control form-control-sm" type="number" id="precio" name="precio" #precio="ngModel" [(ngModel)]="accesorio.precio" placeholder="Precio" required />
         @if (isEdit){
-        <button type="submit">{{titulo_editar}}</button>
+        <button type="submit" class="boton-agregar">Editar</button>
         }
         @else{
-        <button type="submit">{{titulo_agregar}}</button>
+        <button type="submit" class="boton-agregar">Agregar</button>
         }
       </div>
     </form>

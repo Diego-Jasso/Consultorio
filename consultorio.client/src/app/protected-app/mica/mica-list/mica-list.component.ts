@@ -14,7 +14,7 @@ import { IlenteDeContacto, micaBifocal, micaMonofocal, micaProgresivo, tratamien
 export class MicaListComponent {
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output('agregar') agregar: EventEmitter<TipoMica> = new EventEmitter<TipoMica>();
 
   readonly LOADING_MESSAGE = "Cargando...";
   readonly ERROR_MESSAGE = "Sucedio un error, intentelo más tarde";
@@ -22,6 +22,8 @@ export class MicaListComponent {
   readonly Estatus = Estatus;
   TipoMica = TipoMica;
 
+
+  titulo: string = 'Micas Monofocales/Vision Sencilla';
   estado: Estatus = Estatus.Cargando;
   lenteDeContactoList: IlenteDeContacto[] = [];
   monofocalList: micaMonofocal[] = [];
@@ -72,7 +74,7 @@ export class MicaListComponent {
   }
 
   onAgregar(): void {
-    this.agregar.emit(true);
+    this.agregar.emit(this.TipoMicaList);
   }
 
   onEditar(armazon: IArmazon) {
@@ -88,21 +90,27 @@ export class MicaListComponent {
     switch (tabIndex) {
       case 0:
         this.TipoMicaList = TipoMica.LenteDeContacto;
+        this.titulo = 'Micas Monofocales/Vision Sencilla';
         break;
       case 1:
         this.TipoMicaList = TipoMica.Monofocal;
+        this.titulo = 'Micas Progresivos';
         break;
       case 2:
         this.TipoMicaList = TipoMica.Progresivo;
+        this.titulo = 'Micas Bifocales';
         break;
       case 3:
         this.TipoMicaList = TipoMica.Bifocal;
+        this.titulo = 'Lentes de Contacto';
         break;
       case 4:
         this.TipoMicaList = TipoMica.Tratamiento;
+        this.titulo = 'Tratamientos y Servicios';
         break;
       default:
         this.TipoMicaList = TipoMica.LenteDeContacto;
+        this.titulo = 'Micas Monofocales/Vision Sencilla';
     }
   }
 }

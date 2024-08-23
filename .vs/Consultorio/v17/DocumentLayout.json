@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\protected-app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\protected-app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,21 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 11,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "protected-app.module.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAADIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-22T05:23:45.651Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -75,7 +62,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "protected-app.module.ts",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-08-22T05:23:45.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "app.module.ts",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\app.module.ts",
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\app.module.ts",
@@ -83,12 +82,11 @@
               "RelativeToolTip": "consultorio.client\\src\\app\\app.module.ts",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-22T05:22:49.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-22T05:22:49.353Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "mica-form.component.ts",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
@@ -96,21 +94,19 @@
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
               "ViewState": "AQIAAFkAAAAAAAAAAAAgwGwAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-22T05:05:29.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-22T05:05:29.476Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "mica-form.component.html",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAYwBwAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-22T05:04:36.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-22T05:04:36.852Z"
             },
             {
               "$type": "Document",
@@ -120,20 +116,19 @@
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "ViewState": "AQIAADoAAAAAAAAAAAAgwFAAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-22T04:47:27.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-22T04:47:27.321Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "mica-list.component.html",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAABAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-08-22T04:44:29.293Z",
               "EditorCaption": ""

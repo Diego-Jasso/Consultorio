@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { IArmazon } from '../../models/armazon';
 import { ArmazonService } from '../../servicios/armazon.service';
 import { ToastrService } from 'ngx-toastr';
-import { validarCamposRequeridos } from '../../../compartido/utilerias';
+import { TipoMica, validarCamposRequeridos } from '../../../compartido/utilerias';
+import { IlenteDeContacto, micaBifocal, micaMonofocal, micaProgresivo, tratamientosServicios } from '../../models/mica';
 
 @Component({
   selector: 'app-mica-form',
@@ -11,16 +12,25 @@ import { validarCamposRequeridos } from '../../../compartido/utilerias';
   styleUrl: './mica-form.component.css'
 })
 export class MicaFormComponent {
-
   @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @ViewChild('addForm') addForm!: NgForm;
+  TipoMica = TipoMica;
 
-  readonly titulo_agregar = "Agregar armazon";
-  readonly titulo_editar = "Editar armazon";
+  titulo: string = 'Micas Monofocales/Vision Sencilla';
+
+  readonly titulo_agregar = "Agregar " + this.titulo;
+  readonly titulo_editar = "Editar";
   mostrarForm: boolean = false;
 
-  armazon: IArmazon = {} as IArmazon;
+
+  TipoMicaForm: TipoMica = TipoMica.LenteDeContacto;
+  micaObject: object = {} as object;
+  lenteDeContacto: IlenteDeContacto = {} as IlenteDeContacto;
+  monofocal: micaMonofocal = {} as micaMonofocal;
+  progresivo: micaProgresivo = {} as micaProgresivo;
+  bifocal: micaBifocal = {} as micaBifocal;
+  tratamiento: tratamientosServicios = {} as tratamientosServicios;
   isEdit = false;
   constructor(private service: ArmazonService,
     private toastr: ToastrService) { }
@@ -30,36 +40,38 @@ export class MicaFormComponent {
     this.mostrarForm = false;
   }
 
-  abrirForm() {
+  abrirForm(mica: TipoMica) {
+    this.TipoMicaForm = mica;
     this.mostrarForm = true;
   }
 
   onGuardar(form: NgForm): void {
     if (this.isEdit) {
-      this.onEditar(form);
+      this.onEditar(form,this.micaObject);
     } else {
-      this.onAgregar(form);
+      this.onAgregar(form,this.micaObject);
     }
   }
 
-  onAgregar(form: NgForm): void {
+  onAgregar<T>(form: NgForm,item: T): void {
     if (!form.valid) {
       validarCamposRequeridos(form);
       return;
     }
-    this.service.Agregar(this.armazon).subscribe({
-      next: (armazon) => this.toastr.success('El registro fue agregado correctamente'),
-      complete: () => {
-        this.actualizarTabla();
-        this.limpiar(form);
-      },
-      error: (err) => {
-        this.toastr.error(err.error, 'Error', {
-          timeOut: 4000,
-          progressAnimation: 'increasing'
-        })
-      }
-    });
+    console.log(item);
+    //this.service.Agregar(item).subscribe({
+    //  next: (item) => this.toastr.success('El registro fue agregado correctamente'),
+    //  complete: () => {
+    //    this.actualizarTabla();
+    //    this.limpiar(form);
+    //  },
+    //  error: (err) => {
+    //    this.toastr.error(err.error, 'Error', {
+    //      timeOut: 4000,
+    //      progressAnimation: 'increasing'
+    //    })
+    //  }
+    //});
   }
 
   actualizarTabla() {
@@ -69,7 +81,7 @@ export class MicaFormComponent {
   limpiar(form: NgForm): void {
     form.reset();
     this.isEdit = false;
-    this.armazon = {} as IArmazon;
+    this.micaObject = {} as IArmazon;
   }
 
   cargarDatos(id: number): void {
@@ -79,32 +91,34 @@ export class MicaFormComponent {
   }
 
   obtenerPorId(id: number): void {
-    this.service.GetById(id).subscribe({
-      next: (armazon) => { this.armazon = armazon },
-      complete: () => { },
-      error: (err) => {
-        console.log(err.error);
-      }
-    })
+    console.log(id);
+    //this.service.GetById(id).subscribe({
+    //  next: (armazon) => { this.armazon = armazon },
+    //  complete: () => { },
+    //  error: (err) => {
+    //    console.log(err.error);
+    //  }
+    //})
   }
 
-  onEditar(form: NgForm): void {
+  onEditar<T>(form: NgForm,item:T): void {
     if (!form.valid) {
       validarCamposRequeridos(form);
       return;
     }
-    this.service.Editar(this.armazon).subscribe({
-      next: (tipoAcceso) => this.toastr.success('El registro fue actualizado correctamente'),
-      complete: () => {
-        this.actualizarTabla();
-        this.cerrarForm(form);
-      },
-      error: (err) => {
-        this.toastr.error(err.error, 'Error', {
-          timeOut: 4000,
-          progressAnimation: 'increasing'
-        })
-      }
-    });
+    console.log(item);
+    //this.service.Editar(item).subscribe({
+    //  next: (item) => this.toastr.success('El registro fue actualizado correctamente'),
+    //  complete: () => {
+    //    this.actualizarTabla();
+    //    this.cerrarForm(form);
+    //  },
+    //  error: (err) => {
+    //    this.toastr.error(err.error, 'Error', {
+    //      timeOut: 4000,
+    //      progressAnimation: 'increasing'
+    //    })
+    //  }
+    //});
   }
 }

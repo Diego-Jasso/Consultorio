@@ -1,28 +1,51 @@
 <div class="card" *ngIf="mostrarForm">
   <div class="card-head" style="display:flex; flex-direction:row;">
     @if (isEdit){
-    <h2 class="card-header">{{titulo_editar}}</h2>
+    <h3>{{titulo_editar}}</h3>
     }
     @else{
-    <h2 class="card-header">{{titulo_agregar}}</h2>
+    <h3>{{titulo_agregar}}</h3>
     }
     <button class="button-close" (click)="cerrarForm(addform)"><i class="fa-solid fa-times close-icon"></i></button>
   </div>
   <div class="card-body">
     <form #addform="ngForm" (ngSubmit)="onGuardar(addform)">
-      <div>
-        <input class="form-control form-control-sm" type="number" id="cantidad_disponible" name="cantidad_disponible" #cantidad_disponible="ngModel" [(ngModel)]="armazon.cantidad_disponible" placeholder="Cantidad disponible" required />
-        <input class="form-control form-control-sm" type="text" id="marca" name="marca" #marca="ngModel" [(ngModel)]="armazon.marca" placeholder="Marca" required />
-        <input class="form-control form-control-sm" type="text" id="modelo" name="modelo" #modelo="ngModel" [(ngModel)]="armazon.modelo" placeholder="Modelo" required />
-        <input class="form-control form-control-sm" type="text" id="color" name="color" #color="ngModel" [(ngModel)]="armazon.color" placeholder="Color" required />
-        <input class="form-control form-control-sm" type="text" id="tipo_de_lente" name="tipo_de_lente" #tipo_de_lente="ngModel" [(ngModel)]="armazon.tipo_de_lente" placeholder="Tipo de lente" required />
-        <input class="form-control form-control-sm" type="text" id="material" name="material" #material="ngModel" [(ngModel)]="armazon.material" placeholder="Material" required />
-        <input class="form-control form-control-sm" type="number" id="precio" name="precio" #precio="ngModel" [(ngModel)]="armazon.precio" placeholder="Precio" required />
+      <div class="formulario">
+        @switch(TipoMicaForm){
+        @case(TipoMica.LenteDeContacto){
+        <input class="form-control form-control-sm" type="text" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="lenteDeContacto.descripcion" placeholder="Descripcion" required />
+        <input class="form-control form-control-sm" type="number" id="costo" name="costo" costo="ngModel" #costo="ngModel" [(ngModel)]="lenteDeContacto.costo" placeholder="Precio" required />
+        }
+        @case(TipoMica.Monofocal){
+        <input class="form-control form-control-sm" type="text" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="monofocal.material" placeholder="Material" required />
+        <input class="form-control form-control-sm" type="text" id="modelo" name="modelo" modelo="ngModel" #modelo="ngModel" [(ngModel)]="monofocal.modelo" placeholder="Modelo" required />
+        <input class="form-control form-control-sm" type="text" id="categoria" name="categoria" categoria="ngModel" #categoria="ngModel" [(ngModel)]="monofocal.categoria" placeholder="Categoria" required />
+        <input class="form-control form-control-sm" type="number" id="precio" name="precio" precio="ngModel" #precio="ngModel" [(ngModel)]="monofocal.precio" placeholder="Precio" required />
+        }
+        @case(TipoMica.Progresivo){
+        <input class="form-control form-control-sm" type="text" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="progresivo.material" placeholder="Material" required />
+        <input class="form-control form-control-sm" type="text" id="autographIntelligenge2" name="autographIntelligenge2" #autographIntelligenge2="ngModel" [(ngModel)]="progresivo.autographIntelligenge2" placeholder="Autograph Intelligence 2" required />
+        <input class="form-control form-control-sm" type="text" id="autographIID" name="autographIID" #autographIID="ngModel" [(ngModel)]="progresivo.autographIID" placeholder="Autograph IID" required />
+        <input class="form-control form-control-sm" type="text" id="intouchUX" name="intouchUX" #intouchUX="ngModel" [(ngModel)]="progresivo.intouchUX" placeholder="Descripcion" required />
+        <input class="form-control form-control-sm" type="text" id="hdExperience" name="hdExperience" #hdExperience="ngModel" [(ngModel)]="progresivo.hdExperience" placeholder="HD Experience" required />
+
+        }
+        @case(TipoMica.Bifocal){
+        <input class="form-control form-control-sm" type="text" id="marca" name="marca" #marca="ngModel" [(ngModel)]="bifocal.marca" placeholder="Marca" required />
+        <input class="form-control form-control-sm" type="number" id="precioDuoDigital" name="precioDuoDigital" #precioDuoDigital="ngModel" [(ngModel)]="bifocal.precioDuoDigital" placeholder="Duo Digital" required />
+        <input class="form-control form-control-sm" type="number" id="precioFlatTop28" name="precioFlatTop28" #precioFlatTop28="ngModel" [(ngModel)]="bifocal.precioFlatTop28" placeholder="Flat Top 28" required />
+
+        }
+        @case(TipoMica.Tratamiento){
+        <input class="form-control form-control-sm" type="text" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="tratamiento.descripcion" placeholder="Descripcion" required />
+        <input class="form-control form-control-sm" type="number" id="precio" name="precio" #precio="ngModel" [(ngModel)]="tratamiento.precio" placeholder="Precio" required />
+        }
+        }
         @if (isEdit){
-        <button type="submit">{{titulo_editar}}</button>
+        <button type="submit" class="boton-agregar">Editar</button>
         }
         @else{
-        <button type="submit">{{titulo_agregar}}</button>
+        <button type="submit" class="boton-agregar">Agregar</button>
         }
       </div>
     </form>

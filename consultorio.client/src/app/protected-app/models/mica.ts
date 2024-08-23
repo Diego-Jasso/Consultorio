@@ -1,7 +1,7 @@
 export interface IlenteDeContacto {
   id: number
   descripcion: string,
-  precio: number
+  costo: number
 }
 export interface micaMonofocal {
   id: number,

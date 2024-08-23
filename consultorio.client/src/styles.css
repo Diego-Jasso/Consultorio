@@ -35,6 +35,7 @@ body {
     overflow-y: auto;
   }
 
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -56,3 +57,11 @@ textarea.ng-touched.ng-invalid:not(:focus),
   border-radius: 8px;
   border: 2px solid #ffff;
 }
+
+.formulario{
+    display:flex;
+    align-content:center;
+    gap:20px;
+}
+
+
