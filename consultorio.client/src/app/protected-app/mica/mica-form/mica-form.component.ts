@@ -17,9 +17,8 @@ export class MicaFormComponent {
   @ViewChild('addForm') addForm!: NgForm;
   TipoMica = TipoMica;
 
-  titulo: string = 'Micas Monofocales/Vision Sencilla';
 
-  readonly titulo_agregar = "Agregar " + this.titulo;
+  titulo_agregar = "Agregar ";
   readonly titulo_editar = "Editar";
   mostrarForm: boolean = false;
 
@@ -42,10 +41,51 @@ export class MicaFormComponent {
 
   abrirForm(mica: TipoMica) {
     this.TipoMicaForm = mica;
+    console.log(this.TipoMicaForm);
+    switch (mica) {
+      case TipoMica.LenteDeContacto:
+        this.titulo_agregar = 'Agregar lentes de contacto';
+        break;
+      case TipoMica.Monofocal:
+        this.titulo_agregar = 'Agregar mica monofocal';
+        break;
+      case TipoMica.Progresivo:
+        this.titulo_agregar = 'Agregrar mica progresivo';
+        break;
+      case TipoMica.Bifocal:
+        this.titulo_agregar = 'Agregar mica bifocal';
+        break;
+      case TipoMica.Tratamiento:
+        this.titulo_agregar = 'Agregar tratamiento y/o servicio';
+        break;
+      default:
+        this.titulo_agregar = 'Agregar mica monofocal';
+        break;
+    }
     this.mostrarForm = true;
   }
 
   onGuardar(form: NgForm): void {
+    switch (this.TipoMicaForm) {
+      case TipoMica.LenteDeContacto:
+        this.micaObject = this.lenteDeContacto;
+        break;
+      case TipoMica.Monofocal:
+        this.micaObject = this.monofocal;
+        break;
+      case TipoMica.Progresivo:
+        this.micaObject = this.progresivo;
+        break;
+      case TipoMica.Bifocal:
+        this.micaObject = this.bifocal;
+        break;
+      case TipoMica.Tratamiento:
+        this.micaObject = this.tratamiento;
+        break;
+      default:
+        this.micaObject = this.monofocal;
+        break;
+    }
     if (this.isEdit) {
       this.onEditar(form,this.micaObject);
     } else {

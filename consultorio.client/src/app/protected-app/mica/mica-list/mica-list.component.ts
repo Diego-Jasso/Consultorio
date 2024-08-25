@@ -15,6 +15,7 @@ export class MicaListComponent {
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('agregar') agregar: EventEmitter<TipoMica> = new EventEmitter<TipoMica>();
+  @Output('cambioForm') cambioForm: EventEmitter<TipoMica> = new EventEmitter<TipoMica>();
 
   readonly LOADING_MESSAGE = "Cargando...";
   readonly ERROR_MESSAGE = "Sucedio un error, intentelo más tarde";
@@ -31,7 +32,7 @@ export class MicaListComponent {
   bifocalList: micaBifocal[] = [];
   tratamientoList: tratamientosServicios[] = [];
   busquedaTexto = '';
-  TipoMicaList: TipoMica = TipoMica.LenteDeContacto;
+  TipoMicaList: TipoMica = TipoMica.Monofocal;
 
   constructor(private service: MicaService,
     private toastr: ToastrService,
@@ -89,19 +90,19 @@ export class MicaListComponent {
     const tabIndex = e.index;
     switch (tabIndex) {
       case 0:
-        this.TipoMicaList = TipoMica.LenteDeContacto;
+        this.TipoMicaList = TipoMica.Monofocal;
         this.titulo = 'Micas Monofocales/Vision Sencilla';
         break;
       case 1:
-        this.TipoMicaList = TipoMica.Monofocal;
+        this.TipoMicaList = TipoMica.Progresivo;
         this.titulo = 'Micas Progresivos';
         break;
       case 2:
-        this.TipoMicaList = TipoMica.Progresivo;
+        this.TipoMicaList = TipoMica.Bifocal;
         this.titulo = 'Micas Bifocales';
         break;
       case 3:
-        this.TipoMicaList = TipoMica.Bifocal;
+        this.TipoMicaList = TipoMica.LenteDeContacto;
         this.titulo = 'Lentes de Contacto';
         break;
       case 4:
@@ -109,8 +110,9 @@ export class MicaListComponent {
         this.titulo = 'Tratamientos y Servicios';
         break;
       default:
-        this.TipoMicaList = TipoMica.LenteDeContacto;
+        this.TipoMicaList = TipoMica.Monofocal;
         this.titulo = 'Micas Monofocales/Vision Sencilla';
     }
+    this.cambioForm.emit(this.TipoMicaList);
   }
 }

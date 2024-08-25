@@ -1,30 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\",
+  "WorkspaceRootPath": "C:\\Users\\djasso\\source\\repos\\Consultorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\repositories\\impl\\tratamientosserviciosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\impl\\tratamientosserviciosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\repositories\\impl\\micaprogresivorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\impl\\micaprogresivorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\protected-app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\repositories\\imicaprogresivorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\imicaprogresivorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\repositories\\imicabifocalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\imicabifocalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\repositories\\itratamientosserviciosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\itratamientosserviciosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\repositories\\imicamonofocalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\imicamonofocalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\djasso\\source\\repos\\consultorio\\consultorio.server\\repositories\\ilentesdecontactorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\repositories\\ilentesdecontactorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +42,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Program.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Program.cs",
+              "RelativeToolTip": "Consultorio.Server\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAC4AAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T02:10:42.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -46,91 +71,97 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "protected-app.module.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\protected-app.module.ts",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACcAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-22T05:23:45.651Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "app.module.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\app.module.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\app.module.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\app.module.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\app.module.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-22T05:22:49.353Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "mica-form.component.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAgwGwAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-22T05:05:29.476Z"
+              "DocumentIndex": 1,
+              "Title": "TratamientosServiciosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\Impl\\TratamientosServiciosRepository.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\Impl\\TratamientosServiciosRepository.cs",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\Impl\\TratamientosServiciosRepository.cs",
+              "RelativeToolTip": "Consultorio.Server\\Repositories\\Impl\\TratamientosServiciosRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T02:08:50.38Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "mica-form.component.html",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-22T05:04:36.852Z"
+              "Title": "MicaProgresivoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\Impl\\MicaProgresivoRepository.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\Impl\\MicaProgresivoRepository.cs",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\Impl\\MicaProgresivoRepository.cs",
+              "RelativeToolTip": "Consultorio.Server\\Repositories\\Impl\\MicaProgresivoRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T01:53:13.882Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "mica-list.component.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-22T04:47:27.321Z"
+              "DocumentIndex": 3,
+              "Title": "IMicaProgresivoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IMicaProgresivoRepository.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\IMicaProgresivoRepository.cs",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IMicaProgresivoRepository.cs",
+              "RelativeToolTip": "Consultorio.Server\\Repositories\\IMicaProgresivoRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T01:49:46.395Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "mica-list.component.html",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-22T04:44:29.293Z",
+              "DocumentIndex": 5,
+              "Title": "ITratamientosServiciosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\ITratamientosServiciosRepository.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\ITratamientosServiciosRepository.cs",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\ITratamientosServiciosRepository.cs",
+              "RelativeToolTip": "Consultorio.Server\\Repositories\\ITratamientosServiciosRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T01:48:50.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IMicaBifocalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IMicaBifocalRepository.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\IMicaBifocalRepository.cs",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IMicaBifocalRepository.cs",
+              "RelativeToolTip": "Consultorio.Server\\Repositories\\IMicaBifocalRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T01:47:55.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IMicaMonofocalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IMicaMonofocalRepository.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\IMicaMonofocalRepository.cs",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\IMicaMonofocalRepository.cs",
+              "RelativeToolTip": "Consultorio.Server\\Repositories\\IMicaMonofocalRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T01:46:40.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ILentesDeContactoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\ILentesDeContactoRepository.cs",
+              "RelativeDocumentMoniker": "Consultorio.Server\\Repositories\\ILentesDeContactoRepository.cs",
+              "ToolTip": "C:\\Users\\djasso\\source\\repos\\Consultorio\\Consultorio.Server\\Repositories\\ILentesDeContactoRepository.cs",
+              "RelativeToolTip": "Consultorio.Server\\Repositories\\ILentesDeContactoRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T01:43:38.533Z",
               "EditorCaption": ""
             }
           ]

@@ -29,4 +29,9 @@ export class MicasComponent {
   onAgregar(mica: TipoMica) {
     this.form?.abrirForm(mica);
   }
+  onCambioForm(mica: TipoMica) {
+    if (this.form?.mostrarForm) {
+      this.form?.abrirForm(mica);
+    }
+  }
 }
