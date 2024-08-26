@@ -12,14 +12,18 @@
     <form #addform="ngForm" (ngSubmit)="onGuardar(addform)">
       <div class="formulario">
         @switch(TipoMicaForm){
-        @case(TipoMica.LenteDeContacto){
-        <input class="form-control form-control-sm" type="text" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="lenteDeContacto.descripcion" placeholder="Descripcion" required />
-        <input class="form-control form-control-sm" type="number" id="costo" name="costo" costo="ngModel" #costo="ngModel" [(ngModel)]="lenteDeContacto.costo" placeholder="Precio" required />
-        }
         @case(TipoMica.Monofocal){
-        <input class="form-control form-control-sm" type="text" id="descripcion" name="descripcion" #descripcion="ngModel" [(ngModel)]="monofocal.material" placeholder="Material" required />
-        <input class="form-control form-control-sm" type="text" id="modelo" name="modelo" modelo="ngModel" #modelo="ngModel" [(ngModel)]="monofocal.modelo" placeholder="Modelo" required />
-        <input class="form-control form-control-sm" type="text" id="categoria" name="categoria" categoria="ngModel" #categoria="ngModel" [(ngModel)]="monofocal.categoria" placeholder="Categoria" required />
+        <select class="select-control select-control-sm" type="text" id="tipo" name="tipo" #descripcion="ngModel" [(ngModel)]="monofocal.tipo" required>
+          <option value="Tipo">Tipo</option>
+          <option value="Terminado">Terminado</option>
+          <option value="Esferico">Esferico</option>
+          <option value="Asferico">Asferico</option>
+          <option value="Ultra Thin">Ultra Thin</option>
+          <option value="Ultra Alto Indice">Ultra Alto Indice</option>
+        </select>
+        <input class="form-control form-control-sm" type="text" id="material" name="material" material="ngModel" #material="ngModel" [(ngModel)]="monofocal.material" placeholder="Material" required />
+        <input class="form-control form-control-sm" type="text" id="tratamiento" name="tratamiento" v="ngModel" #tratamiento="ngModel" [(ngModel)]="monofocal.tratamiento" placeholder="Tratamiento"/>
+        <input class="form-control form-control-sm" type="text" id="rango" name="rango" rango="ngModel" #rango="ngModel" [(ngModel)]="monofocal.rango" placeholder="Rango" required />
         <input class="form-control form-control-sm" type="number" id="precio" name="precio" precio="ngModel" #precio="ngModel" [(ngModel)]="monofocal.precio" placeholder="Precio" required />
         }
         @case(TipoMica.Progresivo){

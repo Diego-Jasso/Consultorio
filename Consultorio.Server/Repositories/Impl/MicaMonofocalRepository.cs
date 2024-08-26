@@ -16,9 +16,10 @@ namespace Consultorio.Server.Repositories.Impl
                    select new micaMonofocalDTO
                    {
                        Id = m.Id,
+                       Tipo = m.Tipo,
                        Material = m.Material,
-                       Modelo = m.Modelo,
-                       Categoria = m.Categoria,
+                       Tratamiento = m.Tratamiento,
+                       Rango = m.Rango,
                        Precio = m.Precio
                    };
         }

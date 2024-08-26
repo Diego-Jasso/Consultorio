@@ -10,6 +10,11 @@ export const navbarData = [
     label: 'Micas'
   },
   {
+    routeLink: 'lenteDeContacto',
+    icon: 'fa fa-eye',
+    label: 'Lentes de Contacto'
+  },
+  {
     routeLink: 'accesorio',
     icon: 'fa fa-spray-can',
     label: 'Accesorios'

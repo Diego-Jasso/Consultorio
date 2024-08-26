@@ -4,10 +4,10 @@ using Consultorio.Server.Models;
 
 namespace Consultorio.Server.Repositories
 {
-    public interface ILentesDeContactoRepository:IBaseRepository<lentesDeContacto>
+    public interface ILenteDeContactoRepository:IBaseRepository<lenteDeContacto>
     {
         IEnumerable<lenteDeContactoDTO> ConsultarDTO();
 
-        lentesDeContacto ConsultarPorId(int id);
+        lenteDeContacto ConsultarPorId(int id);
     }
 }

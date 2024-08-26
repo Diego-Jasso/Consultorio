@@ -6,9 +6,10 @@ namespace Consultorio.Server.Models
     {
         [Key]
         public int Id { get; set; }
+        public string Tipo { get; set; } = string.Empty;
         public string Material { get; set; } = string.Empty;
-        public string Modelo { get; set; } = string.Empty;
-        public string Categoria { get; set; } = string.Empty;
+        public string Tratamiento { get; set; } = string.Empty;
+        public string Rango { get; set; } = string.Empty;
         public float Precio { get; set; }
     }
 }

@@ -15,7 +15,7 @@ export class MicasComponent {
   EstatusList = EstatusList;
 
   onActualizar(is: boolean) {
-    this.list?.fetchLista();
+    this.list?.fetchListaMono();
   }
 
   onEditar(id: number): void {

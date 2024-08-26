@@ -14,7 +14,7 @@ namespace Consultorio.Server.Repositories
         public DbSet<Cotizacion> Cotizacion { get; set; } = default!;
         public DbSet<Status> Status { get; set; } = default!;
         public DbSet<ArmazonCotizacion> ArmazonCotizacion { get; set; } = default!;
-        public DbSet<lentesDeContacto> LenteDeContacto { get; set; } = default!;
+        public DbSet<lenteDeContacto> LenteDeContacto { get; set; } = default!;
         public DbSet<micaMonofocal> MicaMonofocal { get; set; } = default!;
         public DbSet<micaBifocal> MicaBifocal { get; set; } = default!;
         public DbSet<micaProgresivo> MicaProgresivo { get; set; } = default!;

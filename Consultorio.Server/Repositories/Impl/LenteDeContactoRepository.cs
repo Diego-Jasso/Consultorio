@@ -4,24 +4,25 @@ using Consultorio.Server.Models;
 
 namespace Consultorio.Server.Repositories.Impl
 {
-    public class LenteDeContactoRepository(AppDbContext context) : BaseRepository<lentesDeContacto>(context),ILentesDeContactoRepository
+    public class LenteDeContactoRepository(AppDbContext context) : BaseRepository<lenteDeContacto>(context),ILenteDeContactoRepository
     {
         private readonly AppDbContext _context = context;
 
 
         public IEnumerable<lenteDeContactoDTO> ConsultarDTO()
         {
-            IEnumerable<lentesDeContacto> query = context.LenteDeContacto.ToList();
+            IEnumerable<lenteDeContacto> query = context.LenteDeContacto.ToList();
             return from m in query
                    select new lenteDeContactoDTO
                    {
-                       id = m.Id,
-                       Descripcion = m.Descripcion,
+                       Id = m.Id,
+                       Tipo = m.Tipo,
+                       Marca = m.Marca,
                        precio = m.precio
                    };
         }
 
-        public lentesDeContacto ConsultarPorId(int id)
+        public lenteDeContacto ConsultarPorId(int id)
         {
             return _context.LenteDeContacto.Find(id);
         }

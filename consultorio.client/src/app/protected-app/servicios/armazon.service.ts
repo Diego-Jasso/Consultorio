@@ -2,7 +2,8 @@ import { Inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IArmazon} from '../models/armazon';
+import { IArmazon } from '../models/armazon';
+import { TipoMica } from '../../compartido/utilerias';
 
 @Injectable({
   providedIn: 'root'

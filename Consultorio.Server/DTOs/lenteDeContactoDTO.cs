@@ -4,13 +4,14 @@ namespace Consultorio.Server.DTOs
 {
     public class lenteDeContactoNewDTO
     {
-        public string Descripcion { get; set; } = string.Empty;
+        public string Tipo { get; set; } = string.Empty;
+        public string Marca { get; set; } = string.Empty;
         public double precio { get; set; }
     }
 
     public class lenteDeContactoDTO: lenteDeContactoNewDTO
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public bool Success { get; set; } = Constantes.SUCCESS;
         public string Error { get; set; } = string.Empty;
         public static lenteDeContactoDTO ToError(string error)

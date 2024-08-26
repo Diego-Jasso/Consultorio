@@ -2,9 +2,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Estatus, EstatusList, TipoMica } from '../../../compartido/utilerias';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { MicaService } from '../../servicios/mica.service.';
+import { MicaMonofocalService } from '../../servicios/mica.monofocal.service.';
 import { IArmazon } from '../../models/armazon';
-import { IlenteDeContacto, micaBifocal, micaMonofocal, micaProgresivo, tratamientosServicios } from '../../models/mica';
+import {  micaBifocal, micaMonofocal, micaProgresivo, tratamientosServicios } from '../../models/mica';
+import { MicaBifocalService } from '../../servicios/mica.bifocal.service.';
+import { MicaProgresivoService } from '../../servicios/mica.progresivo.service.';
+import { TratamientosServiciosService } from '../../servicios/tratamientos.servicios.service';
 
 @Component({
   selector: 'app-mica-list',
@@ -26,7 +29,6 @@ export class MicaListComponent {
 
   titulo: string = 'Micas Monofocales/Vision Sencilla';
   estado: Estatus = Estatus.Cargando;
-  lenteDeContactoList: IlenteDeContacto[] = [];
   monofocalList: micaMonofocal[] = [];
   progresivoList: micaProgresivo[] = [];
   bifocalList: micaBifocal[] = [];
@@ -34,44 +36,142 @@ export class MicaListComponent {
   busquedaTexto = '';
   TipoMicaList: TipoMica = TipoMica.Monofocal;
 
-  constructor(private service: MicaService,
+  constructor(private monoService: MicaMonofocalService,
+    private biService: MicaBifocalService,
+    private proService: MicaProgresivoService,
+    private tratService: TratamientosServiciosService,
     private toastr: ToastrService,
     private dialog: MatDialog,) { }
 
   ngOnInit() {
-
+    this.fetchListaMono();
   }
 
-  fetchLista(): void {
-    //this.estado = Estatus.Cargando;
-    //var observable = this.service.GetAll();
-    //observable.subscribe({
-    //  next: (_armazon: IArmazon[]) => this.micaList = _armazon,
-    //  complete: () => this.estado = Estatus.Procesado,
-    //  error: (err) => {
-    //    this.estado = Estatus.Error;
-    //    this.toastr.error(err.error, 'Error', {
-    //      timeOut: 4000,
-    //      progressAnimation: 'increasing'
-    //    });
-    //  }
-    //});
+  fetchListaMono(): void {
+    this.estado = Estatus.Cargando;
+    var observable = this.monoService.GetAll();
+    observable.subscribe({
+      next: (_mica: micaMonofocal[]) => this.monofocalList= _mica,
+      complete: () => this.estado = Estatus.Procesado,
+      error: (err) => {
+        this.estado = Estatus.Error;
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
+  }
+  fetchListaBi(): void {
+    this.estado = Estatus.Cargando;
+    var observable = this.biService.GetAll();
+    observable.subscribe({
+      next: (_mica: micaBifocal[]) => this.bifocalList = _mica,
+      complete: () => this.estado = Estatus.Procesado,
+      error: (err) => {
+        this.estado = Estatus.Error;
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
   }
 
-  onEliminar(armazon: IArmazon) {
-    //this.limpiarFormulario();
-    //this.service.Eliminar(armazon.armazonid).subscribe({
-    //  next: (armazon) => this.fetchLista(),
-    //  complete: () => {
-    //    this.toastr.success('El registro fue eliminado correctamente')
-    //  },
-    //  error: (err) => {
-    //    this.toastr.error(err.error, 'Error', {
-    //      timeOut: 4000,
-    //      progressAnimation: 'increasing'
-    //    })
-    //  }
-    //});
+  fetchListaProgre(): void {
+    this.estado = Estatus.Cargando;
+    var observable = this.proService.GetAll();
+    observable.subscribe({
+      next: (_mica: micaProgresivo[]) => this.progresivoList = _mica,
+      complete: () => this.estado = Estatus.Procesado,
+      error: (err) => {
+        this.estado = Estatus.Error;
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
+  }
+
+  fetchListaTrat(): void {
+    this.estado = Estatus.Cargando;
+    var observable = this.tratService.GetAll();
+    observable.subscribe({
+      next: (_tratamiento: tratamientosServicios[]) => this.tratamientoList = _tratamiento,
+      complete: () => this.estado = Estatus.Procesado,
+      error: (err) => {
+        this.estado = Estatus.Error;
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
+  }
+
+  onEliminarMono(mica: micaMonofocal) {
+    this.limpiarFormulario();
+    this.monoService.Eliminar(mica.id).subscribe({
+      next: (mica) => this.fetchListaMono(),
+      complete: () => {
+        this.toastr.success('El registro fue eliminado correctamente')
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onEliminarBi(mica: micaBifocal) {
+    this.limpiarFormulario();
+    this.biService.Eliminar(mica.id).subscribe({
+      next: (mica) => this.fetchListaBi(),
+      complete: () => {
+        this.toastr.success('El registro fue eliminado correctamente')
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onEliminarProgre(mica: micaProgresivo) {
+    this.limpiarFormulario();
+    this.proService.Eliminar(mica.id).subscribe({
+      next: (mica) => this.fetchListaProgre(),
+      complete: () => {
+        this.toastr.success('El registro fue eliminado correctamente')
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onEliminarTrat(tratamiento: tratamientosServicios) {
+    this.limpiarFormulario();
+    this.tratService.Eliminar(tratamiento.id).subscribe({
+      next: (tratamiento) => this.fetchListaTrat(),
+      complete: () => {
+        this.toastr.success('El registro fue eliminado correctamente')
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
   }
 
   onAgregar(): void {
@@ -92,26 +192,27 @@ export class MicaListComponent {
       case 0:
         this.TipoMicaList = TipoMica.Monofocal;
         this.titulo = 'Micas Monofocales/Vision Sencilla';
+        this.fetchListaMono();
         break;
       case 1:
         this.TipoMicaList = TipoMica.Progresivo;
         this.titulo = 'Micas Progresivos';
+        this.fetchListaProgre();
         break;
       case 2:
         this.TipoMicaList = TipoMica.Bifocal;
         this.titulo = 'Micas Bifocales';
+        this.fetchListaBi();
         break;
       case 3:
-        this.TipoMicaList = TipoMica.LenteDeContacto;
-        this.titulo = 'Lentes de Contacto';
-        break;
-      case 4:
         this.TipoMicaList = TipoMica.Tratamiento;
         this.titulo = 'Tratamientos y Servicios';
+        this.fetchListaTrat();
         break;
       default:
         this.TipoMicaList = TipoMica.Monofocal;
         this.titulo = 'Micas Monofocales/Vision Sencilla';
+        this.fetchListaMono();
     }
     this.cambioForm.emit(this.TipoMicaList);
   }

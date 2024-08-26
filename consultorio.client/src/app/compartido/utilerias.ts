@@ -17,5 +17,5 @@ export enum EstatusList {
 } 
 
 export enum TipoMica {
-  LenteDeContacto, Monofocal, Progresivo, Bifocal, Tratamiento
+  Monofocal, Progresivo, Bifocal, Tratamiento
 } 

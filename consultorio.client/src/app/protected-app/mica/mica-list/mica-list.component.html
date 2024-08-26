@@ -4,7 +4,6 @@
     <mat-tab label="Micas Monofocales/Vision Sencilla"></mat-tab>
     <mat-tab label="Micas Progresivos"></mat-tab>
     <mat-tab label="Micas Bifocales"></mat-tab>
-    <mat-tab label="Lentes de Contacto"></mat-tab>
     <mat-tab label="Tratamientos y Servicios"></mat-tab>
   </mat-tab-group>
   <input class="form-control" type="text" placeholder="Buscar..." [(ngModel)]="busquedaTexto">
@@ -13,17 +12,6 @@
       <thead>
         <!--<th scope="col" class="">&emsp;</th>-->
         @switch(TipoMicaList){
-        @case (TipoMica.LenteDeContacto){
-        <tr>
-          <th colspan="2" scope="col" class="">
-            <button class="boton-agregar" (click)="onAgregar()">
-              Agregar <i class="fa-solid fa-plus"></i>
-            </button>
-          </th>
-          <th scope="col">Descripcion</th>
-          <th scope="col">Precio</th>
-        </tr>
-        }
         @case (TipoMica.Monofocal){
         <tr>
           <th colspan="2" scope="col" class="">
@@ -31,9 +19,10 @@
               Agregar <i class="fa-solid fa-plus"></i>
             </button>
           </th>
+          <th scope="col">Tipo</th>
           <th scope="col">Material</th>
           <th scope="col">Tratamiento</th>
-          <th scope="col">Categoria</th>
+          <th scope="col">Rango</th>
           <th scope="col">Precio</th>
         </tr>
         }
@@ -81,41 +70,26 @@
       <tbody>
 
         @switch(TipoMicaList){
-        @case (TipoMica.LenteDeContacto){
-        @for(mica of lenteDeContactoList | busqueda: busquedaTexto; track mica.id ){
-        <tr>
-          <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminar(mica)"><i class="fa fa-trash"></i></button>
-          </td>
-          <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.descripcion}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.costo}}
-          </td>
-        </tr>
-        }
-        }
         @case (TipoMica.Monofocal){
         @for(mica of monofocalList | busqueda: busquedaTexto; track mica.id ){
         <tr>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminar(mica)"><i class="fa fa-trash"></i></button>
+            <button class="boton-agregar" (click)="onEliminarMono(mica)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
             <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
+          </td>
+          <td style="vertical-align: middle;">
+            {{mica.tipo
           </td>
           <td style="vertical-align: middle;">
             {{mica.material}}
           </td>
           <td style="vertical-align: middle;">
-            {{mica.modelo}}
+            {{mica.tratamiento}}
           </td>
           <td style="vertical-align: middle;">
-            {{mica.categoria}}
+            {{mica.rango}}
           </td>
           <td style="vertical-align: middle;">
             {{mica.precio}}
@@ -127,7 +101,7 @@
         @for(mica of progresivoList | busqueda: busquedaTexto; track mica.id ){
         <tr>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminar(mica)"><i class="fa fa-trash"></i></button>
+            <button class="boton-agregar" (click)="onEliminarProgre(mica)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
             <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
@@ -154,7 +128,7 @@
         @for(mica of bifocalList | busqueda: busquedaTexto; track mica.id ){
         <tr>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminar(mica)"><i class="fa fa-trash"></i></button>
+            <button class="boton-agregar" (click)="onEliminarBi(mica)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
             <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
@@ -175,7 +149,7 @@
         @for(tratamiento of tratamientoList | busqueda: busquedaTexto; track tratamiento.id ){
         <tr>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminar(tratamiento)"><i class="fa fa-trash"></i></button>
+            <button class="boton-agregar" (click)="onEliminarTrat(tratamiento)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
             <button class="boton-agregar" (click)="onEditar(tratamiento)"><i class="fa fa-pen-to-square"></i></button>

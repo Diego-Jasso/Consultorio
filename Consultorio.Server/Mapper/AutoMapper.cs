@@ -18,8 +18,8 @@ namespace Consultorio.Server.Mapper
             CreateMap<CotizacionDTO, Cotizacion>().ReverseMap();
             CreateMap<ArmazonCotizacionNewDTO, ArmazonCotizacion>();
             CreateMap<ArmazonCotizacionDTO, ArmazonCotizacion>().ReverseMap();
-            CreateMap<lenteDeContactoNewDTO,lentesDeContacto>();
-            CreateMap<lenteDeContactoDTO,lentesDeContacto>().ReverseMap();
+            CreateMap<lenteDeContactoNewDTO,lenteDeContacto>();
+            CreateMap<lenteDeContactoDTO,lenteDeContacto>().ReverseMap();
             CreateMap<micaBifocaNewlDTO, micaMonofocal>();
             CreateMap<micaBifocalDTO, micaBifocal>().ReverseMap();
             CreateMap<micaProgresivoNewDTO,micaProgresivo>();

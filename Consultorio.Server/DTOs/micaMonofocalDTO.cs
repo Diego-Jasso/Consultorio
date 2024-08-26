@@ -4,9 +4,10 @@ namespace Consultorio.Server.DTOs
 {
     public class micaMonofocalNewDTO
     {
+        public string Tipo { get; set; } = string.Empty;
         public string Material { get; set; } = string.Empty;
-        public string Modelo { get; set; } = string.Empty;
-        public string Categoria { get; set; } = string.Empty;
+        public string Tratamiento { get; set; } = string.Empty;
+        public string Rango { get; set; } = string.Empty;
         public float Precio { get; set; }
     }
     public class micaMonofocalDTO: micaMonofocalNewDTO

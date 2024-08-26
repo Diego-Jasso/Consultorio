@@ -5,6 +5,7 @@ import { ArmazonService } from '../../servicios/armazon.service';
 import { ToastrService } from 'ngx-toastr';
 import { TipoMica, validarCamposRequeridos } from '../../../compartido/utilerias';
 import { IlenteDeContacto, micaBifocal, micaMonofocal, micaProgresivo, tratamientosServicios } from '../../models/mica';
+import { MicaMonofocalService } from '../../servicios/mica.monofocal.service.';
 
 @Component({
   selector: 'app-mica-form',
@@ -23,15 +24,14 @@ export class MicaFormComponent {
   mostrarForm: boolean = false;
 
 
-  TipoMicaForm: TipoMica = TipoMica.LenteDeContacto;
+  TipoMicaForm: TipoMica = TipoMica.Monofocal;
   micaObject: object = {} as object;
-  lenteDeContacto: IlenteDeContacto = {} as IlenteDeContacto;
   monofocal: micaMonofocal = {} as micaMonofocal;
   progresivo: micaProgresivo = {} as micaProgresivo;
   bifocal: micaBifocal = {} as micaBifocal;
   tratamiento: tratamientosServicios = {} as tratamientosServicios;
   isEdit = false;
-  constructor(private service: ArmazonService,
+  constructor(private monoService: MicaMonofocalService,
     private toastr: ToastrService) { }
 
   cerrarForm(form: NgForm) {
@@ -43,9 +43,6 @@ export class MicaFormComponent {
     this.TipoMicaForm = mica;
     console.log(this.TipoMicaForm);
     switch (mica) {
-      case TipoMica.LenteDeContacto:
-        this.titulo_agregar = 'Agregar lentes de contacto';
-        break;
       case TipoMica.Monofocal:
         this.titulo_agregar = 'Agregar mica monofocal';
         break;
@@ -67,9 +64,6 @@ export class MicaFormComponent {
 
   onGuardar(form: NgForm): void {
     switch (this.TipoMicaForm) {
-      case TipoMica.LenteDeContacto:
-        this.micaObject = this.lenteDeContacto;
-        break;
       case TipoMica.Monofocal:
         this.micaObject = this.monofocal;
         break;
@@ -89,18 +83,18 @@ export class MicaFormComponent {
     if (this.isEdit) {
       this.onEditar(form,this.micaObject);
     } else {
-      this.onAgregar(form,this.micaObject);
+      this.onAgregar(form,this.micaObject,this.monoService);
     }
   }
 
-  onAgregar<T>(form: NgForm,item: T): void {
+  onAgregar<T>(form: NgForm,item: T,service:any): void {
     if (!form.valid) {
       validarCamposRequeridos(form);
       return;
     }
     console.log(item);
-    //this.service.Agregar(item).subscribe({
-    //  next: (item) => this.toastr.success('El registro fue agregado correctamente'),
+    //service.Agregar(item).subscribe({
+    //  next: () => this.toastr.success('El registro fue agregado correctamente'),
     //  complete: () => {
     //    this.actualizarTabla();
     //    this.limpiar(form);
@@ -131,8 +125,7 @@ export class MicaFormComponent {
   }
 
   obtenerPorId(id: number): void {
-    console.log(id);
-    //this.service.GetById(id).subscribe({
+    //this.monoService.GetById(id).subscribe({
     //  next: (armazon) => { this.armazon = armazon },
     //  complete: () => { },
     //  error: (err) => {
@@ -146,7 +139,6 @@ export class MicaFormComponent {
       validarCamposRequeridos(form);
       return;
     }
-    console.log(item);
     //this.service.Editar(item).subscribe({
     //  next: (item) => this.toastr.success('El registro fue actualizado correctamente'),
     //  complete: () => {

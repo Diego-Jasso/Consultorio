@@ -27,6 +27,9 @@ import { MicasComponent } from './mica/mica.component';
 import { MicaListComponent } from './mica/mica-list/mica-list.component';
 import { MicaFormComponent } from './mica/mica-form/mica-form.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { LenteDeContactoComponent } from './lente-de-contacto/lente-de-contacto.component';
+import { LenteDeContactoListComponent } from './lente-de-contacto/lente-de-contacto-list/lente-de-contacto-list.component';
+import { LenteDeContactoFormComponent } from './lente-de-contacto/lente-de-contacto-form/lente-de-contacto-form.component';
 
 
 @NgModule({
@@ -50,6 +53,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MicasComponent,
     MicaListComponent,
     MicaFormComponent,
+    LenteDeContactoComponent,
+    LenteDeContactoListComponent,
+    LenteDeContactoFormComponent,
   ],
   imports: [
     CommonModule,

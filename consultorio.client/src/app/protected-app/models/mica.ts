@@ -1,13 +1,15 @@
 export interface IlenteDeContacto {
   id: number
-  descripcion: string,
-  costo: number
+  tipo: string,
+  marca: string,
+  precio: number
 }
 export interface micaMonofocal {
   id: number,
   material: string,
-  modelo: string,
-  categoria: string,
+  tipo: string,
+  tratamiento: string,
+  rango: string,
   precio: number
 }
 export interface micaProgresivo {
