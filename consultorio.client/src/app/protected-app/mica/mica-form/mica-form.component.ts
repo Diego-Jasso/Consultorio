@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { TipoMica, validarCamposRequeridos } from '../../../compartido/utilerias';
 import { IlenteDeContacto, micaBifocal, micaMonofocal, micaProgresivo, tratamientosServicios } from '../../models/mica';
 import { MicaMonofocalService } from '../../servicios/mica.monofocal.service.';
+import { MicaBifocalService } from '../../servicios/mica.bifocal.service.';
 
 @Component({
   selector: 'app-mica-form',
@@ -13,7 +14,7 @@ import { MicaMonofocalService } from '../../servicios/mica.monofocal.service.';
   styleUrl: './mica-form.component.css'
 })
 export class MicaFormComponent {
-  @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output('actualizar') actualizar: EventEmitter<TipoMica> = new EventEmitter<TipoMica>();
 
   @ViewChild('addForm') addForm!: NgForm;
   TipoMica = TipoMica;
@@ -26,12 +27,13 @@ export class MicaFormComponent {
 
   TipoMicaForm: TipoMica = TipoMica.Monofocal;
   micaObject: object = {} as object;
-  monofocal: micaMonofocal = {} as micaMonofocal;
+  monofocal: micaMonofocal = { tipo: 'Tipo' } as micaMonofocal;
   progresivo: micaProgresivo = {} as micaProgresivo;
   bifocal: micaBifocal = {} as micaBifocal;
   tratamiento: tratamientosServicios = {} as tratamientosServicios;
   isEdit = false;
   constructor(private monoService: MicaMonofocalService,
+    private biService: MicaBifocalService,
     private toastr: ToastrService) { }
 
   cerrarForm(form: NgForm) {
@@ -41,7 +43,6 @@ export class MicaFormComponent {
 
   abrirForm(mica: TipoMica) {
     this.TipoMicaForm = mica;
-    console.log(this.TipoMicaForm);
     switch (mica) {
       case TipoMica.Monofocal:
         this.titulo_agregar = 'Agregar mica monofocal';
@@ -65,13 +66,21 @@ export class MicaFormComponent {
   onGuardar(form: NgForm): void {
     switch (this.TipoMicaForm) {
       case TipoMica.Monofocal:
-        this.micaObject = this.monofocal;
+        if (this.isEdit) {
+          this.onEditarMono(form);
+        } else {
+          this.onAgregarMono(form);
+        }
         break;
       case TipoMica.Progresivo:
         this.micaObject = this.progresivo;
         break;
       case TipoMica.Bifocal:
-        this.micaObject = this.bifocal;
+        if (this.isEdit) {
+          this.onEditarBi(form);
+        } else {
+          this.onAgregarBi(form);
+        }
         break;
       case TipoMica.Tratamiento:
         this.micaObject = this.tratamiento;
@@ -80,77 +89,144 @@ export class MicaFormComponent {
         this.micaObject = this.monofocal;
         break;
     }
-    if (this.isEdit) {
-      this.onEditar(form,this.micaObject);
-    } else {
-      this.onAgregar(form,this.micaObject,this.monoService);
-    }
   }
 
-  onAgregar<T>(form: NgForm,item: T,service:any): void {
+  onAgregarMono(form: NgForm): void {
     if (!form.valid) {
       validarCamposRequeridos(form);
       return;
     }
-    console.log(item);
-    //service.Agregar(item).subscribe({
-    //  next: () => this.toastr.success('El registro fue agregado correctamente'),
-    //  complete: () => {
-    //    this.actualizarTabla();
-    //    this.limpiar(form);
-    //  },
-    //  error: (err) => {
-    //    this.toastr.error(err.error, 'Error', {
-    //      timeOut: 4000,
-    //      progressAnimation: 'increasing'
-    //    })
-    //  }
-    //});
+    this.monoService.Agregar(this.monofocal).subscribe({
+      next: () => this.toastr.success('El registro fue agregado correctamente'),
+      complete: () => {
+        this.actualizarTabla();
+        this.limpiar(form);
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onAgregarBi(form: NgForm): void {
+    if (!form.valid) {
+      validarCamposRequeridos(form);
+      return;
+    }
+    this.biService.Agregar(this.bifocal).subscribe({
+      next: () => this.toastr.success('El registro fue agregado correctamente'),
+      complete: () => {
+        this.actualizarTabla();
+        this.limpiar(form);
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
   }
 
   actualizarTabla() {
-    this.actualizar.emit(true);
+    this.actualizar.emit(this.TipoMicaForm);
   }
 
   limpiar(form: NgForm): void {
     form.reset();
     this.isEdit = false;
-    this.micaObject = {} as IArmazon;
+    this.monofocal = { tipo: 'Tipo' } as micaMonofocal;
   }
 
   cargarDatos(id: number): void {
     this.mostrarForm = true;
     this.isEdit = true;
-    this.obtenerPorId(id);
+    switch (this.TipoMicaForm) {
+      case TipoMica.Monofocal:
+        this.obtenerPorIdMono(id);
+        break;
+      case TipoMica.Progresivo:
+        this.obtenerPorIdMono(id);
+        break;
+      case TipoMica.Bifocal:
+        this.obtenerPorIdBi(id);
+        break;
+      case TipoMica.Tratamiento:
+        this.obtenerPorIdBi(id);
+        break;
+      default:
+          this.obtenerPorIdMono(id);
+        break;
+    }
+    
   }
 
-  obtenerPorId(id: number): void {
-    //this.monoService.GetById(id).subscribe({
-    //  next: (armazon) => { this.armazon = armazon },
-    //  complete: () => { },
-    //  error: (err) => {
-    //    console.log(err.error);
-    //  }
-    //})
+  obtenerPorIdMono(id: number): void {
+    this.monoService.GetById(id).subscribe({
+      next: (mono) => { this.monofocal = mono },
+      complete: () => { },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    })
   }
 
-  onEditar<T>(form: NgForm,item:T): void {
+  obtenerPorIdBi(id: number): void {
+    this.biService.GetById(id).subscribe({
+      next: (mono) => { this.bifocal = mono },
+      complete: () => { },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    })
+  }
+
+  onEditarMono(form: NgForm): void {
     if (!form.valid) {
       validarCamposRequeridos(form);
       return;
     }
-    //this.service.Editar(item).subscribe({
-    //  next: (item) => this.toastr.success('El registro fue actualizado correctamente'),
-    //  complete: () => {
-    //    this.actualizarTabla();
-    //    this.cerrarForm(form);
-    //  },
-    //  error: (err) => {
-    //    this.toastr.error(err.error, 'Error', {
-    //      timeOut: 4000,
-    //      progressAnimation: 'increasing'
-    //    })
-    //  }
-    //});
+    this.monoService.Editar(this.monofocal).subscribe({
+      next: (item) => this.toastr.success('El registro fue actualizado correctamente'),
+      complete: () => {
+        this.actualizarTabla();
+        this.cerrarForm(form);
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onEditarBi(form: NgForm): void {
+    if (!form.valid) {
+      validarCamposRequeridos(form);
+      return;
+    }
+    this.biService.Editar(this.bifocal).subscribe({
+      next: (item) => this.toastr.success('El registro fue actualizado correctamente'),
+      complete: () => {
+        this.actualizarTabla();
+        this.cerrarForm(form);
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
   }
 }

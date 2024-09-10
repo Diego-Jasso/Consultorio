@@ -14,8 +14,24 @@ export class MicasComponent {
 
   EstatusList = EstatusList;
 
-  onActualizar(is: boolean) {
-    this.list?.fetchListaMono();
+  onActualizar(mica: TipoMica) {
+    switch (mica) {
+      case TipoMica.Monofocal:
+        this.list?.fetchListaMono();
+        break;
+      case TipoMica.Progresivo:
+        this.list?.fetchListaProgre();
+        break;
+      case TipoMica.Bifocal:
+        this.list?.fetchListaBi();
+        break;
+      case TipoMica.Tratamiento:
+        this.list?.fetchListaTrat();
+        break;
+      default:
+        this.list?.fetchListaMono();
+        break;
+    }
   }
 
   onEditar(id: number): void {

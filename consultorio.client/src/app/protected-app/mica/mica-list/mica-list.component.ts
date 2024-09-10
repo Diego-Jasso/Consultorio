@@ -178,8 +178,17 @@ export class MicaListComponent {
     this.agregar.emit(this.TipoMicaList);
   }
 
-  onEditar(armazon: IArmazon) {
-    this.editar.emit(armazon.armazonid);
+  onEditarMono(mica: micaMonofocal) {
+    this.editar.emit(mica.id);
+  }
+  onEditarPro(mica: micaProgresivo) {
+    this.editar.emit(mica.id);
+  }
+  onEditarBi(mica: micaBifocal) {
+    this.editar.emit(mica.id);
+  }
+  onEditarTra(mica: tratamientosServicios) {
+    this.editar.emit(mica.id);
   }
 
   limpiarFormulario() {

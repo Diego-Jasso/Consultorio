@@ -20,14 +20,14 @@ namespace Consultorio.Server.Mapper
             CreateMap<ArmazonCotizacionDTO, ArmazonCotizacion>().ReverseMap();
             CreateMap<lenteDeContactoNewDTO,lenteDeContacto>();
             CreateMap<lenteDeContactoDTO,lenteDeContacto>().ReverseMap();
-            CreateMap<micaBifocaNewlDTO, micaMonofocal>();
+            CreateMap<micaBifocalNewDTO, micaBifocal>();
             CreateMap<micaBifocalDTO, micaBifocal>().ReverseMap();
             CreateMap<micaProgresivoNewDTO,micaProgresivo>();
             CreateMap<micaProgresivoDTO,micaProgresivo>().ReverseMap();
-            CreateMap<micaBifocaNewlDTO,micaBifocal>();
-            CreateMap<micaBifocalDTO,micaBifocal>().ReverseMap();
             CreateMap<tratamientosServiciosNewDTO,tratamientosServicios>();
             CreateMap<tratamientosServiciosDTO,tratamientosServicios>().ReverseMap();
+            CreateMap<micaMonofocalNewDTO, micaMonofocal>();
+            CreateMap<micaMonofocalDTO,micaMonofocal>().ReverseMap();
         }
     }
 }

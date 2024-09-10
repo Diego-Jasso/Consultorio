@@ -77,10 +77,10 @@
             <button class="boton-agregar" (click)="onEliminarMono(mica)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
+            <button class="boton-agregar" (click)="onEditarMono(mica)"><i class="fa fa-pen-to-square"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            {{mica.tipo
+            {{mica.tipo}}
           </td>
           <td style="vertical-align: middle;">
             {{mica.material}}
@@ -104,7 +104,7 @@
             <button class="boton-agregar" (click)="onEliminarProgre(mica)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
+            <button class="boton-agregar" (click)="onEditarPro(mica)"><i class="fa fa-pen-to-square"></i></button>
           </td>
           <td style="vertical-align: middle;">
             {{mica.material}}
@@ -131,7 +131,7 @@
             <button class="boton-agregar" (click)="onEliminarBi(mica)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
+            <button class="boton-agregar" (click)="onEditarBi(mica)"><i class="fa fa-pen-to-square"></i></button>
           </td>
           <td style="vertical-align: middle;">
             {{mica.marca}}
@@ -152,7 +152,7 @@
             <button class="boton-agregar" (click)="onEliminarTrat(tratamiento)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditar(tratamiento)"><i class="fa fa-pen-to-square"></i></button>
+            <button class="boton-agregar" (click)="onEditarTra(tratamiento)"><i class="fa fa-pen-to-square"></i></button>
           </td>
           <td style="vertical-align: middle;">
             {{tratamiento.descripcion}}

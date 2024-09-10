@@ -47,6 +47,7 @@ builder.Services.AddScoped<ILenteDeContactoRepository, LenteDeContactoRepository
 builder.Services.AddScoped<ITratamientosServiciosRepository,TratamientosServiciosRepository>();
 builder.Services.AddScoped<ILenteDeContactoService,LenteDeContactoService>();
 builder.Services.AddScoped<IMicaMonofocalService,MicaMonofocalService>();
+builder.Services.AddScoped<IMicaBifocalService,MicaBifocalService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

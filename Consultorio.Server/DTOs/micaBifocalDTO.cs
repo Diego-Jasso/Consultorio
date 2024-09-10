@@ -2,13 +2,13 @@
 
 namespace Consultorio.Server.DTOs
 {
-    public class micaBifocaNewlDTO
+    public class micaBifocalNewDTO
     {
         public string Marca { get; set; } = string.Empty;
         public float precioDuoDigital { get; set; }
         public float precioFlatTop28 { get; set; }
     }
-    public class micaBifocalDTO: micaBifocaNewlDTO
+    public class micaBifocalDTO: micaBifocalNewDTO
     {
         public int Id { get; set; }
         public bool Success { get; set; } = Constantes.SUCCESS;

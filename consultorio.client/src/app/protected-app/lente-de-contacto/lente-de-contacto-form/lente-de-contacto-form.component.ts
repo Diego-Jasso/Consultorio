@@ -82,7 +82,10 @@ export class LenteDeContactoFormComponent {
       next: (lente) => { this.lente = lente },
       complete: () => { },
       error: (err) => {
-        console.log(err.error);
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
       }
     })
   }
