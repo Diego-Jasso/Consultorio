@@ -4,7 +4,7 @@ using Consultorio.Server.Models;
 
 namespace Consultorio.Server.Repositories.Impl
 {
-    public class MicaProgresivoRepository(AppDbContext context) : BaseRepository<micaProgresivo>(context),IMicaProgesivoRepository
+    public class MicaProgresivoRepository(AppDbContext context) : BaseRepository<micaProgresivo>(context),IMicaProgresivoRepository
     {
         private readonly AppDbContext _context = context;
 
@@ -18,7 +18,7 @@ namespace Consultorio.Server.Repositories.Impl
                        Id = m.Id,
                        Material = m.Material,
                        AutographIntelligenge2 = m.AutographIntelligenge2,
-                       AautographIID = m.AautographIID,
+                       AutographIID = m.AutographIID,
                        IntouchUX = m.IntouchUX,
                        hdExperience = m.hdExperience
                    };

@@ -3,48 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\mapper\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\mapper\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\services\\impl\\micabifocalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\services\\impl\\micabifocalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\services\\imicabifocalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\services\\imicabifocalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\controllers\\micabifocalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\controllers\\micabifocalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\services\\impl\\micabifocalvalidatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\services\\impl\\micabifocalvalidatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\services\\impl\\micamonofocalvalidatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\services\\impl\\micamonofocalvalidatorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.server\\controllers\\micamonofocalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4BBAC899-B48A-4933-8C66-9F8D33247615}|Consultorio.Server\\Consultorio.Server.csproj|solutionrelative:consultorio.server\\controllers\\micamonofocalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -83,144 +43,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AutoMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Mapper\\AutoMapper.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Mapper\\AutoMapper.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Mapper\\AutoMapper.cs",
-              "RelativeToolTip": "Consultorio.Server\\Mapper\\AutoMapper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T04:06:08.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "mica-list.component.ts",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-list\\mica-list.component.ts",
-              "ViewState": "AQIAAKMAAAAAAAAAAAAkwL4AAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-09-10T04:01:45.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "mica-form.component.ts",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.ts",
-              "ViewState": "AQIAAIsAAAAAAAAAAAAkwJoAAAAgAAAA",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAcwF4AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-09-10T03:59:21.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "mica-form.component.html",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\mica\\mica-form\\mica-form.component.html",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAADMAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-09-10T03:59:03.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Program.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Program.cs",
-              "RelativeToolTip": "Consultorio.Server\\Program.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAADEAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T03:55:45.494Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MicaBifocalValidatorService.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\Impl\\MicaBifocalValidatorService.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Services\\Impl\\MicaBifocalValidatorService.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\Impl\\MicaBifocalValidatorService.cs",
-              "RelativeToolTip": "Consultorio.Server\\Services\\Impl\\MicaBifocalValidatorService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T03:52:42.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MicaBifocalService.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\Impl\\MicaBifocalService.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Services\\Impl\\MicaBifocalService.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\Impl\\MicaBifocalService.cs",
-              "RelativeToolTip": "Consultorio.Server\\Services\\Impl\\MicaBifocalService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T03:50:19.11Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MicaMonofocalValidatorService.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\Impl\\MicaMonofocalValidatorService.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Services\\Impl\\MicaMonofocalValidatorService.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\Impl\\MicaMonofocalValidatorService.cs",
-              "RelativeToolTip": "Consultorio.Server\\Services\\Impl\\MicaMonofocalValidatorService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T03:49:51.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IMicaBifocalService.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\IMicaBifocalService.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Services\\IMicaBifocalService.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Services\\IMicaBifocalService.cs",
-              "RelativeToolTip": "Consultorio.Server\\Services\\IMicaBifocalService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T03:48:51.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MicaMonofocalController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\MicaMonofocalController.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Controllers\\MicaMonofocalController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\MicaMonofocalController.cs",
-              "RelativeToolTip": "Consultorio.Server\\Controllers\\MicaMonofocalController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAA9wDIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T03:46:03.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MicaBifocalController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\MicaBifocalController.cs",
-              "RelativeDocumentMoniker": "Consultorio.Server\\Controllers\\MicaBifocalController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\Consultorio.Server\\Controllers\\MicaBifocalController.cs",
-              "RelativeToolTip": "Consultorio.Server\\Controllers\\MicaBifocalController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T03:45:34.254Z",
+              "WhenOpened": "2024-09-13T02:22:32.256Z",
               "EditorCaption": ""
             }
           ]

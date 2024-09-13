@@ -7,6 +7,8 @@ import { TipoMica, validarCamposRequeridos } from '../../../compartido/utilerias
 import { IlenteDeContacto, micaBifocal, micaMonofocal, micaProgresivo, tratamientosServicios } from '../../models/mica';
 import { MicaMonofocalService } from '../../servicios/mica.monofocal.service.';
 import { MicaBifocalService } from '../../servicios/mica.bifocal.service.';
+import { MicaProgresivoService } from '../../servicios/mica.progresivo.service.';
+import { TratamientosServiciosService } from '../../servicios/tratamientos.servicios.service';
 
 @Component({
   selector: 'app-mica-form',
@@ -34,6 +36,8 @@ export class MicaFormComponent {
   isEdit = false;
   constructor(private monoService: MicaMonofocalService,
     private biService: MicaBifocalService,
+    private proService: MicaProgresivoService,
+    private tratService:TratamientosServiciosService,
     private toastr: ToastrService) { }
 
   cerrarForm(form: NgForm) {
@@ -73,7 +77,11 @@ export class MicaFormComponent {
         }
         break;
       case TipoMica.Progresivo:
-        this.micaObject = this.progresivo;
+        if (this.isEdit) {
+          this.onEditarPro(form);
+        } else {
+          this.onAgregarPro(form);
+        }
         break;
       case TipoMica.Bifocal:
         if (this.isEdit) {
@@ -83,10 +91,18 @@ export class MicaFormComponent {
         }
         break;
       case TipoMica.Tratamiento:
-        this.micaObject = this.tratamiento;
+        if (this.isEdit) {
+          this.onEditarTrat(form);
+        } else {
+          this.onAgregarTrat(form);
+        }
         break;
       default:
-        this.micaObject = this.monofocal;
+        if (this.isEdit) {
+          this.onEditarMono(form);
+        } else {
+          this.onAgregarMono(form);
+        }
         break;
     }
   }
@@ -131,6 +147,46 @@ export class MicaFormComponent {
     });
   }
 
+  onAgregarPro(form: NgForm): void {
+    if (!form.valid) {
+      validarCamposRequeridos(form);
+      return;
+    }
+    this.proService.Agregar(this.progresivo).subscribe({
+      next: () => this.toastr.success('El registro fue agregado correctamente'),
+      complete: () => {
+        this.actualizarTabla();
+        this.limpiar(form);
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onAgregarTrat(form: NgForm): void {
+    if (!form.valid) {
+      validarCamposRequeridos(form);
+      return;
+    }
+    this.tratService.Agregar(this.tratamiento).subscribe({
+      next: () => this.toastr.success('El registro fue agregado correctamente'),
+      complete: () => {
+        this.actualizarTabla();
+        this.limpiar(form);
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
   actualizarTabla() {
     this.actualizar.emit(this.TipoMicaForm);
   }
@@ -149,13 +205,13 @@ export class MicaFormComponent {
         this.obtenerPorIdMono(id);
         break;
       case TipoMica.Progresivo:
-        this.obtenerPorIdMono(id);
+        this.obtenerPorIdPro(id);
         break;
       case TipoMica.Bifocal:
         this.obtenerPorIdBi(id);
         break;
       case TipoMica.Tratamiento:
-        this.obtenerPorIdBi(id);
+        this.obtenerPorIdTrat(id);
         break;
       default:
           this.obtenerPorIdMono(id);
@@ -180,6 +236,32 @@ export class MicaFormComponent {
   obtenerPorIdBi(id: number): void {
     this.biService.GetById(id).subscribe({
       next: (mono) => { this.bifocal = mono },
+      complete: () => { },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    })
+  }
+
+  obtenerPorIdPro(id: number): void {
+    this.proService.GetById(id).subscribe({
+      next: (mono) => { this.progresivo = mono },
+      complete: () => { },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    })
+  }
+
+  obtenerPorIdTrat(id: number): void {
+    this.tratService.GetById(id).subscribe({
+      next: (mono) => { this.tratamiento = mono },
       complete: () => { },
       error: (err) => {
         this.toastr.error(err.error, 'Error', {
@@ -216,6 +298,46 @@ export class MicaFormComponent {
       return;
     }
     this.biService.Editar(this.bifocal).subscribe({
+      next: (item) => this.toastr.success('El registro fue actualizado correctamente'),
+      complete: () => {
+        this.actualizarTabla();
+        this.cerrarForm(form);
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onEditarPro(form: NgForm): void {
+    if (!form.valid) {
+      validarCamposRequeridos(form);
+      return;
+    }
+    this.proService.Editar(this.progresivo).subscribe({
+      next: (item) => this.toastr.success('El registro fue actualizado correctamente'),
+      complete: () => {
+        this.actualizarTabla();
+        this.cerrarForm(form);
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
+
+  onEditarTrat(form: NgForm): void {
+    if (!form.valid) {
+      validarCamposRequeridos(form);
+      return;
+    }
+    this.tratService.Editar(this.tratamiento).subscribe({
       next: (item) => this.toastr.success('El registro fue actualizado correctamente'),
       complete: () => {
         this.actualizarTabla();

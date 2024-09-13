@@ -4,7 +4,7 @@ using Consultorio.Server.Models;
 
 namespace Consultorio.Server.Repositories
 {
-    public interface IMicaProgesivoRepository:IBaseRepository<micaProgresivo>
+    public interface IMicaProgresivoRepository:IBaseRepository<micaProgresivo>
     {
         IEnumerable<micaProgresivoDTO> ConsultarDTO();
 
