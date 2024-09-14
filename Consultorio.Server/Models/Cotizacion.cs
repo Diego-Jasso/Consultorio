@@ -14,6 +14,7 @@ namespace Consultorio.Server.Models
         public DateOnly ultimaModificacion { get; set; }
         public int usuarioModificacionid { get; set; }
         public double precio { get; set; }
+        public double anticipo { get; set; }
         public int statusid { get; set; }
         [ForeignKey("usuarioid")]
         public virtual required Usuario Usuario { get; set; }

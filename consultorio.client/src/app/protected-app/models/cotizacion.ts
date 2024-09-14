@@ -8,6 +8,7 @@ export interface ICotizacion {
   ultimaModificacion: Date;
   usuarioModificacionid: number;
   precio: number;
+  anticipo: number;
   descripcionStatus: string;
   nombreModificacionUsuario: string;
   nombreUsuario: string;

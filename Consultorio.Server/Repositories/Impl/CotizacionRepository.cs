@@ -29,7 +29,8 @@ namespace Consultorio.Server.Repositories.Impl
                        nombreModificacionUsuario = cot.UsuarioMod.nombre,
                        precio = cot.precio,
                        statusid = cot.statusid,
-                       descripcionStatus = cot.Status.descripcion
+                       descripcionStatus = cot.Status.descripcion,
+                       anticipo = cot.anticipo
                    };
         }
 

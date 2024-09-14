@@ -10,6 +10,7 @@ namespace Consultorio.Server.DTOs
         public int usuarioModificacionid { get; set; }
         public double precio { get; set; }
         public int statusid { get; set; }
+        public double anticipo { get; set; }
     }
     public class CotizacionDTO: CotizacionNewDTO
     {

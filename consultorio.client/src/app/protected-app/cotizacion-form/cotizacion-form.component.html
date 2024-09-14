@@ -56,7 +56,11 @@
       <tr>
         <td>
           Fecha de creación
-          <input type="date" class="form-control" id="fecha_de_creacion" name="fecha_de_creacion" #fecha_de_creacion="ngModel" [(ngModel)]="cotizacion.fecha_de_creacion" readonly/>
+          <input type="date" class="form-control" id="fecha_de_creacion" name="fecha_de_creacion" #fecha_de_creacion="ngModel" [(ngModel)]="cotizacion.fecha_de_creacion" readonly />
+        </td>
+        <td>
+          Anticipo
+          <input type="number" class="form-control" id="anticipo" name="anticipo" #anticipo="ngModel" [(ngModel)]="cotizacion.anticipo" />
         </td>
       </tr>
       <tr>
