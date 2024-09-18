@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { AccesorioFormComponent } from './accesorio-form/accesorio-form.component';
 import { AccesorioListComponent } from './accesorio-list/accesorio-list.component';
+import { EstatusList } from '../../compartido/utilerias';
 
 
 @Component({
@@ -12,6 +13,8 @@ export class AccesoriosComponent {
 
   @ViewChild('form') form!: AccesorioFormComponent;
   @ViewChild('list') list!: AccesorioListComponent;
+
+  EstatusList = EstatusList;
 
   onActualizar(is: boolean) {
     this.list?.fetchLista();

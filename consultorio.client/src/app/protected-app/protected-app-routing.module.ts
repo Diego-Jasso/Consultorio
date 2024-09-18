@@ -9,6 +9,7 @@ import { CotizacionComponent } from './cotizacion/cotizacion.component';
 import { CotizacionFormComponent } from './cotizacion-form/cotizacion-form.component';
 import { MicasComponent } from './mica/mica.component';
 import { LenteDeContactoComponent } from './lente-de-contacto/lente-de-contacto.component';
+import { MicaCotizacionFormComponent } from './mica-cotizacion-form/mica-cotizacion-form.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
           { path: 'cotizacion', component: CotizacionComponent },
           { path: 'cotizacionform/:id', component: CotizacionFormComponent },
           { path: 'mica', component: MicasComponent },
-          { path: 'lenteDeContacto', component: LenteDeContactoComponent},
+          { path: 'lenteDeContacto', component: LenteDeContactoComponent },
+          { path: 'micaform', component: MicaCotizacionFormComponent },
           { path: '**', redirectTo: 'cotizacion'}
         ]
       },

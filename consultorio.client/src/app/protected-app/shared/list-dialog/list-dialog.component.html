@@ -10,7 +10,7 @@
   <app-armazon-list [CotId]="data.Id" [EstatusLista]="EstatusList.BusquedaCotizacion"></app-armazon-list>
   }
   @else if(data.Lista == 'Accesorio'){
-  <app-accesorio-list></app-accesorio-list>
+  <app-accesorio-list [CotId]="data.Id" [EstatusLista]="EstatusList.BusquedaCotizacion"></app-accesorio-list>
   }
 </mat-dialog-content>
 

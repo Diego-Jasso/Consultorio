@@ -8,6 +8,7 @@ import { AuthService } from '../../auth/services/auth.service';
 import { formatDate } from '@angular/common';
 import { SharedService } from '../servicios/shared.service';
 import { ArmazonListComponent } from '../armazon/armazon-list/armazon-list.component';
+import { AccesorioListComponent } from '../accesorio/accesorio-list/accesorio-list.component';
 
 @Component({
   selector: 'app-cotizacion-form',
@@ -19,6 +20,7 @@ export class CotizacionFormComponent {
   @Input() id!: number;
   @ViewChild('addForm') userForm!: NgForm;
   @ViewChild('armazonList') armazonList!: ArmazonListComponent;
+  @ViewChild('accesorioList') accesorioList!: AccesorioListComponent;
 
   readonly titulo_agregar = "Crear cotización";
   readonly titulo_editar = "Editar cotización";
@@ -36,6 +38,7 @@ export class CotizacionFormComponent {
   }
   ngAfterViewInit() {
     this.armazonList.fetchListaCotizacion(this.id);
+    this.accesorioList.fetchListaCotizacion(this.id);
   }
 
   onGuardar(form: NgForm): void {

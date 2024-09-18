@@ -30,6 +30,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { LenteDeContactoComponent } from './lente-de-contacto/lente-de-contacto.component';
 import { LenteDeContactoListComponent } from './lente-de-contacto/lente-de-contacto-list/lente-de-contacto-list.component';
 import { LenteDeContactoFormComponent } from './lente-de-contacto/lente-de-contacto-form/lente-de-contacto-form.component';
+import { MicaCotizacionFormComponent } from './mica-cotizacion-form/mica-cotizacion-form.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { LenteDeContactoFormComponent } from './lente-de-contacto/lente-de-conta
     LenteDeContactoComponent,
     LenteDeContactoListComponent,
     LenteDeContactoFormComponent,
+    MicaCotizacionFormComponent,
   ],
   imports: [
     CommonModule,

@@ -4,9 +4,24 @@
   <div class="card-body">
     <table class="table">
       <thead>
+
+        @switch(EstatusLista){
+        @case (EstatusList.Cotizacion){
         <tr>
 
-          <!--<th scope="col" class="">&emsp;</th>-->
+          <th scope="col" class="">
+            <button class="boton-agregar" (click)="onAbrirAccesorios()">
+              Agregar <i class="fa-solid fa-plus"></i>
+            </button>
+          </th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Precio</th>
+        </tr>
+        }
+        @case (EstatusList.Catalogo){
+        <tr>
+
           <th colspan="2" scope="col" class="">
             <button class="boton-agregar" (click)="onAgregar()">
               Agregar <i class="fa-solid fa-plus"></i>
@@ -16,10 +31,41 @@
           <th scope="col">Descripción</th>
           <th scope="col">Precio</th>
         </tr>
+        }
+        @case (EstatusList.BusquedaCotizacion){
+        <tr>
+          <th colspan="2" scope="col" class="">&emsp;</th>
+          <th scope="col">Cantidad disponible</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Precio</th>
+        </tr>
+        }
+        }
       </thead>
       @switch(estado){
       @case (Estatus.Procesado){
       <tbody>
+
+        @switch(EstatusLista){
+        @case (EstatusList.Cotizacion){
+        @for(accesorio of accesorioCotizacionList | busqueda: busquedaTexto; track accesorio.id ){
+        <tr>
+          <td style="vertical-align: middle;">
+            <button class="boton-agregar" (click)="onEliminarDeCotizacion(accesorio.id)"><i class="fa fa-trash"></i></button>
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.cantidad}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.descripcion}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.precio}}
+          </td>
+        </tr>
+        }
+        }
+        @case (EstatusList.Catalogo){
         @for(accesorio of accesorioList | busqueda: busquedaTexto; track accesorio.id ){
         <tr>
           <td style="vertical-align: middle;">
@@ -38,6 +84,29 @@
             {{accesorio.precio}}
           </td>
         </tr>
+        }
+        }
+        @case (EstatusList.BusquedaCotizacion){
+        @for(accesorio of accesorioList | busqueda: busquedaTexto; track accesorio.id ){
+        <tr>
+          <td style="vertical-align: middle;">
+            <input #cantidad type="number" value="1" style="width:65px" min="1" />
+          </td>
+          <td style="vertical-align: middle;">
+            <button class="boton-agregar" (click)="onAgregarACotizacion(accesorio.id,cantidad.value)"><i class="fa fa-plus"></i></button>
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.cantidad_disponible}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.descripcion}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{accesorio.precio}}
+          </td>
+        </tr>
+        }
+        }
         }
       </tbody>
       }
