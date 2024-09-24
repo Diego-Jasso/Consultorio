@@ -19,5 +19,7 @@ namespace Consultorio.Server.Repositories
         public DbSet<micaBifocal> MicaBifocal { get; set; } = default!;
         public DbSet<micaProgresivo> MicaProgresivo { get; set; } = default!;
         public DbSet<tratamientosServicios> TratamientosServicios { get; set; } = default!;
+        public DbSet<AccesorioCotizacion> AccesorioCotizacion { get; set; } = default!;
+
     }
 }

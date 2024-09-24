@@ -50,6 +50,8 @@ builder.Services.AddScoped<IMicaMonofocalService,MicaMonofocalService>();
 builder.Services.AddScoped<IMicaBifocalService,MicaBifocalService>();
 builder.Services.AddScoped<IMicaProgresivoService,MicaProgresivoService>();
 builder.Services.AddScoped<ITratamientosServiciosService, TratamientosServiciosService>();
+builder.Services.AddScoped<IAccesorioCotizacionRepository,AccesorioCotizacionRepository>();
+builder.Services.AddScoped<IAccesorioCotizacionService,AccesorioCotizacionService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

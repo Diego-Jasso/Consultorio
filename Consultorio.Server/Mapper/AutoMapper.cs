@@ -28,6 +28,8 @@ namespace Consultorio.Server.Mapper
             CreateMap<tratamientosServiciosDTO,tratamientosServicios>().ReverseMap();
             CreateMap<micaMonofocalNewDTO, micaMonofocal>();
             CreateMap<micaMonofocalDTO,micaMonofocal>().ReverseMap();
+            CreateMap<AccesorioCotizacionNewDTO, AccesorioCotizacion>();
+            CreateMap<AccesorioCotizacionDTO,AccesorioCotizacion>().ReverseMap();
         }
     }
 }

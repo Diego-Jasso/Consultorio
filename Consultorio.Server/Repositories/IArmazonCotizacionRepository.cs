@@ -5,11 +5,11 @@ using Consultorio.Server.Models;
 
 namespace Consultorio.Server.Repositories
 {
-    public interface IArmazonCotizacionRepository:IBaseRepository<ArmazonCotizacion>
+    public interface IAccesorioCotizacionRepository : IBaseRepository<AccesorioCotizacion>
     {
-        IEnumerable<ArmazonCotizacionDTO> ConsultarDTO(int cotizacionid);
-        ArmazonCotizacion ConsultarPorId(int id);
+        IEnumerable<AccesorioCotizacionDTO> ConsultarDTO(int cotizacionid);
+        AccesorioCotizacion ConsultarPorId(int id);
         double ConsultarPrecioTotal(int id);
-        ArmazonCotizacion ConsultarPorArmazonId(int id,int cotid);
+        AccesorioCotizacion ConsultarPorAccesorioId(int id,int cotid);
     }
 }

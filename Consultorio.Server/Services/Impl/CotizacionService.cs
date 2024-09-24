@@ -8,10 +8,11 @@ using FluentValidation.Results;
 
 namespace Consultorio.Server.Services.Impl
 {
-    public class CotizacionService(ICotizacionRepository repository,IArmazonCotizacionRepository artrepository,IMapper mapper):ICotizacionService
+    public class CotizacionService(ICotizacionRepository repository,IArmazonCotizacionRepository artrepository,IAccesorioCotizacionRepository accrepository,IMapper mapper):ICotizacionService
     {
         private readonly ICotizacionRepository _repository = repository;
         private readonly IArmazonCotizacionRepository _artrepository = artrepository;
+        private readonly IAccesorioCotizacionRepository _accrepository = accrepository;
         private readonly IMapper _mapper = mapper;
 
         public List<CotizacionDTO> ConsultarDTO()
@@ -53,7 +54,7 @@ namespace Consultorio.Server.Services.Impl
         public CotizacionDTO Editar(CotizacionDTO cotizacionDto)
         {
             cotizacionDto.ultimaModificacion = DateOnly.FromDateTime(DateTime.Now);
-            cotizacionDto.precio = _artrepository.ConsultarPrecioTotal(cotizacionDto.cotizacionid);
+            cotizacionDto.precio = _artrepository.ConsultarPrecioTotal(cotizacionDto.cotizacionid) + _accrepository.ConsultarPrecioTotal(cotizacionDto.cotizacionid);
             Cotizacion cotizacion = _mapper.Map<Cotizacion>(cotizacionDto);
             CotizacionValidatorService validator = new(_repository);
             ValidationResult result = validator.Validate(cotizacion);

@@ -70,6 +70,11 @@
       </tr>
       <tr>
         <td colspan="2">
+          <app-mica-cotizacion-form></app-mica-cotizacion-form>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
           <app-accesorio-list #accesorioList [CotId]="cotizacion.cotizacionid" [EstatusLista]="EstatusList.Cotizacion" (precioActualizado)="onPrecioCambio()"></app-accesorio-list>
         </td>
       </tr>

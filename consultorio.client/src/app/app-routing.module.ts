@@ -10,9 +10,9 @@ const routes: Routes = [
   },
   {
     path: 'layout',
-    loadChildren: () => import('./protected-app/protected-app.module').then(m => m.ProtectedAppModule)
-    //canActivate: [validateTokenGuard],
-    //canMatch: [canMatch]
+    loadChildren: () => import('./protected-app/protected-app.module').then(m => m.ProtectedAppModule),
+    canActivate: [validateTokenGuard],
+    canMatch: [canMatch]
   },
   {
     path: '**',
