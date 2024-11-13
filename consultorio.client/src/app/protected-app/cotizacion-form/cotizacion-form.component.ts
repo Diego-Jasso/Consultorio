@@ -26,6 +26,8 @@ export class CotizacionFormComponent {
   readonly titulo_editar = "Editar cotización";
   readonly EstatusList = EstatusList;
 
+
+  showAddLensFramePopup = false;
   cotizacion: ICotizacion = {} as ICotizacion;
   isEdit = false;
   constructor(private service: CotizacionService,
@@ -92,5 +94,36 @@ export class CotizacionFormComponent {
         })
       }
     });
+  }
+
+  itemToEdit: { frame: string; lensType: string } | null = null;
+
+  selectedItems: { frame: string; lensType: string }[] = [];
+
+  onAddLensFrame(newItem: { frame: string; lensType: string }) {
+    if (this.itemToEdit) {
+      // Edit the existing item
+      const index = this.selectedItems.indexOf(this.itemToEdit);
+      this.selectedItems[index] = newItem;
+    } else {
+      // Add new item
+      this.selectedItems.push(newItem);
+    }
+    this.closePopup();
+  }
+
+  openAddLensFramePopup() {
+    this.itemToEdit = null;  // Reset for new item
+    this.showAddLensFramePopup = true;
+  }
+
+  openEditLensFramePopup(item: { frame: string; lensType: string }) {
+    this.itemToEdit = item;
+    this.showAddLensFramePopup = true;
+  }
+
+  closePopup() {
+    this.showAddLensFramePopup = false;
+    this.itemToEdit = null;
   }
 }

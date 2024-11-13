@@ -1,0 +1,22 @@
+<h3>Select Frame and Lens Type</h3>
+
+<div>
+  <label for="frame">Glass Frame</label>
+  <select id="frame" [(ngModel)]="selectedFrame">
+    <option *ngFor="let frame of frames" [value]="frame">{{ frame }}</option>
+  </select>
+  <app-armazon-list [CotId]="cotId" [EstatusLista]="EstatusList.BusquedaCotizacion"></app-armazon-list>
+</div>
+
+<div>
+  <label for="lensType">Lens Type</label>
+  <select id="lensType" [(ngModel)]="selectedLensType">
+    <option value="" selected>No Lens Selected</option>
+    <option *ngFor="let lensType of lensTypes" [value]="lensType">{{ lensType }}</option>
+  </select>
+</div>
+
+<div class="popup-actions">
+  <button (click)="onAdd()">Add to Quote</button>
+  <button (click)="onClose()">Cancel</button>
+</div>

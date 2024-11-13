@@ -1,0 +1,16 @@
+:host {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  z-index: 1000;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+}

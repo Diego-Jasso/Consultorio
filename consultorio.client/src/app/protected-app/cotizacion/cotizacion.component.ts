@@ -50,7 +50,8 @@ export class CotizacionComponent {
   }
 
   onEditar(cotizacion: ICotizacion) {
-    this.router.navigateByUrl('layout/cotizacionform/'+cotizacion.cotizacionid);
+    let link = 'layout/cotizacionform/' + cotizacion.cotizacionid;
+    window.open(link, '_blank');
   }
 
   onAgregar(): void {
@@ -59,8 +60,9 @@ export class CotizacionComponent {
     this.cotizacion.usuarioModificacionid = this.authService.user.id
     this.service.Agregar(this.cotizacion).subscribe(cot => {
       if (cot.success === true) {
-        this.toastr.success('La cotización fue agregada correctamente'),
-        this.router.navigateByUrl("/layout/cotizacionform/" + cot.cotizacionid)
+        this.toastr.success('La cotización fue agregada correctamente');
+        let link = '/layout/cotizacionform/' + cot.cotizacionid;
+        window.open(link, '_blank');
       } else {
         this.toastr.error(cot.error, 'Error', {
           timeOut: 4000,

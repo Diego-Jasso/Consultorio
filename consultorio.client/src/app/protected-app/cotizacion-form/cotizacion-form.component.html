@@ -5,7 +5,6 @@
   @else{
   <h2 class="card-header">{{titulo_agregar}}</h2>
   }
-  <button type="button" routerLink="/layout/cotizacion">Regresar</button>
 </div>
 <div ng-app>
   <form #userForm="ngForm" (ngSubmit)="onGuardar(userForm)">
@@ -13,10 +12,10 @@
       <tr>
         <td>
           @if (isEdit){
-          <button type="submit">{{titulo_editar}}</button>
+          <button type="submit">Guardar</button>
           }
           @else{
-          <button type="submit">{{titulo_agregar}}</button>
+          <button type="submit">Guardar</button>
           }
         </td>
       </tr>
@@ -28,9 +27,9 @@
           </div>
         </td>
         <td>
-          Creador 
+          Creador
           <div class="input-group mb-3">
-            <input class="form-control" id="nombreUsuario" name="nombreUsuario" #nombreUsuario="ngModel" [(ngModel)]="cotizacion.nombreUsuario" readonly/>
+            <input class="form-control" id="nombreUsuario" name="nombreUsuario" #nombreUsuario="ngModel" [(ngModel)]="cotizacion.nombreUsuario" readonly />
           </div>
         </td>
         <td>
@@ -64,8 +63,26 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2">  
-          <app-armazon-list #armazonList [CotId]="cotizacion.cotizacionid" [EstatusLista]="EstatusList.Cotizacion" (precioActualizado)="onPrecioCambio()" ></app-armazon-list>
+        <td colspan="2">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Armazones y Micas</h3>
+          <button type="button" (click)="showAddLensFramePopup = true">Agregar</button>
+
+          <app-nuevo-lente-form *ngIf="showAddLensFramePopup"
+                                [itemToEdit]="itemToEdit"
+                                [cotId]="cotizacion.cotizacionid"
+                                (addItem)="onAddLensFrame($event)"
+                                (closePopup)="closePopup()">
+          </app-nuevo-lente-form>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <app-armazon-list #armazonList [CotId]="cotizacion.cotizacionid" [EstatusLista]="EstatusList.Cotizacion" (precioActualizado)="onPrecioCambio()"></app-armazon-list>
         </td>
       </tr>
       <tr>
