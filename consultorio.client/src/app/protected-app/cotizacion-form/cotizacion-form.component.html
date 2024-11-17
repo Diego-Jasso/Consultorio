@@ -12,10 +12,10 @@
       <tr>
         <td>
           @if (isEdit){
-          <button type="submit">Guardar</button>
+          <button type="submit" class="boton-agregar">Guardar</button>
           }
           @else{
-          <button type="submit">Guardar</button>
+          <button type="submit" class="boton-agregar">Guardar</button>
           }
         </td>
       </tr>
@@ -70,7 +70,7 @@
       <tr>
         <td>
           <h3>Armazones y Micas</h3>
-          <button type="button" (click)="showAddLensFramePopup = true">Agregar</button>
+          <button type="button" (click)="showAddLensFramePopup = true" class="boton-agregar">Agregar</button>
 
           <app-nuevo-lente-form *ngIf="showAddLensFramePopup"
                                 [itemToEdit]="itemToEdit"

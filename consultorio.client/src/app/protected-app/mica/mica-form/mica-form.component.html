@@ -13,7 +13,7 @@
       <div class="formulario">
         @switch(TipoMicaForm){
         @case(TipoMica.Monofocal){
-        <select class="select-control select-control-sm" type="text" id="tipo" name="tipo" #descripcion="ngModel" [(ngModel)]="monofocal.tipo" required>
+        <select class="form-select form-select-sm" type="text" id="tipo" name="tipo" #descripcion="ngModel" [(ngModel)]="monofocal.tipo" required>
           <option value="Tipo">Tipo</option>
           <option value="Terminado">Terminado</option>
           <option value="Esferico">Esferico</option>

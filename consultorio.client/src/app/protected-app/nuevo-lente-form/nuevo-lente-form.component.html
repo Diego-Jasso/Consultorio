@@ -1,22 +1,101 @@
-<h3>Select Frame and Lens Type</h3>
+<h3>Selecciona armazon y micas</h3>
 
+<h4>Armazon</h4>
 <div>
-  <label for="frame">Glass Frame</label>
-  <select id="frame" [(ngModel)]="selectedFrame">
-    <option *ngFor="let frame of frames" [value]="frame">{{ frame }}</option>
-  </select>
-  <app-armazon-list [CotId]="cotId" [EstatusLista]="EstatusList.BusquedaCotizacion"></app-armazon-list>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [(ngModel)]="sinArmazon">
+    <label class="form-check-label" for="flexSwitchCheckChecked">Armazon</label>
+  </div>
+  <app-armazon-list *ngIf="sinArmazon" [CotId]="cotId" [EstatusLista]="EstatusList.BusquedaCotizacion"></app-armazon-list>
 </div>
 
+<h4>Mica</h4>
 <div>
-  <label for="lensType">Lens Type</label>
-  <select id="lensType" [(ngModel)]="selectedLensType">
-    <option value="" selected>No Lens Selected</option>
-    <option *ngFor="let lensType of lensTypes" [value]="lensType">{{ lensType }}</option>
+  <label style="margin-right: 10px; font-weight: bold;">Tipo de Mica:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="1" id="monofocal" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="monofocal">
+      Monofocal
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="2" id="progresivo" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="progresivo">
+      Progresivo
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="3" id="bifocal" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="bifocal">
+      Bifocal
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="4" id="lenteDeContacto" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="lenteDeContacto">
+      Lentes de contacto
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="5" id="sinMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="sinMica">
+      Sin mica
+    </label>
+  </div>
+</div>
+
+<div *ngIf="tipoDeMica == '1'" style="display:flex;">
+  <label style="margin-right: 10px; font-weight: bold;">Tipo de Mica Monofocal:</label>
+  <select class="form-select form-select-sm" type="text" id="tipo" [(ngModel)]="tipo">
+    <option value="Tipo">Seleccione un tipo...</option>
+    <option value="Terminado">Terminado</option>
+    <option value="Esferico">Esferico</option>
+    <option value="Asferico">Asferico</option>
+    <option value="Ultra Thin">Ultra Thin</option>
+    <option value="Ultra Alto Indice">Ultra Alto Indice</option>
   </select>
 </div>
 
-<div class="popup-actions">
-  <button (click)="onAdd()">Add to Quote</button>
-  <button (click)="onClose()">Cancel</button>
+<div *ngIf="tipoDeMica == '4'" style="display:flex;">
+  <label style="margin-right: 10px; font-weight: bold;">Tipo de Lente de Contacto:</label>
+  <select class="form-select form-select-sm" id="tipo" name="tipo" #tipo="ngModel" [(ngModel)]="tipoLenteDeContacto" required>
+    <option value="Tipo">Seleccione un tipo...</option>
+    <option value="Desechable">Desechable</option>
+    <option value="Gas Permeable">Gas Permeable</option>
+    <option value="Hidrofilico">Hidrofilico</option>
+  </select>
 </div>
+
+  <div *ngIf="tipoDeMica != '5' && tipoDeMica != '4'">
+    <label style="margin-right: 10px; font-weight: bold;">Material:</label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" value="mat1" id="cr39" [(ngModel)]="material" (ngModelChange)="onMaterialChange($event)">
+      <label class="form-check-label" for="cr39">
+        CR 39
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" value="mat2" id="hiIndex" [(ngModel)]="material" (ngModelChange)="onMaterialChange($event)">
+      <label class="form-check-label" for="hiIndex">
+        Hi Index
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" value="mat3" id="trivex" [(ngModel)]="material" (ngModelChange)="onMaterialChange($event)">
+      <label class="form-check-label" for="trivex">
+        Trivex
+      </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" value="mat4" id="policarbonato" [(ngModel)]="material" (ngModelChange)="onMaterialChange($event)">
+      <label class="form-check-label" for="policarbonato">
+        Policarbonato
+      </label>
+    </div>
+  </div>
+
+
+  <div class="popup-actions">
+    <button (click)="onAdd()">Add to Quote</button>
+    <button (click)="onClose()">Cancel</button>
+  </div>

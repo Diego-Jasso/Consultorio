@@ -9,11 +9,12 @@ import { EstatusList } from '../../compartido/utilerias';
 export class NuevoLenteFormComponent {
 
   readonly EstatusList = EstatusList;
- frames: string[] = ['Frame A', 'Frame B', 'Frame C']; // Add actual frame options
-  lensTypes: string[] = ['Mica Monofocal', 'Mica Progresiva', 'Mica Bifocal', 'Lente de Contacto'];
 
-  selectedFrame: string = '';
-  selectedLensType: string = '';
+  sinArmazon: boolean = true;
+  tipoDeMica: string = "1";
+  material: string = "";
+  tipo: string = "Tipo";
+  tipoLenteDeContacto: string = "Tipo";
 
   @Input() itemToEdit: { frame: string; lensType: string } | null = null;
   @Input() cotId!: number;
@@ -23,18 +24,87 @@ export class NuevoLenteFormComponent {
 
   ngOnInit() {
     // Pre-fill fields if editing an existing item
-    if (this.itemToEdit) {
-      this.selectedFrame = this.itemToEdit.frame;
-      this.selectedLensType = this.itemToEdit.lensType;
-    }
+  
   }
 
   onAdd() {
-    this.addItem.emit({ frame: this.selectedFrame, lensType: this.selectedLensType });
     this.onClose();
   }
 
   onClose() {
     this.closePopup.emit();
   }
+
+  onSelectionChange(e: any) {
+    
+  }
+
+  onMaterialChange(e: any) {
+
+  }
+
+  //fetchListaMono(): void {
+  //  var observable = this.monoService.GetAll();
+  //  observable.subscribe({
+  //    next: (_mica: micaMonofocal[]) => this.monofocalList = _mica,
+  //    complete: () => this.estado = Estatus.Procesado,
+  //    error: (err) => {
+  //      this.estado = Estatus.Error;
+  //      this.toastr.error(err.error, 'Error', {
+  //        timeOut: 4000,
+  //        progressAnimation: 'increasing'
+  //      });
+  //    }
+  //  });
+  //}
+  //fetchListaBi(): void {
+  //  var observable = this.biService.GetAll();
+  //  observable.subscribe({
+  //    next: (_mica: micaBifocal[]) => this.bifocalList = _mica,
+  //    complete: () => this.estado = Estatus.Procesado,
+  //    error: (err) => {
+  //      this.estado = Estatus.Error;
+  //      this.toastr.error(err.error, 'Error', {
+  //        timeOut: 4000,
+  //        progressAnimation: 'increasing'
+  //      });
+  //    }
+  //  });
+  //}
+
+  //fetchListaProgre(): void {
+  //  this.estado = Estatus.Cargando;
+  //  var observable = this.proService.GetAll();
+  //  observable.subscribe({
+  //    next: (_mica: micaProgresivo[]) => this.progresivoList = _mica,
+  //    complete: () => this.estado = Estatus.Procesado,
+  //    error: (err) => {
+  //      this.estado = Estatus.Error;
+  //      this.toastr.error(err.error, 'Error', {
+  //        timeOut: 4000,
+  //        progressAnimation: 'increasing'
+  //      });
+  //    }
+  //  });
+  //}
+
+  //fetchLista(): void {
+  //  this.estado = Estatus.Cargando;
+  //  var observable = this.lenteDeContactoService.GetAll();
+  //  observable.subscribe({
+  //    next: (_lente: IlenteDeContacto[]) => this.lenteDeContactoList = _lente,
+  //    complete: () =>
+  //      this.estado = Estatus.Procesado,
+  //    error: (err) => {
+  //      this.estado = Estatus.Error;
+  //      this.toastr.error(err.error, 'Error', {
+  //        timeOut: 4000,
+  //        progressAnimation: 'increasing'
+  //      });
+  //    }
+  //  });
+  //  if (this.lenteDeContactoList = []) {
+  //    this.estado = Estatus.Vacio;
+  //  }
+  //}
 }

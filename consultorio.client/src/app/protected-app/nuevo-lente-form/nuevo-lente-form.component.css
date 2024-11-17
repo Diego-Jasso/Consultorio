@@ -14,3 +14,9 @@
   justify-content: flex-end;
   margin-top: 1em;
 }
+
+.radio-button-group{
+    display:flex;
+    gap:10px;
+}
+
