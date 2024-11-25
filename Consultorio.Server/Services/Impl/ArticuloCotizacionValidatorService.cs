@@ -4,18 +4,18 @@ using FluentValidation;
 
 namespace Consultorio.Server.Services.Impl
 {
-    public class ArmazonCotizacionValidatorService:AbstractValidator<ArmazonCotizacion>,IArmazonCotizacionValidatorService
+    public class ArticuloCotizacionValidatorService:AbstractValidator<ArticuloCotizacion>,IArticuloCotizacionValidatorService
     {
-        public ArmazonCotizacionValidatorService(IArmazonCotizacionRepository repository)
+        public ArticuloCotizacionValidatorService(IArticuloCotizacionRepository repository)
         {
             Include(new Art(repository));
         }
     }
-    public class Art : AbstractValidator<ArmazonCotizacion>
+    public class Art : AbstractValidator<ArticuloCotizacion>
     {
-        private readonly IArmazonCotizacionRepository _repository;
+        private readonly IArticuloCotizacionRepository _repository;
 
-        public Art(IArmazonCotizacionRepository repository)
+        public Art(IArticuloCotizacionRepository repository)
         {
             _repository = repository;
             RuleFor(a => a.armazonid)

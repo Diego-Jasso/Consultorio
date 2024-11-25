@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Consultorio.Server.Controllers
 {
-    public class ArmazonCotizacionController(IArmazonCotizacionService service): BaseApiController
+    public class ArmazonCotizacionController(IArticuloCotizacionService service): BaseApiController
     {
         [HttpGet("List/{id}")]
         public ActionResult<List<ArmazonCotizacionDTO>> ConsultarDTO(int id)

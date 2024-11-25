@@ -39,7 +39,6 @@ export class CotizacionFormComponent {
     this.cargarDatos(this.id);
   }
   ngAfterViewInit() {
-    this.armazonList.fetchListaCotizacion(this.id);
     this.accesorioList.fetchListaCotizacion(this.id);
   }
 

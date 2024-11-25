@@ -16,8 +16,8 @@ namespace Consultorio.Server.Mapper
             CreateMap<UsuarioDTO,Usuario>().ReverseMap();
             CreateMap<CotizacionNewDTO, Cotizacion>();
             CreateMap<CotizacionDTO, Cotizacion>().ReverseMap();
-            CreateMap<ArmazonCotizacionNewDTO, ArmazonCotizacion>();
-            CreateMap<ArmazonCotizacionDTO, ArmazonCotizacion>().ReverseMap();
+            CreateMap<ArticuloCotizacionNewDTO, ArticuloCotizacion>();
+            CreateMap<ArticuloCotizacionDTO, ArticuloCotizacion>().ReverseMap();
             CreateMap<lenteDeContactoNewDTO,lenteDeContacto>();
             CreateMap<lenteDeContactoDTO,lenteDeContacto>().ReverseMap();
             CreateMap<micaBifocalNewDTO, micaBifocal>();

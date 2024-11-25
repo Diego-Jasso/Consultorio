@@ -1,22 +1,20 @@
 <div>
-  @if (isEdit){
-  <h2 class="card-header">{{titulo_editar}}</h2>
-  }
-  @else{
-  <h2 class="card-header">{{titulo_agregar}}</h2>
-  }
+ 
 </div>
 <div ng-app>
   <form #userForm="ngForm" (ngSubmit)="onGuardar(userForm)">
     <table style="width:100%">
       <tr>
-        <td>
-          @if (isEdit){
-          <button type="submit" class="boton-agregar">Guardar</button>
-          }
-          @else{
-          <button type="submit" class="boton-agregar">Guardar</button>
-          }
+        <td colspan="2">
+          <div style="display:flex;">
+            @if (isEdit){
+            <h2 class="card-header">{{titulo_editar}}</h2>
+            }
+            @else{
+            <h2 class="card-header">{{titulo_agregar}}</h2>
+            }
+            <button type="submit" class="boton-agregar" style="margin-left:auto">Guardar</button>
+          </div>
         </td>
       </tr>
       <tr>
@@ -68,26 +66,23 @@
         </td>
       </tr>
       <tr>
-        <td>
-          <h3>Armazones y Micas</h3>
-          <button type="button" (click)="showAddLensFramePopup = true" class="boton-agregar">Agregar</button>
-
+        <td colspan="2">
+          <div style=" display:flex;">
+            <h3>Armazones y Micas</h3>
+            <button type="button" (click)="showAddLensFramePopup = true" class="boton-agregar" style="margin-left:auto">Agregar</button>
+          </div>
           <app-nuevo-lente-form *ngIf="showAddLensFramePopup"
                                 [itemToEdit]="itemToEdit"
                                 [cotId]="cotizacion.cotizacionid"
                                 (addItem)="onAddLensFrame($event)"
-                                (closePopup)="closePopup()">
+                                (closePopup)="closePopup()"
+                                style="width:80vh">
           </app-nuevo-lente-form>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <app-armazon-list #armazonList [CotId]="cotizacion.cotizacionid" [EstatusLista]="EstatusList.Cotizacion" (precioActualizado)="onPrecioCambio()"></app-armazon-list>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <app-mica-cotizacion-form></app-mica-cotizacion-form>
+          <hr>
         </td>
       </tr>
       <tr>

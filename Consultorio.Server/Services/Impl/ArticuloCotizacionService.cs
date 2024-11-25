@@ -9,90 +9,90 @@ using Microsoft.JSInterop.Infrastructure;
 
 namespace Consultorio.Server.Services.Impl
 {
-    public class ArmazonCotizacionService(IArmazonCotizacionRepository repository,IMapper mapper): IArmazonCotizacionService
+    public class ArticuloCotizacionService(IArticuloCotizacionRepository repository,IMapper mapper): IArticuloCotizacionService
     {
-        private readonly IArmazonCotizacionRepository _repository = repository;
+        private readonly IArticuloCotizacionRepository _repository = repository;
         private readonly IMapper _mapper = mapper;
-        public List<ArmazonCotizacionDTO> ConsultarDTO(int id)
+        public List<ArticuloCotizacionDTO> ConsultarDTO(int id)
         {
             return _repository.ConsultarDTO(id).ToList();
         }
 
-        public ArmazonCotizacionDTO ConsultarPorId(int id)
+        public ArticuloCotizacionDTO ConsultarPorId(int id)
         {
-            ArmazonCotizacion articulo = _repository.ConsultarPorId(id);
-            return _mapper.Map<ArmazonCotizacionDTO>(articulo);
+            ArticuloCotizacion articulo = _repository.ConsultarPorId(id);
+            return _mapper.Map<ArticuloCotizacionDTO>(articulo);
         }
 
-        public ArmazonCotizacionDTO Agregar(ArmazonCotizacionNewDTO dto)
+        public ArticuloCotizacionDTO Agregar(ArticuloCotizacionNewDTO dto)
         {
-            ArmazonCotizacion currentArmazon = _repository.ConsultarPorArmazonId(dto.armazonid,dto.cotizacionid);
+            ArticuloCotizacion currentArmazon = _repository.ConsultarPorArmazonId(dto.armazonid,dto.cotizacionid);
             if (currentArmazon == null)
             {
-                ArmazonCotizacion articulo = _mapper.Map<ArmazonCotizacion>(dto);
-                ArmazonCotizacionValidatorService validator = new(_repository);
+                ArticuloCotizacion articulo = _mapper.Map<ArticuloCotizacion>(dto);
+                ArticuloCotizacionValidatorService validator = new(_repository);
                 ValidationResult result = validator.Validate(articulo);
                 if (result.IsValid)
                 {
                     _repository.Agregar(articulo);
-                    return _mapper.Map<ArmazonCotizacionDTO>(articulo);
+                    return _mapper.Map<ArticuloCotizacionDTO>(articulo);
                 }
                 else
                 {
-                    return ArmazonCotizacionDTO.ToError(
+                    return ArticuloCotizacionDTO.ToError(
                         result.ToString(Constantes.COMA));
                 }
             }
             else
             {
-                ArmazonCotizacion articulo = _repository.ConsultarPorId(currentArmazon.id);
+                ArticuloCotizacion articulo = _repository.ConsultarPorId(currentArmazon.id);
                 articulo.cantidad += dto.cantidad;
-                ArmazonCotizacionValidatorService validator = new(_repository);
+                ArticuloCotizacionValidatorService validator = new(_repository);
                 ValidationResult result = validator.Validate(articulo);
                 if (result.IsValid)
                 {
                     _repository.Editar(articulo);
-                    return _mapper.Map<ArmazonCotizacionDTO>(articulo);
+                    return _mapper.Map<ArticuloCotizacionDTO>(articulo);
                 }
                 else
                 {
-                    return ArmazonCotizacionDTO.ToError(
+                    return ArticuloCotizacionDTO.ToError(
                         result.ToString(Constantes.COMA));
                 }
             }
         }
 
-        public ArmazonCotizacionDTO Editar(ArmazonCotizacionDTO dto)
+        public ArticuloCotizacionDTO Editar(ArticuloCotizacionDTO dto)
         {
-            ArmazonCotizacion articulo = _mapper.Map<ArmazonCotizacion>(dto);
-            ArmazonCotizacionValidatorService validator = new(_repository);
+            ArticuloCotizacion articulo = _mapper.Map<ArticuloCotizacion>(dto);
+            ArticuloCotizacionValidatorService validator = new(_repository);
             ValidationResult result = validator.Validate(articulo);
             if (result.IsValid)
             {
                 _repository.Editar(articulo);
-                return _mapper.Map<ArmazonCotizacionDTO>(articulo);
+                return _mapper.Map<ArticuloCotizacionDTO>(articulo);
             }
             else
             {
-                return ArmazonCotizacionDTO.ToError(
+                return ArticuloCotizacionDTO.ToError(
                     result.ToString(Constantes.COMA));
             }
 
         }
 
-        public ArmazonCotizacionDTO EliminarDTO(int id)
+        public ArticuloCotizacionDTO EliminarDTO(int id)
         {
-            ArmazonCotizacion articulo = _repository.ConsultarPorId(id);
-            ArmazonCotizacionValidatorService validator = new(_repository);
+            ArticuloCotizacion articulo = _repository.ConsultarPorId(id);
+            ArticuloCotizacionValidatorService validator = new(_repository);
             ValidationResult result = validator.Validate(articulo);
             if (result.IsValid)
             {
                 _repository.Eliminar(articulo);
-                return _mapper.Map<ArmazonCotizacionDTO>(articulo);
+                return _mapper.Map<ArticuloCotizacionDTO>(articulo);
             }
             else
             {
-                return ArmazonCotizacionDTO.ToError(
+                return ArticuloCotizacionDTO.ToError(
                     result.ToString(Constantes.COMA));
             }
 
@@ -103,7 +103,7 @@ namespace Consultorio.Server.Services.Impl
             throw new NotImplementedException();
         }
 
-        public List<ArmazonCotizacionDTO> ConsultarDTO()
+        public List<ArticuloCotizacionDTO> ConsultarDTO()
         {
             throw new NotImplementedException();
         }

@@ -3,34 +3,34 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IArmazon } from '../models/armazon';
-import { ArmazonCotizacionModel, IArmazonCotizacion } from '../models/armazon.cotizacion';
+import { ArticuloCotizacionModel, IArmazonCotizacion } from '../models/armazon.cotizacion';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ArmazonCotizacionService {
+export class ArticuloCotizacionService {
 
   baseUrl: string = environment.baseUrl + 'ArmazonCotizacion'
 
   constructor(private http: HttpClient) { }
 
-  GetAll(id:number): Observable<IArmazonCotizacion[]> {
-    return this.http.get<IArmazonCotizacion[]>(`${this.baseUrl}/List/${id}`);
+  GetAll(id: number): Observable<ArticuloCotizacionModel[]> {
+    return this.http.get<ArticuloCotizacionModel[]>(`${this.baseUrl}/List/${id}`);
   }
 
-  GetById(id: number): Observable<IArmazonCotizacion> {
-    return this.http.get<IArmazonCotizacion>(`${this.baseUrl}/${id}`)
+  GetById(id: number): Observable<ArticuloCotizacionModel> {
+    return this.http.get<ArticuloCotizacionModel>(`${this.baseUrl}/${id}`)
   }
 
-  Agregar(armazon: ArmazonCotizacionModel): Observable<ArmazonCotizacionModel> {
-    return this.http.post<ArmazonCotizacionModel>(`${this.baseUrl}`, armazon);
+  Agregar(armazon: ArticuloCotizacionModel): Observable<ArticuloCotizacionModel> {
+    return this.http.post<ArticuloCotizacionModel>(`${this.baseUrl}`, armazon);
   }
 
-  Editar(armazon: IArmazonCotizacion): Observable<IArmazonCotizacion> {
-    return this.http.put<IArmazonCotizacion>(`${this.baseUrl}/${armazon.armazonid}`, armazon);
+  Editar(armazon: ArticuloCotizacionModel): Observable<ArticuloCotizacionModel> {
+    return this.http.put<ArticuloCotizacionModel>(`${this.baseUrl}/${armazon.armazonid}`, armazon);
   }
 
-  Eliminar(id: number): Observable<IArmazonCotizacion> {
-    return this.http.delete<IArmazonCotizacion>(`${this.baseUrl}/${id}`);
+  Eliminar(id: number): Observable<ArticuloCotizacionModel> {
+    return this.http.delete<ArticuloCotizacionModel>(`${this.baseUrl}/${id}`);
   }
 }

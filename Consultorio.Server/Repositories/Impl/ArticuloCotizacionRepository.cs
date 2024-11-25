@@ -6,15 +6,15 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Consultorio.Server.Repositories.Impl
 {
-    public class ArmazonCotizacionRepository(AppDbContext context): BaseRepository<ArmazonCotizacion>(context), IArmazonCotizacionRepository
+    public class ArticuloCotizacionRepository(AppDbContext context): BaseRepository<ArticuloCotizacion>(context), IArticuloCotizacionRepository
     {
         private readonly AppDbContext _context = context;
-        public IEnumerable<ArmazonCotizacionDTO> ConsultarDTO(int id)
+        public IEnumerable<ArticuloCotizacionDTO> ConsultarDTO(int id)
         {
-            IEnumerable<ArmazonCotizacion> query = context.ArmazonCotizacion.Include(a=>a.Armazon).Where(a => a.cotizacionid.Equals(id));
+            IEnumerable<ArticuloCotizacion> query = context.ArticuloCotizacion.Include(a=>a.Armazon).Where(a => a.cotizacionid.Equals(id));
 
             return from a in query
-                   select new ArmazonCotizacionDTO
+                   select new ArticuloCotizacionDTO
                    {
                        id= a.id,
                        cotizacionid =a.cotizacionid,
@@ -33,18 +33,18 @@ namespace Consultorio.Server.Repositories.Impl
 
         public double ConsultarPrecioTotal(int id)
         {
-            double total =  context.ArmazonCotizacion.Include(a => a.Armazon).Where(a => a.cotizacionid.Equals(id)).Sum(a => a.Armazon.precio * a.cantidad);
+            double total =  context.ArticuloCotizacion.Include(a => a.Armazon).Where(a => a.cotizacionid.Equals(id)).Sum(a => a.Armazon.precio * a.cantidad);
             return total;
         }
 
-        public ArmazonCotizacion ConsultarPorId(int id)
+        public ArticuloCotizacion ConsultarPorId(int id)
         {
-            return _context.ArmazonCotizacion.Find(id);
+            return _context.ArticuloCotizacion.Find(id);
         }
 
-        public ArmazonCotizacion ConsultarPorArmazonId(int id,int cotid)
+        public ArticuloCotizacion ConsultarPorArmazonId(int id,int cotid)
         {
-            return _context.ArmazonCotizacion.Where(ac => ac.armazonid == id && ac.cotizacionid == cotid).FirstOrDefault();
+            return _context.ArticuloCotizacion.Where(ac => ac.armazonid == id && ac.cotizacionid == cotid).FirstOrDefault();
         }
     }
 }

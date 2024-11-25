@@ -9,10 +9,12 @@ export interface IArmazonCotizacion {
   material: string;
   precio: number;
 }
-export interface ArmazonCotizacionModel {
+export interface ArticuloCotizacionModel {
   cotizacionid: number;
   armazonid: number;
   cantidad: number;
+  tipoMica: string;
+  micaid: number;
 }
 
 

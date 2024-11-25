@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EstatusList } from '../../compartido/utilerias';
+import { ArmazonService } from '../servicios/armazon.service';
+import { IArmazon } from '../models/armazon';
+import { ToastrService } from 'ngx-toastr';
+import { ArticuloCotizacionModel } from '../models/armazon.cotizacion';
+import { ArticuloCotizacionService } from '../servicios/armazon.cotizacion.service';
 
 @Component({
   selector: 'app-nuevo-lente-form',
@@ -11,24 +16,30 @@ export class NuevoLenteFormComponent {
   readonly EstatusList = EstatusList;
 
   sinArmazon: boolean = true;
-  tipoDeMica: string = "1";
+  tipoDeMica: string = "MON";
   material: string = "";
   tipo: string = "Tipo";
   tipoLenteDeContacto: string = "Tipo";
+  armazonList: IArmazon[] = [];
+  armazon: number = -1;
+  articuloCotizacion: ArticuloCotizacionModel = {} as ArticuloCotizacionModel;
 
   @Input() itemToEdit: { frame: string; lensType: string } | null = null;
   @Input() cotId!: number;
   @Output() addItem = new EventEmitter<{ frame: string; lensType: string }>();
   @Output() closePopup = new EventEmitter<void>();
 
+  constructor(private armazonService: ArmazonService,
+    private toastr: ToastrService,
+    private artservice: ArticuloCotizacionService,
+  ) { }
 
   ngOnInit() {
-    // Pre-fill fields if editing an existing item
-  
+    this.fetchLista();
   }
 
   onAdd() {
-    this.onClose();
+    this.onAgregar();
   }
 
   onClose() {
@@ -36,75 +47,43 @@ export class NuevoLenteFormComponent {
   }
 
   onSelectionChange(e: any) {
-    
+    console.log(this.tipoDeMica);
   }
 
   onMaterialChange(e: any) {
-
+    console.log(this.material);
   }
 
-  //fetchListaMono(): void {
-  //  var observable = this.monoService.GetAll();
-  //  observable.subscribe({
-  //    next: (_mica: micaMonofocal[]) => this.monofocalList = _mica,
-  //    complete: () => this.estado = Estatus.Procesado,
-  //    error: (err) => {
-  //      this.estado = Estatus.Error;
-  //      this.toastr.error(err.error, 'Error', {
-  //        timeOut: 4000,
-  //        progressAnimation: 'increasing'
-  //      });
-  //    }
-  //  });
-  //}
-  //fetchListaBi(): void {
-  //  var observable = this.biService.GetAll();
-  //  observable.subscribe({
-  //    next: (_mica: micaBifocal[]) => this.bifocalList = _mica,
-  //    complete: () => this.estado = Estatus.Procesado,
-  //    error: (err) => {
-  //      this.estado = Estatus.Error;
-  //      this.toastr.error(err.error, 'Error', {
-  //        timeOut: 4000,
-  //        progressAnimation: 'increasing'
-  //      });
-  //    }
-  //  });
-  //}
+  fetchLista(): void {
+    var observable = this.armazonService.GetAll();
+    observable.subscribe({
+      next: (_armazon: IArmazon[]) => this.armazonList = _armazon,
+      complete: () => { },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
+  }
 
-  //fetchListaProgre(): void {
-  //  this.estado = Estatus.Cargando;
-  //  var observable = this.proService.GetAll();
-  //  observable.subscribe({
-  //    next: (_mica: micaProgresivo[]) => this.progresivoList = _mica,
-  //    complete: () => this.estado = Estatus.Procesado,
-  //    error: (err) => {
-  //      this.estado = Estatus.Error;
-  //      this.toastr.error(err.error, 'Error', {
-  //        timeOut: 4000,
-  //        progressAnimation: 'increasing'
-  //      });
-  //    }
-  //  });
-  //}
-
-  //fetchLista(): void {
-  //  this.estado = Estatus.Cargando;
-  //  var observable = this.lenteDeContactoService.GetAll();
-  //  observable.subscribe({
-  //    next: (_lente: IlenteDeContacto[]) => this.lenteDeContactoList = _lente,
-  //    complete: () =>
-  //      this.estado = Estatus.Procesado,
-  //    error: (err) => {
-  //      this.estado = Estatus.Error;
-  //      this.toastr.error(err.error, 'Error', {
-  //        timeOut: 4000,
-  //        progressAnimation: 'increasing'
-  //      });
-  //    }
-  //  });
-  //  if (this.lenteDeContactoList = []) {
-  //    this.estado = Estatus.Vacio;
-  //  }
-  //}
+  onAgregar() {
+    this.articuloCotizacion.armazonid = this.armazon;
+    this.articuloCotizacion.cotizacionid = this.cotId;
+    this.articuloCotizacion.cantidad = 1;
+    this.articuloCotizacion.tipoMica = this.tipoDeMica;
+    this.artservice.Agregar(this.articuloCotizacion).subscribe({
+      next: (armazon) => this.toastr.success('El registro fue agregado correctamente'),
+      complete: () => {
+        this.onClose();
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
+  }
 }

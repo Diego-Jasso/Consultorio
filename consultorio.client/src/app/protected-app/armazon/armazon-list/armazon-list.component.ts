@@ -5,9 +5,9 @@ import { ToastrService } from 'ngx-toastr';
 import { Estatus, EstatusList } from '../../../compartido/utilerias';
 import { MatDialog } from '@angular/material/dialog';
 import { ListDialogComponent } from '../../shared/list-dialog/list-dialog.component';
-import { ArmazonCotizacionService } from '../../servicios/armazon.cotizacion.service';
+import { ArticuloCotizacionService } from '../../servicios/armazon.cotizacion.service';
 import { SharedService } from '../../servicios/shared.service';
-import { IArmazonCotizacion,ArmazonCotizacionModel } from '../../models/armazon.cotizacion';
+import { IArmazonCotizacion,ArticuloCotizacionModel } from '../../models/armazon.cotizacion';
 
 
 @Component({
@@ -33,12 +33,12 @@ export class ArmazonListComponent {
   armazonCotizacionList: IArmazonCotizacion[] = [];
   busquedaTexto = '';
   EstatusList = EstatusList;
-  cotArmazon: ArmazonCotizacionModel = {} as ArmazonCotizacionModel;
+  cotArmazon: ArticuloCotizacionModel = {} as ArticuloCotizacionModel;
 
   constructor(private service: ArmazonService,
     private toastr: ToastrService,
     private dialog: MatDialog,
-    private artservice: ArmazonCotizacionService,
+    private artservice: ArticuloCotizacionService,
     private sharedService: SharedService){ }
 
   ngOnInit() {
@@ -71,21 +71,21 @@ export class ArmazonListComponent {
     });
   }
 
-  fetchListaCotizacion(id:number): void {
-    this.estado = Estatus.Cargando;
-    var observable = this.artservice.GetAll(id);
-    observable.subscribe({
-      next: (_armazon: IArmazonCotizacion[]) => this.armazonCotizacionList = _armazon,
-      complete: () => this.estado = Estatus.Procesado,
-      error: (err) => {
-        this.estado = Estatus.Error;
-        this.toastr.error(err.error, 'Error', {
-          timeOut: 4000,
-          progressAnimation: 'increasing'
-        });
-      }
-    });
-  }
+  //fetchListaCotizacion(id:number): void {
+  //  this.estado = Estatus.Cargando;
+  //  var observable = this.artservice.GetAll(id);
+  //  observable.subscribe({
+  //    next: (_armazon: IArmazonCotizacion[]) => this.armazonCotizacionList = _armazon,
+  //    complete: () => this.estado = Estatus.Procesado,
+  //    error: (err) => {
+  //      this.estado = Estatus.Error;
+  //      this.toastr.error(err.error, 'Error', {
+  //        timeOut: 4000,
+  //        progressAnimation: 'increasing'
+  //      });
+  //    }
+  //  });
+  //}
 
   onEliminar(armazon: IArmazon) {
     this.limpiarFormulario();
@@ -107,22 +107,22 @@ export class ArmazonListComponent {
     this.agregar.emit(true);
   }
 
-  onAbrirArmazones(): void {
-    const dialogRef = this.dialog.open(
-      ListDialogComponent,
-      {
-        data: {
-          Lista: "Armazon",
-          Id:this.CotId
-        }
-      });
-    dialogRef.afterClosed().subscribe(respuesta => {
-      if (respuesta) {
-        this.fetchListaCotizacion(this.CotId);
-        this.precioActualizado.emit(); 
-      }
-    });
-  }
+  //onAbrirArmazones(): void {
+  //  const dialogRef = this.dialog.open(
+  //    ListDialogComponent,
+  //    {
+  //      data: {
+  //        Lista: "Armazon",
+  //        Id:this.CotId
+  //      }
+  //    });
+  //  dialogRef.afterClosed().subscribe(respuesta => {
+  //    if (respuesta) {
+  //      this.fetchListaCotizacion(this.CotId);
+  //      this.precioActualizado.emit(); 
+  //    }
+  //  });
+  //}
 
   onEditar(armazon: IArmazon) {
     this.editar.emit(armazon.armazonid);
@@ -149,18 +149,18 @@ export class ArmazonListComponent {
     });
   }
 
-  onEliminarDeCotizacion(id: number) {
-    this.artservice.Eliminar(id).subscribe({
-      next: (armazon) => this.fetchListaCotizacion(this.CotId),
-      complete: () => {
-        this.toastr.success('El registro fue eliminado correctamente')
-      },
-      error: (err) => {
-        this.toastr.error(err.error, 'Error', {
-          timeOut: 4000,
-          progressAnimation: 'increasing'
-        })
-      }
-    });
-  }
+  //onEliminarDeCotizacion(id: number) {
+  //  this.artservice.Eliminar(id).subscribe({
+  //    next: (armazon) => this.fetchListaCotizacion(this.CotId),
+  //    complete: () => {
+  //      this.toastr.success('El registro fue eliminado correctamente')
+  //    },
+  //    error: (err) => {
+  //      this.toastr.error(err.error, 'Error', {
+  //        timeOut: 4000,
+  //        progressAnimation: 'increasing'
+  //      })
+  //    }
+  //  });
+  //}
 }

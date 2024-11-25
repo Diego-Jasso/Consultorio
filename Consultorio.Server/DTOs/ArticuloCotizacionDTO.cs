@@ -2,13 +2,15 @@
 
 namespace Consultorio.Server.DTOs
 {
-    public class ArmazonCotizacionNewDTO
+    public class ArticuloCotizacionNewDTO
     {
         public int cotizacionid { get; set; }
         public int armazonid { get; set; }
         public int cantidad { get; set; }
+        public string tipoMica { get; set; } = string.Empty;
+        public int micaid { get; set; }
     }
-    public class ArmazonCotizacionDTO: ArmazonCotizacionNewDTO
+    public class ArticuloCotizacionDTO : ArticuloCotizacionNewDTO
     {
         public int id { get; set; }
         public string marca { get; set; } = string.Empty;
@@ -20,9 +22,9 @@ namespace Consultorio.Server.DTOs
         public double precioTotal { get; set; }
         public bool Success { get; set; } = Constantes.SUCCESS;
         public string Error { get; set; } = string.Empty;
-        public static ArmazonCotizacionDTO ToError(string error)
+        public static ArticuloCotizacionDTO ToError(string error)
         {
-            return new ArmazonCotizacionDTO
+            return new ArticuloCotizacionDTO
             {
                 Error = error,
                 Success = Constantes.FAILURE

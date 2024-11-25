@@ -1,6 +1,6 @@
 ﻿namespace Consultorio.Server.Services
 {
-    public interface IArmazonCotizacionValidatorService
+    public interface IArticuloCotizacionValidatorService
     {
     }
 }
