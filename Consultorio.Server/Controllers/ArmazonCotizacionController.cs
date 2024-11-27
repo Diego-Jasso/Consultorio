@@ -5,23 +5,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Consultorio.Server.Controllers
 {
-    public class ArmazonCotizacionController(IArticuloCotizacionService service): BaseApiController
+    public class ArticuloCotizacionController(IArticuloCotizacionService service): BaseApiController
     {
         [HttpGet("List/{id}")]
-        public ActionResult<List<ArmazonCotizacionDTO>> ConsultarDTO(int id)
+        public ActionResult<List<ArticuloCotizacionDTO>> ConsultarDTO(int id)
         {
             return service.ConsultarDTO(id);
         }
 
         [HttpGet("{id}")]
 
-        public ActionResult<ArmazonCotizacionDTO> ConsultarPorId(int id)
+        public ActionResult<ArticuloCotizacionDTO> ConsultarPorId(int id)
         {
             return service.ConsultarPorId(id);
         }
 
         [HttpPost]
-        public ActionResult<ArmazonCotizacionDTO> Agregar(ArmazonCotizacionNewDTO dto)
+        public ActionResult<ArticuloCotizacionDTO> Agregar(ArticuloCotizacionNewDTO dto)
         {
             var result = service.Agregar(dto);
             if (result.Success)
@@ -31,7 +31,7 @@ namespace Consultorio.Server.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<ArmazonCotizacionDTO> Editar(ArmazonCotizacionDTO dto)
+        public ActionResult<ArticuloCotizacionDTO> Editar(ArticuloCotizacionDTO dto)
         {
             var result = service.Editar(dto);
             if (result.Success)
@@ -41,7 +41,7 @@ namespace Consultorio.Server.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<ArmazonCotizacionDTO> Delete(int id)
+        public ActionResult<ArticuloCotizacionDTO> Delete(int id)
         {
             var result = service.EliminarDTO(id);
             if (result.Success)

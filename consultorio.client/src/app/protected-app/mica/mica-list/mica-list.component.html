@@ -1,168 +1,54 @@
 <div class="card">
   <h3 class="card-header">{{titulo}}</h3>
-  <mat-tab-group (selectedTabChange)="onTabClick($event)">
-    <mat-tab label="Micas Monofocales/Vision Sencilla"></mat-tab>
-    <mat-tab label="Micas Progresivos"></mat-tab>
-    <mat-tab label="Micas Bifocales"></mat-tab>
-    <mat-tab label="Tratamientos y Servicios"></mat-tab>
-  </mat-tab-group>
-  <input class="form-control" type="text" placeholder="Buscar..." [(ngModel)]="busquedaTexto">
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="Buscar..." [(ngModel)]="busquedaTexto">
+    <select class="form-control" [(ngModel)]="selectedTipo" (change)="fetchLista(selectedTipo)">
+      <option value="ALL">Todas las micas</option>
+      <option value="MON">Monofocal/Vision Sencilla</option>
+      <option value="BIF">Bifocal</option>
+      <option value="PRO">Progresivo</option>
+    </select>
+  </div>
   <div class="card-body">
     <table class="table">
       <thead>
         <!--<th scope="col" class="">&emsp;</th>-->
-        @switch(TipoMicaList){
-        @case (TipoMica.Monofocal){
         <tr>
           <th colspan="2" scope="col" class="">
             <button class="boton-agregar" (click)="onAgregar()">
               Agregar <i class="fa-solid fa-plus"></i>
             </button>
           </th>
-          <th scope="col">Tipo</th>
-          <th scope="col">Material</th>
-          <th scope="col">Tratamiento</th>
-          <th scope="col">Rango</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Material - Tratamiento</th>
+          <th scope="col">Detalles</th>
           <th scope="col">Precio</th>
         </tr>
-        }
-        @case (TipoMica.Progresivo){
-        <tr>
-          <th colspan="2" scope="col" class="">
-            <button class="boton-agregar" (click)="onAgregar()">
-              Agregar <i class="fa-solid fa-plus"></i>
-            </button>
-          </th>
-          <th scope="col">Material</th>
-          <th scope="col">Autograph Intelligence 2</th>
-          <th scope="col">Autograph IID</th>
-          <th scope="col">Intouch UX</th>
-          <th scope="col">HD Experience</th>
-        </tr>
-        }
-        @case (TipoMica.Bifocal){
-        <tr>
-          <th colspan="2" scope="col" class="">
-            <button class="boton-agregar" (click)="onAgregar()">
-              Agregar <i class="fa-solid fa-plus"></i>
-            </button>
-          </th>
-          <th scope="col">Material</th>
-          <th scope="col">Precio Duo Digital</th>
-          <th scope="col">Precio Flat top 28</th>
-        </tr>
-        }
-        @case (TipoMica.Tratamiento){
-        <tr>
-          <th colspan="2" scope="col" class="">
-            <button class="boton-agregar" (click)="onAgregar()">
-              Agregar <i class="fa-solid fa-plus"></i>
-            </button>
-          </th>
-          <th scope="col">Descripcion</th>
-          <th scope="col">Precio</th>
-        </tr>
-        }
-        }
       </thead>
       @switch(estado){
       @case (Estatus.Procesado){
       <tbody>
-
-        @switch(TipoMicaList){
-        @case (TipoMica.Monofocal){
-        @for(mica of monofocalList | busqueda: busquedaTexto; track mica.id ){
+        @for(mica of micaList | busqueda: busquedaTexto; track mica.id ){
         <tr>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminarMono(mica)"><i class="fa fa-trash"></i></button>
+            <button class="boton-agregar" (click)="onEliminar(mica)"><i class="fa fa-trash"></i></button>
           </td>
           <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditarMono(mica)"><i class="fa fa-pen-to-square"></i></button>
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.tipo}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.material}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.tratamiento}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.rango}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.precio}}
-          </td>
-        </tr>
-        }
-        }
-        @case (TipoMica.Progresivo){
-        @for(mica of progresivoList | busqueda: busquedaTexto; track mica.id ){
-        <tr>
-          <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminarProgre(mica)"><i class="fa fa-trash"></i></button>
-          </td>
-          <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditarPro(mica)"><i class="fa fa-pen-to-square"></i></button>
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.material}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.autographIntelligenge2}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.autographIID}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.intouchUX}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{mica.hdExperience}}
-          </td>
-        </tr>
-        }
-        }
-        @case (TipoMica.Bifocal){
-        @for(mica of bifocalList | busqueda: busquedaTexto; track mica.id ){
-        <tr>
-          <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminarBi(mica)"><i class="fa fa-trash"></i></button>
-          </td>
-          <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditarBi(mica)"><i class="fa fa-pen-to-square"></i></button>
+            <button class="boton-agregar" (click)="onEditar(mica)"><i class="fa fa-pen-to-square"></i></button>
           </td>
           <td style="vertical-align: middle;">
             {{mica.marca}}
           </td>
           <td style="vertical-align: middle;">
-            {{mica.precioDuoDigital}}
+            {{mica.materialTratamiento}}
           </td>
           <td style="vertical-align: middle;">
-            {{mica.precioFlatTop28}}
+            {{mica.resumen}}
+          </td>
+          <td style="vertical-align: middle;">
+            {{mica.precio}}
           </td>
         </tr>
-        }
-        }
-        @case (TipoMica.Tratamiento){
-        @for(tratamiento of tratamientoList | busqueda: busquedaTexto; track tratamiento.id ){
-        <tr>
-          <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEliminarTrat(tratamiento)"><i class="fa fa-trash"></i></button>
-          </td>
-          <td style="vertical-align: middle;">
-            <button class="boton-agregar" (click)="onEditarTra(tratamiento)"><i class="fa fa-pen-to-square"></i></button>
-          </td>
-          <td style="vertical-align: middle;">
-            {{tratamiento.descripcion}}
-          </td>
-          <td style="vertical-align: middle;">
-            {{tratamiento.precio}}
-          </td>
-        </tr>
-        }
-        }
         }
       </tbody>
       }

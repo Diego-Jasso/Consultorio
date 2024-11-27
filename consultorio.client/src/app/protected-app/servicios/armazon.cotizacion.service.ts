@@ -3,14 +3,14 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IArmazon } from '../models/armazon';
-import { ArticuloCotizacionModel, IArmazonCotizacion } from '../models/armazon.cotizacion';
+import { ArticuloCotizacionModel, IArticuloCotizacion } from '../models/armazon.cotizacion';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticuloCotizacionService {
 
-  baseUrl: string = environment.baseUrl + 'ArmazonCotizacion'
+  baseUrl: string = environment.baseUrl + 'ArticuloCotizacion'
 
   constructor(private http: HttpClient) { }
 

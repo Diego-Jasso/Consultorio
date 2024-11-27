@@ -1,4 +1,4 @@
-export interface IArmazonCotizacion {
+export interface IArticuloCotizacion {
   id: number;
   cotizacionid: number;
   armazonid: number;

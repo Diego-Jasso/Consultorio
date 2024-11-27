@@ -18,7 +18,10 @@ namespace Consultorio.Server.DTOs
         public string color { get; set; } = string.Empty;
         public string tipo_de_lente { get; set; } = string.Empty;
         public string material { get; set; } = string.Empty;
-        public double precio { get; set; }
+        public string materialTratamiento { get; set; }= string.Empty;
+        public double precioArmazon { get; set; }
+        public double precioMica { get; set; }
+        public string descripcionMica { get; set; } = string.Empty;
         public double precioTotal { get; set; }
         public bool Success { get; set; } = Constantes.SUCCESS;
         public string Error { get; set; } = string.Empty;

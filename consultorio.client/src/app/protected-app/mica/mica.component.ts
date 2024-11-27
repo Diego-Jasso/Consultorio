@@ -14,25 +14,8 @@ export class MicasComponent {
 
   EstatusList = EstatusList;
 
-  onActualizar(mica: TipoMica) {
-    switch (mica) {
-      case TipoMica.Monofocal:
-        this.list?.fetchListaMono();
-        break;
-      case TipoMica.Progresivo:
-        this.list?.fetchListaProgre();
-        break;
-      case TipoMica.Bifocal:
-        this.list?.fetchListaBi();
-        break;
-      case TipoMica.Tratamiento:
-        this.list?.fetchListaTrat();
-        break;
-      default:
-        this.list?.fetchListaMono();
-        break;
-    }
-  }
+  onActualizar(is: boolean) {
+    this.list?.fetchLista();  }
 
   onEditar(id: number): void {
     this.form?.cargarDatos(id);
@@ -42,12 +25,8 @@ export class MicasComponent {
     this.form?.cerrarForm(this.form.addForm);
   }
 
-  onAgregar(mica: TipoMica) {
-    this.form?.abrirForm(mica);
+  onAgregar(is: boolean) {
+    this.form?.abrirForm();
   }
-  onCambioForm(mica: TipoMica) {
-    if (this.form?.mostrarForm) {
-      this.form?.abrirForm(mica);
-    }
-  }
+ 
 }

@@ -26,9 +26,16 @@ export interface micaBifocal {
   precioDuoDigital: number,
   precioFlatTop28: number
 }
-export interface tratamientosServicios {
+export interface Mica {
   id: number,
+  tipoMica: string,
+  marca: string,
   descripcion: string,
+  materialTratamiento: string,
+  esfera: string,
+  cilindro: string,
+  adiciones: string,
+  resumen: string,
   precio: number
 }
 

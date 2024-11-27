@@ -24,8 +24,8 @@ namespace Consultorio.Server.Mapper
             CreateMap<micaBifocalDTO, micaBifocal>().ReverseMap();
             CreateMap<micaProgresivoNewDTO,micaProgresivo>();
             CreateMap<micaProgresivoDTO,micaProgresivo>().ReverseMap();
-            CreateMap<tratamientosServiciosNewDTO,tratamientosServicios>();
-            CreateMap<tratamientosServiciosDTO,tratamientosServicios>().ReverseMap();
+            CreateMap<MicaNewDTO,Mica>();
+            CreateMap<MicaDTO,Mica>().ReverseMap();
             CreateMap<micaMonofocalNewDTO, micaMonofocal>();
             CreateMap<micaMonofocalDTO,micaMonofocal>().ReverseMap();
             CreateMap<AccesorioCotizacionNewDTO, AccesorioCotizacion>();

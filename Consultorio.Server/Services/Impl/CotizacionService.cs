@@ -8,10 +8,10 @@ using FluentValidation.Results;
 
 namespace Consultorio.Server.Services.Impl
 {
-    public class CotizacionService(ICotizacionRepository repository,IArmazonCotizacionRepository artrepository,IAccesorioCotizacionRepository accrepository,IMapper mapper):ICotizacionService
+    public class CotizacionService(ICotizacionRepository repository,IArticuloCotizacionRepository artrepository,IAccesorioCotizacionRepository accrepository,IMapper mapper):ICotizacionService
     {
         private readonly ICotizacionRepository _repository = repository;
-        private readonly IArmazonCotizacionRepository _artrepository = artrepository;
+        private readonly IArticuloCotizacionRepository _artrepository = artrepository;
         private readonly IAccesorioCotizacionRepository _accrepository = accrepository;
         private readonly IMapper _mapper = mapper;
 

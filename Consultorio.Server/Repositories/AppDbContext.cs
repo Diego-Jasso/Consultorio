@@ -13,13 +13,13 @@ namespace Consultorio.Server.Repositories
 
         public DbSet<Cotizacion> Cotizacion { get; set; } = default!;
         public DbSet<Status> Status { get; set; } = default!;
-        public DbSet<ArmazonCotizacion> ArmazonCotizacion { get; set; } = default!;
+        public DbSet<ArticuloCotizacion> ArticuloCotizacion { get; set; } = default!;
         public DbSet<lenteDeContacto> LenteDeContacto { get; set; } = default!;
         public DbSet<micaMonofocal> MicaMonofocal { get; set; } = default!;
         public DbSet<micaBifocal> MicaBifocal { get; set; } = default!;
         public DbSet<micaProgresivo> MicaProgresivo { get; set; } = default!;
-        public DbSet<tratamientosServicios> TratamientosServicios { get; set; } = default!;
-        public DbSet<ArticuloCotizacion> ArticuloCotizacion { get; set; } = default!;
+        public DbSet<Mica> Mica { get; set; } = default!;
+        public DbSet<AccesorioCotizacion> AccesorioCotizacion { get; set; } = default!;
 
     }
 }

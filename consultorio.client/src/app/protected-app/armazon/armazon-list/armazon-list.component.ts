@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ListDialogComponent } from '../../shared/list-dialog/list-dialog.component';
 import { ArticuloCotizacionService } from '../../servicios/armazon.cotizacion.service';
 import { SharedService } from '../../servicios/shared.service';
-import { IArmazonCotizacion,ArticuloCotizacionModel } from '../../models/armazon.cotizacion';
+import { IArticuloCotizacion,ArticuloCotizacionModel } from '../../models/armazon.cotizacion';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class ArmazonListComponent {
 
   estado: Estatus = Estatus.Cargando;
   armazonList: IArmazon[] = [];
-  armazonCotizacionList: IArmazonCotizacion[] = [];
+  ArticuloCotizacionList: IArticuloCotizacion[] = [];
   busquedaTexto = '';
   EstatusList = EstatusList;
   cotArmazon: ArticuloCotizacionModel = {} as ArticuloCotizacionModel;
@@ -75,7 +75,7 @@ export class ArmazonListComponent {
   //  this.estado = Estatus.Cargando;
   //  var observable = this.artservice.GetAll(id);
   //  observable.subscribe({
-  //    next: (_armazon: IArmazonCotizacion[]) => this.armazonCotizacionList = _armazon,
+  //    next: (_armazon: IArticuloCotizacion[]) => this.ArticuloCotizacionList = _armazon,
   //    complete: () => this.estado = Estatus.Procesado,
   //    error: (err) => {
   //      this.estado = Estatus.Error;

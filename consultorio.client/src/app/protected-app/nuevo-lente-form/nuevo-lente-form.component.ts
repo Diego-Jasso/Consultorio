@@ -5,6 +5,9 @@ import { IArmazon } from '../models/armazon';
 import { ToastrService } from 'ngx-toastr';
 import { ArticuloCotizacionModel } from '../models/armazon.cotizacion';
 import { ArticuloCotizacionService } from '../servicios/armazon.cotizacion.service';
+import { lenteDeContactoService } from '../servicios/lente.de.contacto.service';
+import { MicaService } from '../servicios/mica.service';
+import { IlenteDeContacto, Mica } from '../models/mica';
 
 @Component({
   selector: 'app-nuevo-lente-form',
@@ -15,14 +18,16 @@ export class NuevoLenteFormComponent {
 
   readonly EstatusList = EstatusList;
 
-  sinArmazon: boolean = true;
   tipoDeMica: string = "MON";
-  material: string = "";
   tipo: string = "Tipo";
-  tipoLenteDeContacto: string = "Tipo";
   armazonList: IArmazon[] = [];
+  micaList: Mica[] = [];
+  lenteDeContactoList: IlenteDeContacto[] = [];
   armazon: number = -1;
+  mica: number = 1;
   articuloCotizacion: ArticuloCotizacionModel = {} as ArticuloCotizacionModel;
+  mostrarMica = true;
+  mostrarLente = false;
 
   @Input() itemToEdit: { frame: string; lensType: string } | null = null;
   @Input() cotId!: number;
@@ -32,10 +37,13 @@ export class NuevoLenteFormComponent {
   constructor(private armazonService: ArmazonService,
     private toastr: ToastrService,
     private artservice: ArticuloCotizacionService,
+    private lenteDeContactoService: lenteDeContactoService,
+    private micaService:MicaService
   ) { }
 
   ngOnInit() {
-    this.fetchLista();
+    this.fetchListaArmazones();
+    this.fetchListaMica(this.tipoDeMica);
   }
 
   onAdd() {
@@ -47,17 +55,59 @@ export class NuevoLenteFormComponent {
   }
 
   onSelectionChange(e: any) {
-    console.log(this.tipoDeMica);
+    switch (this.tipoDeMica) {
+      case 'MON':
+      case 'PRO':
+      case 'BIF':
+        this.fetchListaMica(this.tipoDeMica);
+        this.mostrarMica = true;
+        this.mostrarLente = false;
+        break;
+      case 'LDC':
+        this.fetchListaLenteDeContact();
+        this.mostrarMica = false;
+        this.mostrarLente = true;
+        break;
+      case 'SIN':
+        this.mostrarMica = false;
+        this.mostrarLente = false;
+        break;
+    }
   }
 
-  onMaterialChange(e: any) {
-    console.log(this.material);
-  }
 
-  fetchLista(): void {
+  fetchListaArmazones(): void {
     var observable = this.armazonService.GetAll();
     observable.subscribe({
       next: (_armazon: IArmazon[]) => this.armazonList = _armazon,
+      complete: () => { },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
+  }
+
+  fetchListaMica(filtro:string): void {
+    var observable = this.micaService.GetAllWithFilter(filtro);
+    observable.subscribe({
+      next: (_mica: Mica[]) => this.micaList = _mica,
+      complete: () => { },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
+  }
+
+  fetchListaLenteDeContact() {
+    var observable = this.lenteDeContactoService.GetAll();
+    observable.subscribe({
+      next: (_lente: IlenteDeContacto[]) => this.lenteDeContactoList = _lente,
       complete: () => { },
       error: (err) => {
         this.toastr.error(err.error, 'Error', {
@@ -73,6 +123,7 @@ export class NuevoLenteFormComponent {
     this.articuloCotizacion.cotizacionid = this.cotId;
     this.articuloCotizacion.cantidad = 1;
     this.articuloCotizacion.tipoMica = this.tipoDeMica;
+    this.articuloCotizacion.micaid =  this.mica;
     this.artservice.Agregar(this.articuloCotizacion).subscribe({
       next: (armazon) => this.toastr.success('El registro fue agregado correctamente'),
       complete: () => {

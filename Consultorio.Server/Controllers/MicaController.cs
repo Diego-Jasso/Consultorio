@@ -5,23 +5,30 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Consultorio.Server.Controllers
 {
-    public class TratamientosServiciosController(ITratamientosServiciosService service):BaseApiController
+    public class MicaController(IMicaService service):BaseApiController
     {
         [HttpGet]
-        public ActionResult<List<tratamientosServiciosDTO>> ConsultarDTO()
+        public ActionResult<List<MicaDTO>> ConsultarDTO()
         {
             return service.ConsultarDTO();
         }
 
+        [HttpGet("Filtro/{filtro}")]
+
+        public ActionResult<List<MicaDTO>> ConsultarDTOConFiltro(string filtro)
+        {
+            return service.ConsultarDTOConFiltro(filtro);
+        }
+
         [HttpGet("{id}")]
 
-        public ActionResult<tratamientosServiciosDTO> ConsultarPorId(int id)
+        public ActionResult<MicaDTO> ConsultarPorId(int id)
         {
             return service.ConsultarPorId(id);
         }
 
         [HttpPost]
-        public ActionResult<tratamientosServiciosDTO> Agregar(tratamientosServiciosNewDTO dto)
+        public ActionResult<MicaDTO> Agregar(MicaNewDTO dto)
         {
             var result = service.Agregar(dto);
             if (result.Success)
@@ -31,7 +38,7 @@ namespace Consultorio.Server.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<tratamientosServiciosDTO> Editar(tratamientosServiciosDTO dto)
+        public ActionResult<MicaDTO> Editar(MicaDTO dto)
         {
             var result = service.Editar(dto);
             if (result.Success)
@@ -41,7 +48,7 @@ namespace Consultorio.Server.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<tratamientosServiciosDTO> Delete(int id)
+        public ActionResult<MicaDTO> Delete(int id)
         {
             var result = service.EliminarDTO(id);
             if (result.Success)
