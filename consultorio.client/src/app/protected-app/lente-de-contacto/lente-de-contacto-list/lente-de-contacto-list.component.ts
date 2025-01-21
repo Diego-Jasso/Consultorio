@@ -3,6 +3,8 @@ import { Estatus } from '../../../compartido/utilerias';
 import { IlenteDeContacto } from '../../models/mica';
 import { lenteDeContactoService } from '../../servicios/lente.de.contacto.service';
 import { ToastrService } from 'ngx-toastr';
+import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-eliminar.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-lente-de-contacto-list',
@@ -14,6 +16,8 @@ export class LenteDeContactoListComponent {
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  readonly TITULO_ELIMINAR = 'Eliminar Lente de Contacto'
+  readonly CONFIRMACION_ELIMINAR = '¿Desea eliminar el registro?';
   readonly LOADING_MESSAGE = "Cargando...";
   readonly ERROR_MESSAGE = "Sucedio un error, intentelo más tarde";
   readonly ZERO_RESULTS = "Sin registros";
@@ -24,7 +28,8 @@ export class LenteDeContactoListComponent {
   busquedaTexto = '';
 
   constructor(private service: lenteDeContactoService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
     this.fetchLista();
@@ -53,6 +58,22 @@ export class LenteDeContactoListComponent {
 
   onEliminar(lente: IlenteDeContacto) {
     this.limpiarFormulario();
+    const dialogRef = this.dialog.open(
+      ModalEliminarComponent,
+      {
+        data: {
+          titulo: this.TITULO_ELIMINAR,
+          mensaje: this.CONFIRMACION_ELIMINAR
+        }
+      });
+    dialogRef.afterClosed().subscribe(respuesta => {
+      if (respuesta) {
+        this.eliminarPorId(lente);
+      }
+    });
+  }
+
+  eliminarPorId(lente: IlenteDeContacto) {
     this.service.Eliminar(lente.id).subscribe({
       next: (lente) => this.fetchLista(),
       complete: () => {

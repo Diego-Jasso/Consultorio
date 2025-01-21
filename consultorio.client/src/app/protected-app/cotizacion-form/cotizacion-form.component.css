@@ -5,3 +5,10 @@
   border-radius: 8px;
   border: 2px solid #ffff;
 }
+
+.articulos-table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  max-height: 100vh;
+}

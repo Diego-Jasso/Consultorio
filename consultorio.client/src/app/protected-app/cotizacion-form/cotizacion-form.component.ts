@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, ViewChild,  } from '@angular/core';
 import { ICotizacion } from '../models/cotizacion';
-import { EstatusList, validarCamposRequeridos } from '../../compartido/utilerias';
+import { Estatus, EstatusList, validarCamposRequeridos } from '../../compartido/utilerias';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { CotizacionService } from '../servicios/cotizacion.service';
@@ -9,6 +9,8 @@ import { formatDate } from '@angular/common';
 import { SharedService } from '../servicios/shared.service';
 import { ArmazonListComponent } from '../armazon/armazon-list/armazon-list.component';
 import { AccesorioListComponent } from '../accesorio/accesorio-list/accesorio-list.component';
+import { ArticuloCotizacionModel, IArticuloCotizacion } from '../models/armazon.cotizacion';
+import { ArticuloCotizacionService } from '../servicios/armazon.cotizacion.service';
 
 @Component({
   selector: 'app-cotizacion-form',
@@ -24,22 +26,33 @@ export class CotizacionFormComponent {
 
   readonly titulo_agregar = "Crear cotización";
   readonly titulo_editar = "Editar cotización";
+  readonly TITULO_ELIMINAR = 'Eliminar '
+  readonly CONFIRMACION_ELIMINAR = '¿Desea eliminar el registro?';
+  readonly LOADING_MESSAGE = "Cargando...";
+  readonly ERROR_MESSAGE = "Sucedio un error, intentelo más tarde";
+  readonly ZERO_RESULTS = "Sin registros";
   readonly EstatusList = EstatusList;
+  readonly Estatus = Estatus;
 
+  estado: Estatus = Estatus.Cargando;
 
-  showAddLensFramePopup = false;
+  AddArticulosVisible = false;
   cotizacion: ICotizacion = {} as ICotizacion;
   isEdit = false;
+  articulosList: ArticuloCotizacionModel[] = [];
+  busquedaTexto = '';
+
+  itemToEdit: { armazon: number; mica: number } | null = null;
+
   constructor(private service: CotizacionService,
     private toastr: ToastrService,
     private authService: AuthService,
-    private sharedService: SharedService) { }
+    private sharedService: SharedService,
+    private artService: ArticuloCotizacionService) { }
 
   ngOnInit() {
     this.cargarDatos(this.id);
-  }
-  ngAfterViewInit() {
-    this.accesorioList.fetchListaCotizacion(this.id);
+    this.fetchListaArticulos(this.id);
   }
 
   onGuardar(form: NgForm): void {
@@ -95,34 +108,62 @@ export class CotizacionFormComponent {
     });
   }
 
-  itemToEdit: { frame: string; lensType: string } | null = null;
-
-  selectedItems: { frame: string; lensType: string }[] = [];
-
-  onAddLensFrame(newItem: { frame: string; lensType: string }) {
-    if (this.itemToEdit) {
-      // Edit the existing item
-      const index = this.selectedItems.indexOf(this.itemToEdit);
-      this.selectedItems[index] = newItem;
-    } else {
-      // Add new item
-      this.selectedItems.push(newItem);
-    }
-    this.closePopup();
+  fetchListaArticulos(id: number): void {
+    this.estado = Estatus.Cargando;
+    var observable = this.artService.GetAll(id);
+    observable.subscribe({
+      next: (_articulo: ArticuloCotizacionModel[]) => this.articulosList = _articulo,
+      complete: () => this.estado = Estatus.Procesado,
+      error: (err) => {
+        this.estado = Estatus.Error;
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        });
+      }
+    });
   }
 
-  openAddLensFramePopup() {
-    this.itemToEdit = null;  // Reset for new item
-    this.showAddLensFramePopup = true;
+  UpdateListaArticulos() {
+    this.fetchListaArticulos(this.id);
   }
 
-  openEditLensFramePopup(item: { frame: string; lensType: string }) {
-    this.itemToEdit = item;
-    this.showAddLensFramePopup = true;
+  onAgregarArticulo() {
+    this.itemToEdit = null; 
+    this.AddArticulosVisible = true;
+    //if (this.itemToEdit) {
+    //  // Edit the existing item
+    //  const index = this.selectedItems.indexOf(this.itemToEdit);
+    //  this.selectedItems[index] = newItem;
+    //} else {
+    //  // Add new item
+    //  this.selectedItems.push(newItem);
+    //}
+    //this.closePopup();
+  }
+
+  onEditarArticulo(articulo: ArticuloCotizacionModel) {
+    this.itemToEdit = { armazon: articulo.armazonid, mica: articulo.micaid }
+    this.AddArticulosVisible = true;
+  }
+
+  onEliminarArticulo(articulo: ArticuloCotizacionModel) {
+    this.artService.Eliminar(articulo.id).subscribe({
+      next: (articulo) => this.fetchListaArticulos(this.id),
+      complete: () => {
+        this.toastr.success('El registro fue eliminado correctamente')
+      },
+      error: (err) => {
+        this.toastr.error(err.error, 'Error', {
+          timeOut: 4000,
+          progressAnimation: 'increasing'
+        })
+      }
+    });
   }
 
   closePopup() {
-    this.showAddLensFramePopup = false;
+    this.AddArticulosVisible = false;
     this.itemToEdit = null;
   }
 }

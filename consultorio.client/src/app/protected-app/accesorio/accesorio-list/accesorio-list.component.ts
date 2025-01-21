@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AccesorioCotizacionService } from '../../servicios/accesorio.cotizacion.service';
 import { IAccesorioCotizacion } from '../../models/accesorio.cotizacion';
 import { ListDialogComponent } from '../../shared/list-dialog/list-dialog.component';
+import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-eliminar.component';
 
 @Component({
   selector: 'app-accesorio-list',
@@ -22,6 +23,8 @@ export class AccesorioListComponent {
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('precioActualizado') precioActualizado: EventEmitter<void> = new EventEmitter<void>();
 
+  readonly TITULO_ELIMINAR = 'Eliminar Accesorio'
+  readonly CONFIRMACION_ELIMINAR = '¿Desea eliminar el registro?';
   readonly LOADING_MESSAGE = "Cargando...";
   readonly ERROR_MESSAGE = "Sucedio un error, intentelo más tarde";
   readonly ZERO_RESULTS = "Sin registros";
@@ -40,17 +43,7 @@ export class AccesorioListComponent {
     private accCotService: AccesorioCotizacionService) { }
 
   ngOnInit() {
-    switch (this.EstatusLista) {
-      case EstatusList.Catalogo:
-        this.fetchLista();
-        break;
-      case EstatusList.Cotizacion:
-
-        break
-      case EstatusList.BusquedaCotizacion:
-        this.fetchLista();
-        break;
-    }
+    this.fetchLista();
   }
 
 
@@ -74,24 +67,25 @@ export class AccesorioListComponent {
     }
   }
 
-  fetchListaCotizacion(id: number): void {
-    this.estado = Estatus.Cargando;
-    var observable = this.accCotService.GetAll(id);
-    observable.subscribe({
-      next: (_accesorio: IAccesorioCotizacion[]) => this.accesorioCotizacionList = _accesorio,
-      complete: () => this.estado = Estatus.Procesado,
-      error: (err) => {
-        this.estado = Estatus.Error;
-        this.toastr.error(err.error, 'Error', {
-          timeOut: 4000,
-          progressAnimation: 'increasing'
-        });
+
+  onEliminar(accesorio: IAccesorio) {
+    this.limpiarFormulario();
+    const dialogRef = this.dialog.open(
+      ModalEliminarComponent,
+      {
+        data: {
+          titulo: this.TITULO_ELIMINAR,
+          mensaje: this.CONFIRMACION_ELIMINAR
+        }
+      });
+    dialogRef.afterClosed().subscribe(respuesta => {
+      if (respuesta) {
+        this.eliminarPorId(accesorio);
       }
     });
   }
 
-  onEliminar(accesorio: IAccesorio) {
-    this.limpiarFormulario();
+  eliminarPorId(accesorio: IAccesorio) {
     this.service.Eliminar(accesorio.id).subscribe({
       next: (accesorio) => this.fetchLista(),
       complete: () => {
@@ -110,22 +104,7 @@ export class AccesorioListComponent {
     this.agregar.emit(true);
   }
 
-  onAbrirAccesorios(): void {
-    const dialogRef = this.dialog.open(
-      ListDialogComponent,
-      {
-        data: {
-          Lista: "Accesorio",
-          Id: this.CotId
-        }
-      });
-    dialogRef.afterClosed().subscribe(respuesta => {
-      if (respuesta) {
-        this.fetchListaCotizacion(this.CotId);
-        this.precioActualizado.emit();
-      }
-    });
-  }
+  
 
   onEditar(accesorio: IAccesorio) {
     this.editar.emit(accesorio.id);
@@ -135,35 +114,35 @@ export class AccesorioListComponent {
     this.eliminar.emit(true);
   }
 
-  onAgregarACotizacion(accesorioId: number, cantidad: string) {
+  //onAgregarACotizacion(accesorioId: number, cantidad: string) {
 
-    this.cotAccesorio.accesorioid = accesorioId;
-    this.cotAccesorio.cotizacionid = this.CotId;
-    this.cotAccesorio.cantidad = parseInt(cantidad, 10);
-    this.accCotService.Agregar(this.cotAccesorio).subscribe({
-      next: (accesorio) => this.toastr.success('El registro fue agregado correctamente'),
-      complete: () => { },
-      error: (err) => {
-        this.toastr.error(err.error, 'Error', {
-          timeOut: 4000,
-          progressAnimation: 'increasing'
-        })
-      }
-    });
-  }
+  //  this.cotAccesorio.accesorioid = accesorioId;
+  //  this.cotAccesorio.cotizacionid = this.CotId;
+  //  this.cotAccesorio.cantidad = parseInt(cantidad, 10);
+  //  this.accCotService.Agregar(this.cotAccesorio).subscribe({
+  //    next: (accesorio) => this.toastr.success('El registro fue agregado correctamente'),
+  //    complete: () => { },
+  //    error: (err) => {
+  //      this.toastr.error(err.error, 'Error', {
+  //        timeOut: 4000,
+  //        progressAnimation: 'increasing'
+  //      })
+  //    }
+  //  });
+  //}
 
-  onEliminarDeCotizacion(id: number) {
-    this.accCotService.Eliminar(id).subscribe({
-      next: (accesorio) => this.fetchListaCotizacion(this.CotId),
-      complete: () => {
-        this.toastr.success('El registro fue eliminado correctamente')
-      },
-      error: (err) => {
-        this.toastr.error(err.error, 'Error', {
-          timeOut: 4000,
-          progressAnimation: 'increasing'
-        })
-      }
-    });
-  }
+  //onEliminarDeCotizacion(id: number) {
+  //  this.accCotService.Eliminar(id).subscribe({
+  //    next: (accesorio) => this.fetchListaCotizacion(this.CotId),
+  //    complete: () => {
+  //      this.toastr.success('El registro fue eliminado correctamente')
+  //    },
+  //    error: (err) => {
+  //      this.toastr.error(err.error, 'Error', {
+  //        timeOut: 4000,
+  //        progressAnimation: 'increasing'
+  //      })
+  //    }
+  //  });
+  //}
 }

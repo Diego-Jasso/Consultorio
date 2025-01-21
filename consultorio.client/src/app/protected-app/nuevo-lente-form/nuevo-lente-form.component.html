@@ -3,6 +3,7 @@
   <h4>Armazon</h4>
   <div>
     <select class="form-select-sm" style="width: 100%; text-overflow: ellipsis" id="armazon" [(ngModel)]="armazon">
+      <option><input type="text" id="search" placeholder="Search options..." /></option>
       <option value="-1">Sin armazon</option>
       @for (armazon of armazonList; track armazon.armazonid) {
       <option value="{{armazon.armazonid}}">
@@ -11,61 +12,61 @@
       }
     </select>
   </div>
+</div>
 
-  <h4 style="margin-top:10px">Mica</h4>
-  <div>
-    <label style="margin-right: 10px; font-weight: bold;">Tipo de Mica:</label>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" value="MON" id="monofocal" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
-      <label class="form-check-label" for="monofocal">
-        Monofocal
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" value="PRO" id="progresivo" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
-      <label class="form-check-label" for="progresivo">
-        Progresivo
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" value="BIF" id="bifocal" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
-      <label class="form-check-label" for="bifocal">
-        Bifocal
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" value="LDC" id="lenteDeContacto" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
-      <label class="form-check-label" for="lenteDeContacto">
-        Lentes de contacto
-      </label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" value="SIN" id="sinMica" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
-      <label class="form-check-label" for="sinMica">
-        Sin mica
-      </label>
-    </div>
+<h4 style="margin-top:10px">Mica</h4>
+<div>
+  <label style="margin-right: 10px; font-weight: bold;">Tipo de Mica:</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="MON" id="monofocal" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="monofocal">
+      Monofocal
+    </label>
   </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="PRO" id="progresivo" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="progresivo">
+      Progresivo
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="BIF" id="bifocal" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="bifocal">
+      Bifocal
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="LDC" id="lenteDeContacto" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="lenteDeContacto">
+      Lentes de contacto
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" value="SIN" id="sinMica" name="tipoDeMica" [(ngModel)]="tipoDeMica" (ngModelChange)="onSelectionChange($event)">
+    <label class="form-check-label" for="sinMica">
+      Sin mica
+    </label>
+  </div>
+</div>
 
-  <div>
-    <select class="form-select-sm" style="width: 100%; text-overflow: ellipsis" id="mica" [(ngModel)]="mica" *ngIf="mostrarMica">
-      @for (mica of micaList; track mica.id) {
-      <option value="{{mica.id}}">
-        {{mica.marca}} {{mica.materialTratamiento}} {{mica.resumen}} {{mica.precio}}
-      </option>
-      }
-    </select>
-    <select class="form-select-sm" style="width: 100%; text-overflow: ellipsis" id="mica" [(ngModel)]="mica" *ngIf="mostrarLente">
-      @for (lente of lenteDeContactoList; track lente.id) {
-      <option value="{{lente.id}}">
-        {{lente.tipo}} {{lente.marca}} {{lente.precio}}
-      </option>
-      }
-    </select>
-  </div>
+<div>
+  <select class="form-select-sm" style="width: 100%; text-overflow: ellipsis" id="mica" [(ngModel)]="mica" *ngIf="mostrarMica">
+    @for (mica of micaList; track mica.id) {
+    <option value="{{mica.id}}">
+      {{mica.marca}} {{mica.materialTratamiento}} {{mica.resumen}} {{mica.precio}}
+    </option>
+    }
+  </select>
+  <select class="form-select-sm" style="width: 100%; text-overflow: ellipsis" id="mica" [(ngModel)]="mica" *ngIf="mostrarLente">
+    @for (lente of lenteDeContactoList; track lente.id) {
+    <option value="{{lente.id}}">
+      {{lente.tipo}} {{lente.marca}} {{lente.precio}}
+    </option>
+    }
+  </select>
+</div>
 
-  <div class="popup-actions">
-    <button (click)="onAdd()">Add to Quote</button>
-    <button (click)="onClose()">Cancel</button>
-  </div>
+<div class="popup-actions">
+  <button (click)="onAdd()">Add to Quote</button>
+  <button (click)="onClose()">Cancel</button>
 </div>

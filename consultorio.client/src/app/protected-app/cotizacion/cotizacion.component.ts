@@ -51,7 +51,8 @@ export class CotizacionComponent {
 
   onEditar(cotizacion: ICotizacion) {
     let link = 'layout/cotizacionform/' + cotizacion.cotizacionid;
-    window.open(link, '_blank');
+    this.router.navigateByUrl(link);
+    //window.open(link, '_blank');
   }
 
   onAgregar(): void {
@@ -62,7 +63,8 @@ export class CotizacionComponent {
       if (cot.success === true) {
         this.toastr.success('La cotización fue agregada correctamente');
         let link = '/layout/cotizacionform/' + cot.cotizacionid;
-        window.open(link, '_blank');
+        this.router.navigateByUrl(link);
+        //window.open(link, '_blank');
       } else {
         this.toastr.error(cot.error, 'Error', {
           timeOut: 4000,

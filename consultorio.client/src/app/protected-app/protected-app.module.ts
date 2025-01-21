@@ -32,6 +32,8 @@ import { LenteDeContactoListComponent } from './lente-de-contacto/lente-de-conta
 import { LenteDeContactoFormComponent } from './lente-de-contacto/lente-de-contacto-form/lente-de-contacto-form.component';
 import { MicaCotizacionFormComponent } from './mica-cotizacion-form/mica-cotizacion-form.component';
 import { NuevoLenteFormComponent } from './nuevo-lente-form/nuevo-lente-form.component';
+import { ModalEliminarComponent } from './shared/modal-eliminar/modal-eliminar.component';
+import { MatSelectModule } from '@angular/material/select'
 
 
 @NgModule({
@@ -60,6 +62,7 @@ import { NuevoLenteFormComponent } from './nuevo-lente-form/nuevo-lente-form.com
     LenteDeContactoFormComponent,
     MicaCotizacionFormComponent,
     NuevoLenteFormComponent,
+    ModalEliminarComponent,
   ],
   imports: [
     CommonModule,
@@ -74,6 +77,7 @@ import { NuevoLenteFormComponent } from './nuevo-lente-form/nuevo-lente-form.com
     MatDialogClose,
     MatDialogTitle,
     MatTabsModule,
+    MatSelectModule,
   ]
 })
 export class ProtectedAppModule { }

@@ -8,6 +8,7 @@ import {  micaBifocal, micaMonofocal, micaProgresivo, Mica } from '../../models/
 import { MicaBifocalService } from '../../servicios/mica.bifocal.service.';
 import { MicaProgresivoService } from '../../servicios/mica.progresivo.service.';
 import { MicaService } from '../../servicios/mica.service';
+import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-eliminar.component';
 
 @Component({
   selector: 'app-mica-list',
@@ -19,6 +20,8 @@ export class MicaListComponent {
   @Output('eliminar') eliminar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  readonly TITULO_ELIMINAR = 'Eliminar Mica'
+  readonly CONFIRMACION_ELIMINAR = '¿Desea eliminar el registro?';
   readonly LOADING_MESSAGE = "Cargando...";
   readonly ERROR_MESSAGE = "Sucedio un error, intentelo más tarde";
   readonly ZERO_RESULTS = "Sin registros";
@@ -59,10 +62,26 @@ export class MicaListComponent {
     });
   }
 
-  onEliminar(tratamiento: Mica) {
+  onEliminar(mica: Mica) {
     this.limpiarFormulario();
-    this.tratService.Eliminar(tratamiento.id).subscribe({
-      next: (tratamiento) => this.fetchLista(),
+    const dialogRef = this.dialog.open(
+      ModalEliminarComponent,
+      {
+        data: {
+          titulo: this.TITULO_ELIMINAR,
+          mensaje: this.CONFIRMACION_ELIMINAR
+        }
+      });
+    dialogRef.afterClosed().subscribe(respuesta => {
+      if (respuesta) {
+        this.eliminarPorId(mica);
+      }
+    });
+  }
+
+  eliminarPorId(mica: Mica) {
+    this.tratService.Eliminar(mica.id).subscribe({
+      next: (mica) => this.fetchLista(),
       complete: () => {
         this.toastr.success('El registro fue eliminado correctamente')
       },

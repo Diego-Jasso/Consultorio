@@ -28,11 +28,14 @@ export class NuevoLenteFormComponent {
   articuloCotizacion: ArticuloCotizacionModel = {} as ArticuloCotizacionModel;
   mostrarMica = true;
   mostrarLente = false;
+  isEdit = false;
+  busquedaTexto = '';
 
-  @Input() itemToEdit: { frame: string; lensType: string } | null = null;
+  @Input() itemToEdit: { armazon: number; mica: number } | null = null;
   @Input() cotId!: number;
-  @Output() addItem = new EventEmitter<{ frame: string; lensType: string }>();
+  @Output() addItem = new EventEmitter<{ armazon: number; mica: number }>();
   @Output() closePopup = new EventEmitter<void>();
+  @Output() refresh = new EventEmitter<void>();
 
   constructor(private armazonService: ArmazonService,
     private toastr: ToastrService,
@@ -44,6 +47,11 @@ export class NuevoLenteFormComponent {
   ngOnInit() {
     this.fetchListaArmazones();
     this.fetchListaMica(this.tipoDeMica);
+    if (this.itemToEdit != null) {
+      this.armazon = this.itemToEdit.armazon;
+      this.mica = this.itemToEdit.mica;
+      this.isEdit = true;
+    }
   }
 
   onAdd() {
@@ -128,6 +136,7 @@ export class NuevoLenteFormComponent {
       next: (armazon) => this.toastr.success('El registro fue agregado correctamente'),
       complete: () => {
         this.onClose();
+        this.refresh.emit();
       },
       error: (err) => {
         this.toastr.error(err.error, 'Error', {
@@ -136,5 +145,9 @@ export class NuevoLenteFormComponent {
         })
       }
     });
+  }
+
+  onEditar() {
+
   }
 }

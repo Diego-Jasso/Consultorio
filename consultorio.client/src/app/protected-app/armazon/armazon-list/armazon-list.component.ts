@@ -8,6 +8,7 @@ import { ListDialogComponent } from '../../shared/list-dialog/list-dialog.compon
 import { ArticuloCotizacionService } from '../../servicios/armazon.cotizacion.service';
 import { SharedService } from '../../servicios/shared.service';
 import { IArticuloCotizacion,ArticuloCotizacionModel } from '../../models/armazon.cotizacion';
+import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-eliminar.component';
 
 
 @Component({
@@ -23,6 +24,8 @@ export class ArmazonListComponent {
   @Output('agregar') agregar: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output('precioActualizado') precioActualizado: EventEmitter<void> = new EventEmitter<void>();
 
+  readonly TITULO_ELIMINAR = 'Eliminar Armazon'
+  readonly CONFIRMACION_ELIMINAR = '¿Desea eliminar el registro?';
   readonly LOADING_MESSAGE = "Cargando...";
   readonly ERROR_MESSAGE = "Sucedio un error, intentelo más tarde";
   readonly ZERO_RESULTS = "Sin registros";
@@ -42,17 +45,7 @@ export class ArmazonListComponent {
     private sharedService: SharedService){ }
 
   ngOnInit() {
-    switch (this.EstatusLista) {
-      case EstatusList.Catalogo:
-        this.fetchLista();
-        break;
-      case EstatusList.Cotizacion:
-        
-        break
-      case EstatusList.BusquedaCotizacion:
-        this.fetchLista();
-        break;
-    }
+    this.fetchLista();
   }
 
   fetchLista(): void {
@@ -89,6 +82,22 @@ export class ArmazonListComponent {
 
   onEliminar(armazon: IArmazon) {
     this.limpiarFormulario();
+    const dialogRef = this.dialog.open(
+      ModalEliminarComponent,
+      {
+        data: {
+          titulo: this.TITULO_ELIMINAR,
+          mensaje: this.CONFIRMACION_ELIMINAR
+        }
+      });
+    dialogRef.afterClosed().subscribe(respuesta => {
+      if (respuesta) {
+        this.eliminarPorId(armazon);
+      }
+    });
+  }
+
+  eliminarPorId(armazon:IArmazon) {
     this.service.Eliminar(armazon.armazonid).subscribe({
       next: (armazon) => this.fetchLista(),
       complete: () => {
