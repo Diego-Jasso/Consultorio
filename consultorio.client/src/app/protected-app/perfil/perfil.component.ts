@@ -4,9 +4,10 @@ import { AuthService } from '../../auth/services/auth.service';
 import { UsuarioService } from '../servicios/usuario.service';
 
 @Component({
-  selector: 'app-perfil',
-  templateUrl: './perfil.component.html',
-  styleUrl: './perfil.component.css'
+    selector: 'app-perfil',
+    templateUrl: './perfil.component.html',
+    styleUrl: './perfil.component.css',
+    standalone: false
 })
 export class PerfilComponent {
 

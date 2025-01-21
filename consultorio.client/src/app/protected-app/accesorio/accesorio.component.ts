@@ -5,9 +5,10 @@ import { EstatusList } from '../../compartido/utilerias';
 
 
 @Component({
-  selector: 'app-accesorio',
-  templateUrl: './accesorio.component.html',
-  styleUrl: './accesorio.component.css'
+    selector: 'app-accesorio',
+    templateUrl: './accesorio.component.html',
+    styleUrl: './accesorio.component.css',
+    standalone: false
 })
 export class AccesoriosComponent {
 

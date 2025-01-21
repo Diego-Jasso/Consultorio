@@ -10,9 +10,10 @@ import { MicaService } from '../servicios/mica.service';
 import { IlenteDeContacto, Mica } from '../models/mica';
 
 @Component({
-  selector: 'app-nuevo-lente-form',
-  templateUrl: './nuevo-lente-form.component.html',
-  styleUrl: './nuevo-lente-form.component.css'
+    selector: 'app-nuevo-lente-form',
+    templateUrl: './nuevo-lente-form.component.html',
+    styleUrl: './nuevo-lente-form.component.css',
+    standalone: false
 })
 export class NuevoLenteFormComponent {
 

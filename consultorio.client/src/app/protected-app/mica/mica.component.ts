@@ -4,9 +4,10 @@ import { MicaFormComponent } from './mica-form/mica-form.component';
 import { MicaListComponent } from './mica-list/mica-list.component';
 
 @Component({
-  selector: 'app-mica',
-  templateUrl: './mica.component.html',
-  styleUrl: './mica.component.css'
+    selector: 'app-mica',
+    templateUrl: './mica.component.html',
+    styleUrl: './mica.component.css',
+    standalone: false
 })
 export class MicasComponent {
   @ViewChild('form') form!: MicaFormComponent;

@@ -11,9 +11,10 @@ import { ListDialogComponent } from '../../shared/list-dialog/list-dialog.compon
 import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-eliminar.component';
 
 @Component({
-  selector: 'app-accesorio-list',
-  templateUrl: './accesorio-list.component.html',
-  styleUrl: './accesorio-list.component.css'
+    selector: 'app-accesorio-list',
+    templateUrl: './accesorio-list.component.html',
+    styleUrl: './accesorio-list.component.css',
+    standalone: false
 })
 export class AccesorioListComponent {
   @Input() EstatusLista: EstatusList = EstatusList.Catalogo;

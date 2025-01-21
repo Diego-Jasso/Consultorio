@@ -13,9 +13,10 @@ import { ArticuloCotizacionModel, IArticuloCotizacion } from '../models/armazon.
 import { ArticuloCotizacionService } from '../servicios/armazon.cotizacion.service';
 
 @Component({
-  selector: 'app-cotizacion-form',
-  templateUrl: './cotizacion-form.component.html',
-  styleUrl: './cotizacion-form.component.css'
+    selector: 'app-cotizacion-form',
+    templateUrl: './cotizacion-form.component.html',
+    styleUrl: './cotizacion-form.component.css',
+    standalone: false
 })
 export class CotizacionFormComponent {
 

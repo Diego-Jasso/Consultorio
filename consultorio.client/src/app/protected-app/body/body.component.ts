@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-body',
-  templateUrl: './body.component.html',
-  styleUrl: './body.component.css'
+    selector: 'app-body',
+    templateUrl: './body.component.html',
+    styleUrl: './body.component.css',
+    standalone: false
 })
 export class BodyComponent {
 

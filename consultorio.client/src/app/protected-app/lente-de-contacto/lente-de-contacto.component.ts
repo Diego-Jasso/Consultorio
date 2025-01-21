@@ -3,9 +3,10 @@ import { LenteDeContactoFormComponent } from './lente-de-contacto-form/lente-de-
 import { LenteDeContactoListComponent } from './lente-de-contacto-list/lente-de-contacto-list.component';
 
 @Component({
-  selector: 'app-lente-de-contacto',
-  templateUrl: './lente-de-contacto.component.html',
-  styleUrl: './lente-de-contacto.component.css'
+    selector: 'app-lente-de-contacto',
+    templateUrl: './lente-de-contacto.component.html',
+    styleUrl: './lente-de-contacto.component.css',
+    standalone: false
 })
 export class LenteDeContactoComponent {
   @ViewChild('form') form!: LenteDeContactoFormComponent;

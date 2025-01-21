@@ -7,9 +7,10 @@ import { IUsuario } from '../../interfaces/user-interface';
 import { validarCamposRequeridos } from '../../../compartido/utilerias';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css',
+    standalone: false
 })
 export class RegisterComponent implements OnInit{
 

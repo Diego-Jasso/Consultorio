@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { menuData } from './menu-data';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.css',
+    standalone: false
 })
 export class HeaderComponent {
   @Input() collapsed = false;

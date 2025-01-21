@@ -11,9 +11,10 @@ import { MicaService } from '../../servicios/mica.service';
 import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-eliminar.component';
 
 @Component({
-  selector: 'app-mica-list',
-  templateUrl: './mica-list.component.html',
-  styleUrl: './mica-list.component.css'
+    selector: 'app-mica-list',
+    templateUrl: './mica-list.component.html',
+    styleUrl: './mica-list.component.css',
+    standalone: false
 })
 export class MicaListComponent {
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();

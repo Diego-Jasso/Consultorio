@@ -7,9 +7,10 @@ import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-elimin
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-lente-de-contacto-list',
-  templateUrl: './lente-de-contacto-list.component.html',
-  styleUrl: './lente-de-contacto-list.component.css'
+    selector: 'app-lente-de-contacto-list',
+    templateUrl: './lente-de-contacto-list.component.html',
+    styleUrl: './lente-de-contacto-list.component.css',
+    standalone: false
 })
 export class LenteDeContactoListComponent {
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();

@@ -11,9 +11,10 @@ import { MicaProgresivoService } from '../../servicios/mica.progresivo.service.'
 import { MicaService } from '../../servicios/mica.service';
 
 @Component({
-  selector: 'app-mica-form',
-  templateUrl: './mica-form.component.html',
-  styleUrl: './mica-form.component.css'
+    selector: 'app-mica-form',
+    templateUrl: './mica-form.component.html',
+    styleUrl: './mica-form.component.css',
+    standalone: false
 })
 export class MicaFormComponent {
   @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();

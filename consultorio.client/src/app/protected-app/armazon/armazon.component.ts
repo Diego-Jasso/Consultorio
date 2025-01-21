@@ -10,9 +10,10 @@ import { EstatusList } from '../../compartido/utilerias';
 
 
 @Component({
-  selector: 'app-armazon',
-  templateUrl: './armazon.component.html',
-  styleUrl: './armazon.component.css',
+    selector: 'app-armazon',
+    templateUrl: './armazon.component.html',
+    styleUrl: './armazon.component.css',
+    standalone: false
 })
 export class ArmazonesComponent {
 

@@ -7,9 +7,10 @@ import { Estatus } from '../../compartido/utilerias';
 import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
-  selector: 'app-cotizacion',
-  templateUrl: './cotizacion.component.html',
-  styleUrl: './cotizacion.component.css'
+    selector: 'app-cotizacion',
+    templateUrl: './cotizacion.component.html',
+    styleUrl: './cotizacion.component.css',
+    standalone: false
 })
 export class CotizacionComponent {
 

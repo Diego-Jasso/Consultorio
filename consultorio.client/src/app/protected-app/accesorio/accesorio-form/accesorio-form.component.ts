@@ -6,9 +6,10 @@ import { ToastrService } from 'ngx-toastr';
 import { validarCamposRequeridos } from '../../../compartido/utilerias';
 
 @Component({
-  selector: 'app-accesorio-form',
-  templateUrl: './accesorio-form.component.html',
-  styleUrl: './accesorio-form.component.css'
+    selector: 'app-accesorio-form',
+    templateUrl: './accesorio-form.component.html',
+    styleUrl: './accesorio-form.component.css',
+    standalone: false
 })
 export class AccesorioFormComponent {
   @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();

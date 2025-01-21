@@ -12,9 +12,10 @@ import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-elimin
 
 
 @Component({
-  selector: 'app-armazon-list',
-  templateUrl: './armazon-list.component.html',
-  styleUrl: './armazon-list.component.css'
+    selector: 'app-armazon-list',
+    templateUrl: './armazon-list.component.html',
+    styleUrl: './armazon-list.component.css',
+    standalone: false
 })
 export class ArmazonListComponent {
   @Input() EstatusLista: EstatusList = EstatusList.Catalogo;

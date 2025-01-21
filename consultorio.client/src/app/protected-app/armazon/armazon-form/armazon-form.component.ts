@@ -7,9 +7,10 @@ import { validarCamposRequeridos } from '../../../compartido/utilerias';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-armazon-form',
-  templateUrl: './armazon-form.component.html',
-  styleUrl: './armazon-form.component.css'
+    selector: 'app-armazon-form',
+    templateUrl: './armazon-form.component.html',
+    styleUrl: './armazon-form.component.css',
+    standalone: false
 })
 export class ArmazonFormComponent {
 

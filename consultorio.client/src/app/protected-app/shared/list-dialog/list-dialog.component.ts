@@ -3,9 +3,10 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EstatusList } from '../../../compartido/utilerias';
 
 @Component({
-  selector: 'app-list-dialog',
-  templateUrl: './list-dialog.component.html',
-  styleUrl: './list-dialog.component.css'
+    selector: 'app-list-dialog',
+    templateUrl: './list-dialog.component.html',
+    styleUrl: './list-dialog.component.css',
+    standalone: false
 })
 export class ListDialogComponent {
   EstatusList = EstatusList;
