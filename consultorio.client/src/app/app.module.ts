@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,28 +14,23 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule,
-    RouterModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    FormsModule,
-    MatInputModule, MatIconModule,
-    MatProgressBarModule,
-    MatTabsModule,
-    ToastrModule.forRoot({
-      "positionClass": "toast-top-center",
-    }),
-  ],
-  providers: [
-    provideAnimationsAsync('noop')
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        MatTableModule,
+        FormsModule,
+        MatInputModule, MatIconModule,
+        MatProgressBarModule,
+        MatTabsModule,
+        ToastrModule.forRoot({
+            "positionClass": "toast-top-center",
+        })], providers: [
+        provideAnimationsAsync('noop'),
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
