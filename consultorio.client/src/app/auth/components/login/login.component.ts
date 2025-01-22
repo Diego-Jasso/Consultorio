@@ -11,7 +11,7 @@ import { validarCamposRequeridos } from '../../../compartido/utilerias';
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrl: './login.component.css',
-    standalone: false
+    standalone: true
 })
 export class LoginComponent {
   constructor(private router: Router,

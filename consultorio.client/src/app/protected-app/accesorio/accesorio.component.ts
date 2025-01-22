@@ -8,7 +8,7 @@ import { EstatusList } from '../../compartido/utilerias';
     selector: 'app-accesorio',
     templateUrl: './accesorio.component.html',
     styleUrl: './accesorio.component.css',
-    standalone: false
+    standalone: true
 })
 export class AccesoriosComponent {
 

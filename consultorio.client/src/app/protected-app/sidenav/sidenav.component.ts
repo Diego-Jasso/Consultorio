@@ -33,7 +33,7 @@ interface SideNavToggle {
             ])
         ])
     ],
-    standalone: false
+    standalone: true
 })
 export class SidenavComponent implements OnInit {
 

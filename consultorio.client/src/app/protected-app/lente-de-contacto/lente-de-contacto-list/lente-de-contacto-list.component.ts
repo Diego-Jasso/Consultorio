@@ -10,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
     selector: 'app-lente-de-contacto-list',
     templateUrl: './lente-de-contacto-list.component.html',
     styleUrl: './lente-de-contacto-list.component.css',
-    standalone: false
+    standalone: true
 })
 export class LenteDeContactoListComponent {
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();

@@ -9,7 +9,7 @@ import { validarCamposRequeridos } from '../../../compartido/utilerias';
     selector: 'app-accesorio-form',
     templateUrl: './accesorio-form.component.html',
     styleUrl: './accesorio-form.component.css',
-    standalone: false
+    standalone: true
 })
 export class AccesorioFormComponent {
   @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();

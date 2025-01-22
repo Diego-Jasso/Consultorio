@@ -6,7 +6,7 @@ import { DialogData } from '../../models/DialogData';
     selector: 'app-modal-eliminar',
     templateUrl: './modal-eliminar.component.html',
     styleUrl: './modal-eliminar.component.css',
-    standalone: false
+    standalone: true
 })
 export class ModalEliminarComponent {
 

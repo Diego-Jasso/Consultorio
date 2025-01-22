@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     selector: 'app-main',
     templateUrl: './main.component.html',
     styleUrl: './main.component.css',
-    standalone: false
+    standalone: true
 })
 export class MainComponent {
 }

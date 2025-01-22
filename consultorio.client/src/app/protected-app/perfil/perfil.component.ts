@@ -7,7 +7,7 @@ import { UsuarioService } from '../servicios/usuario.service';
     selector: 'app-perfil',
     templateUrl: './perfil.component.html',
     styleUrl: './perfil.component.css',
-    standalone: false
+    standalone: true
 })
 export class PerfilComponent {
 

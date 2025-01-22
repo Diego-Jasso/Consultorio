@@ -6,7 +6,7 @@ import { EstatusList } from '../../../compartido/utilerias';
     selector: 'app-list-dialog',
     templateUrl: './list-dialog.component.html',
     styleUrl: './list-dialog.component.css',
-    standalone: false
+    standalone: true
 })
 export class ListDialogComponent {
   EstatusList = EstatusList;

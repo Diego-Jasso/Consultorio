@@ -7,7 +7,7 @@ import { MicaListComponent } from './mica-list/mica-list.component';
     selector: 'app-mica',
     templateUrl: './mica.component.html',
     styleUrl: './mica.component.css',
-    standalone: false
+    standalone: true
 })
 export class MicasComponent {
   @ViewChild('form') form!: MicaFormComponent;

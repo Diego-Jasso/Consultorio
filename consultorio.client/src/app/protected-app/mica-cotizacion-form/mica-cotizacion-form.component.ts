@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     selector: 'app-mica-cotizacion-form',
     templateUrl: './mica-cotizacion-form.component.html',
     styleUrl: './mica-cotizacion-form.component.css',
-    standalone: false
+    standalone: true
 })
 export class MicaCotizacionFormComponent {
 

@@ -7,12 +7,12 @@ import { IUsuario } from '../../interfaces/user-interface';
 import { validarCamposRequeridos } from '../../../compartido/utilerias';
 
 @Component({
-    selector: 'app-register',
-    templateUrl: './register.component.html',
-    styleUrl: './register.component.css',
-    standalone: false
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css',
+  standalone: true
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent implements OnInit {
 
   usuario: IUsuario = {} as IUsuario;
   constructor(private router: Router,
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit{
 
   ngOnInit(): void { }
 
-  register(form:NgForm) {
+  register(form: NgForm) {
     if (!form.valid) {
       validarCamposRequeridos(form);
       return;

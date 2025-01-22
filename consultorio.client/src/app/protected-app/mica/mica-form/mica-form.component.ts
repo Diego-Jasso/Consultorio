@@ -14,7 +14,7 @@ import { MicaService } from '../../servicios/mica.service';
     selector: 'app-mica-form',
     templateUrl: './mica-form.component.html',
     styleUrl: './mica-form.component.css',
-    standalone: false
+    standalone: true
 })
 export class MicaFormComponent {
   @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();

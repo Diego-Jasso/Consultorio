@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
@@ -25,6 +25,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\accesorio\\accesorio-list\\accesorio-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\accesorio\\accesorio-list\\accesorio-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|c:\\users\\usuario\\source\\repos\\consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{9050152E-16E8-4334-B9E8-2EC451C3029B}|consultorio.client\\consultorio.client.esproj|solutionrelative:consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,15 +70,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "nuevo-lente-form.component.css",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.css",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.css",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.css",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-21T03:03:37.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "cotizacion.component.ts",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts",
+              "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts",
+              "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion\\cotizacion.component.ts",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwD8AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-21T02:46:06.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "nuevo-lente-form.component.html",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.html",
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.html",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.html",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAACbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-18T16:44:24.595Z"
+              "WhenOpened": "2025-01-18T16:44:24.595Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -80,9 +115,10 @@
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.ts",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.ts",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\nuevo-lente-form\\nuevo-lente-form.component.ts",
-              "ViewState": "AgIAACwAAAAAAAAAAAApwE8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-16T02:09:10.739Z"
+              "WhenOpened": "2025-01-16T02:09:10.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -92,9 +128,10 @@
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\armazon\\armazon-list\\armazon-list.component.ts",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAgwG8AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAvwCwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-16T02:07:28.699Z"
+              "WhenOpened": "2025-01-16T02:07:28.699Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -104,26 +141,27 @@
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\accesorio\\accesorio-list\\accesorio-list.component.html",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\accesorio\\accesorio-list\\accesorio-list.component.html",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\accesorio\\accesorio-list\\accesorio-list.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-04T04:47:46.566Z"
+              "WhenOpened": "2024-12-04T04:47:46.566Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "cotizacion-form.component.ts",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts",
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts",
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.ts",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAwwJQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwJ4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2024-12-03T23:14:28.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "cotizacion-form.component.html",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Consultorio\\consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html",
               "RelativeDocumentMoniker": "consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html",
@@ -131,7 +169,8 @@
               "RelativeToolTip": "consultorio.client\\src\\app\\protected-app\\cotizacion-form\\cotizacion-form.component.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-12-03T03:56:45.614Z"
+              "WhenOpened": "2024-12-03T03:56:45.614Z",
+              "EditorCaption": ""
             }
           ]
         }

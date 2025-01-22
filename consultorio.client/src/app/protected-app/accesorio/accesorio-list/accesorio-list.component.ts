@@ -14,7 +14,7 @@ import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-elimin
     selector: 'app-accesorio-list',
     templateUrl: './accesorio-list.component.html',
     styleUrl: './accesorio-list.component.css',
-    standalone: false
+    standalone: true
 })
 export class AccesorioListComponent {
   @Input() EstatusLista: EstatusList = EstatusList.Catalogo;

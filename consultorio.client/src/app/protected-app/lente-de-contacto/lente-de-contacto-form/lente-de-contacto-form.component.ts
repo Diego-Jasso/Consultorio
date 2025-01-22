@@ -9,7 +9,7 @@ import { validarCamposRequeridos } from '../../../compartido/utilerias';
     selector: 'app-lente-de-contacto-form',
     templateUrl: './lente-de-contacto-form.component.html',
     styleUrl: './lente-de-contacto-form.component.css',
-    standalone: false
+    standalone: true
 })
 export class LenteDeContactoFormComponent {
   @Output('actualizar') actualizar: EventEmitter<boolean> = new EventEmitter<boolean>();

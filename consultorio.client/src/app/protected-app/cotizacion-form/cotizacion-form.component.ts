@@ -16,7 +16,7 @@ import { ArticuloCotizacionService } from '../servicios/armazon.cotizacion.servi
     selector: 'app-cotizacion-form',
     templateUrl: './cotizacion-form.component.html',
     styleUrl: './cotizacion-form.component.css',
-    standalone: false
+    standalone: true
 })
 export class CotizacionFormComponent {
 

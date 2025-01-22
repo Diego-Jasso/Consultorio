@@ -13,7 +13,7 @@ import { EstatusList } from '../../compartido/utilerias';
     selector: 'app-armazon',
     templateUrl: './armazon.component.html',
     styleUrl: './armazon.component.css',
-    standalone: false
+    standalone: true
 })
 export class ArmazonesComponent {
 

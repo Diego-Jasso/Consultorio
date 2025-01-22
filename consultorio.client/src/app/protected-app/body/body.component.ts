@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
     selector: 'app-body',
     templateUrl: './body.component.html',
     styleUrl: './body.component.css',
-    standalone: false
+    standalone: true
 })
 export class BodyComponent {
 

@@ -10,7 +10,7 @@ import { NgFor } from '@angular/common';
     selector: 'app-armazon-form',
     templateUrl: './armazon-form.component.html',
     styleUrl: './armazon-form.component.css',
-    standalone: false
+    standalone: true
 })
 export class ArmazonFormComponent {
 

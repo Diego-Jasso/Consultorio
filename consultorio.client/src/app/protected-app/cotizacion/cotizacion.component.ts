@@ -10,7 +10,7 @@ import { AuthService } from '../../auth/services/auth.service';
     selector: 'app-cotizacion',
     templateUrl: './cotizacion.component.html',
     styleUrl: './cotizacion.component.css',
-    standalone: false
+    standalone: true
 })
 export class CotizacionComponent {
 

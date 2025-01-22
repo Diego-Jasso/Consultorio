@@ -14,7 +14,7 @@ import { ModalEliminarComponent } from '../../shared/modal-eliminar/modal-elimin
     selector: 'app-mica-list',
     templateUrl: './mica-list.component.html',
     styleUrl: './mica-list.component.css',
-    standalone: false
+    standalone: true
 })
 export class MicaListComponent {
   @Output('editar') editar: EventEmitter<number> = new EventEmitter<number>();

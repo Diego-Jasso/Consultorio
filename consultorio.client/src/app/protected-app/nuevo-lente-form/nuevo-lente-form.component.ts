@@ -13,7 +13,7 @@ import { IlenteDeContacto, Mica } from '../models/mica';
     selector: 'app-nuevo-lente-form',
     templateUrl: './nuevo-lente-form.component.html',
     styleUrl: './nuevo-lente-form.component.css',
-    standalone: false
+    standalone: true
 })
 export class NuevoLenteFormComponent {
 

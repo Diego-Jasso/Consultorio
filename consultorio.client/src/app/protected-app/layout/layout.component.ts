@@ -10,7 +10,7 @@ interface SideNavToggle {
     selector: 'app-layout',
     templateUrl: './layout.component.html',
     styleUrl: './layout.component.css',
-    standalone: false
+    standalone: true
 })
 export class LayoutComponent {
 
