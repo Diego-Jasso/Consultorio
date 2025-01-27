@@ -45,3 +45,7 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
+span {
+  width: 40px;
+}

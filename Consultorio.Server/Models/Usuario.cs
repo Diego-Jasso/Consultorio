@@ -15,9 +15,11 @@ namespace Consultorio.Server.Models
         public string aMaterno { get; set; } = string.Empty;
 
         public string nombreUsuario { get; set; } = string.Empty;
-
+      
         public byte[] passwordHasH { get; set; } = [];
 
         public byte[] passwordSalt { get; set; } = [];
+        public int tipoDeCuenta { get; set; }
+        public bool active { get; set; }
     }
 }

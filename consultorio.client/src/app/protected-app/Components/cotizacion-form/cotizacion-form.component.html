@@ -1,0 +1,171 @@
+<div ng-app>
+  <form #userForm="ngForm" (ngSubmit)="onGuardar(userForm)">
+    <table style="width:100%;">
+      <tr>
+        <td colspan="2">
+          <div style="display: flex; flex-direction: row;">
+            @if (isEdit){
+            <h2 class="card-header">{{titulo_editar}}</h2>
+            }
+            @else{
+            <h2 class="card-header">{{titulo_agregar}}</h2>
+            }
+            <button type="submit" class="boton-agregar" style="margin-left:auto">Guardar</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Folio
+          <div class="input-group mb-3">
+            <input class="form-control" id="folio" name="folio" #folio="ngModel" [(ngModel)]="cotizacion.folio" disabled />
+          </div>
+        </td>
+        <td>
+          Creador
+          <div class="input-group mb-3">
+            <input class="form-control" id="nombreUsuario" name="nombreUsuario" #nombreUsuario="ngModel" [(ngModel)]="cotizacion.nombreUsuario" disabled />
+          </div>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td style="width:50%">
+          Paciente
+          <div class="input-group mb-3">
+            <input class="form-control" id="paciente" name="paciente" #paciente="ngModel" [(ngModel)]="cotizacion.paciente" />
+          </div>
+        </td>
+        <td style="width:50%">
+          Estatus
+          <div class="input-group mb-3">
+            <select class="form-select" id="statusid" name="statusid" #statusid="ngModel" [(ngModel)]="cotizacion.statusid">
+              <option value="2">Cotización</option>
+              <option value="1">Venta</option>
+            </select>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Fecha de creación
+          <input type="date" class="form-control" id="fecha_de_creacion" name="fecha_de_creacion" #fecha_de_creacion="ngModel" [(ngModel)]="cotizacion.fecha_de_creacion" disabled />
+        </td>
+        <td>
+          Anticipo
+          <input type="number" class="form-control" id="anticipo" name="anticipo" #anticipo="ngModel" [(ngModel)]="cotizacion.anticipo" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div style="display:flex; flex-direction:row;">
+            <h3>Armazones y Micas</h3>
+            <button type="button" (click)="AddArticulosVisible = true" class="boton-agregar" style="margin-left:auto">Agregar</button>
+          </div>
+          <app-nuevo-lente-form *ngIf="AddArticulosVisible"
+                                [itemToEdit]="itemToEdit"
+                                [cotId]="cotizacion.cotizacionid"
+                                (addItem)="onAgregarArticulo()"
+                                (closePopup)="closePopup()"
+                                (refresh)="UpdateListaArticulos()"
+                                style="width: 80vw">
+          </app-nuevo-lente-form>
+          <table class="articulos-table">
+            <thead>
+              <tr>
+                <th scope="col" class="">&emsp;</th>
+                <th scope="col" class="">&emsp;</th>
+                <!--<th colspan="2" scope="col" class="">
+            <button class="boton-agregar" (click)="onAgregar()">
+              Agregar <i class="fa-solid fa-plus"></i>
+            </button>
+          </th>-->
+                <th scope="col">Armazon</th>
+                <th scope="col">Precio Armazon</th>
+                <th scope="col">Mica</th>
+                <th scope="col">Precio Mica</th>
+                <th scope="col">Precio Total</th>
+              </tr>
+            </thead>
+            @switch(estado){
+            @case (Estatus.Procesado){
+            <tbody>
+              @for(articulo of articulosList | busqueda: busquedaTexto; track articulo.id ){
+              <tr>
+                <td style="vertical-align: middle;">
+                  <button class="boton-agregar" type="button" (click)="onEliminarArticulo(articulo)"><i class="fa fa-trash"></i></button>
+                </td>
+                <td style="vertical-align: middle;">
+                  <button class="boton-agregar" type="button" (click)="onEditarArticulo(articulo)"><i class="fa fa-pen-to-square"></i></button>
+                </td>
+                <td style="vertical-align: middle;">
+                  {{articulo.marca}} {{articulo.modelo}} {{articulo.color}} {{articulo.tipo_de_lente}} {{articulo.material}}
+                </td>
+                <td style="vertical-align: middle;">
+                  {{articulo.precioArmazon}}
+                </td>
+                <td style="vertical-align: middle;">
+                  {{articulo.descripcionMica}}
+                </td>
+                <td style="vertical-align: middle;">
+                  {{articulo.precioMica}}
+                </td>
+                <td style="vertical-align: middle;">
+                  {{articulo.precioTotal}}
+                </td>
+              </tr>
+              }
+            </tbody>
+            }
+            @case (Estatus.Cargando){
+            <ng-container [ngTemplateOutlet]="footMessage"
+                          [ngTemplateOutletContext]="{message: LOADING_MESSAGE}">
+            </ng-container>
+            }
+            @case (Estatus.Vacio) {
+            <ng-container [ngTemplateOutlet]="footMessage"
+                          [ngTemplateOutletContext]="{message: ZERO_RESULTS}">
+            </ng-container>
+            }
+            @default {
+            <ng-container [ngTemplateOutlet]="footMessage"
+                          [ngTemplateOutletContext]="{
+              message: ERROR_MESSAGE,
+              class: 'bg-danger-subtle text-danger-emphasis'
+            }">
+            </ng-container>
+            }
+            }
+
+            <ng-template #footMessage let-message="message" let-cssClass="class ?? ''">
+              <tfoot>
+                <tr>
+                  <td colspan="9" class="{{cssClass}}">
+                    {{message}}
+                  </td>
+                </tr>
+              </tfoot>
+            </ng-template>
+
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h3>Accesorios</h3>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

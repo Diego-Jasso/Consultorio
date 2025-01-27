@@ -1,12 +1,14 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { DialogData } from '../../models/DialogData';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-modal-eliminar',
     templateUrl: './modal-eliminar.component.html',
     styleUrl: './modal-eliminar.component.css',
-    standalone: true
+  standalone: true,
+  imports: [CommonModule,MatDialogModule]
 })
 export class ModalEliminarComponent {
 

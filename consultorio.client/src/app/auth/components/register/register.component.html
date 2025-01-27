@@ -41,9 +41,15 @@
         <div *ngIf="!pass?.valid && (pass?.dirty || pass?.touched)" class="error">
           <div *ngIf="pass?.errors?.['required']">La contraseña es requerida</div>
         </div>
-        <button type="submit">Registrarse &#8594;</button>
-        <button type="button" routerLink="">Regresar &#8592;</button>
-      </form>
-    </div>
+        <div class="input-group mb-2">
+        <span class="input-group-text"><i class="fa fa-key"></i></span>
+        <input class="form-control" id="confirmPass" name="confirmPass" #confirmPass="ngModel" [(ngModel)]="confirmarPassword" type="password" placeholder="Confirmar contraseña" required />
+      </div>
+      <div *ngIf="!confirmPass?.valid && (confirmPass?.dirty || confirmPass?.touched)" class="error">
+        <div *ngIf="confirmPass?.errors?.['required']">Confirma la contraseña</div>
+      </div>
+    <button type="submit">Registrar usuario &#8594;</button>
+    </form>
+  </div>
   </div>
 </body>

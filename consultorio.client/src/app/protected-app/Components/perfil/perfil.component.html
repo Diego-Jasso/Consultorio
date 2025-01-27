@@ -1,0 +1,37 @@
+<div ng-app>
+  <form #userForm="ngForm" >
+    <table>
+      <tr>
+        <td colspan="2">
+          Nombre(s)
+          <div class="input-group mb-3">
+            <input class="form-control" id="nombre" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre"  disabled />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Apellido Paterno
+          <div class="input-group mb-3">
+            <input class="form-control" id="aPaterno" name="aPaterno" #aPaterno="ngModel" [(ngModel)]="usuario.aPaterno"  disabled />
+          </div>
+        </td>
+        <td>
+          Apellido Materno
+          <div class="input-group mb-3">
+          <input class="form-control" id="aMaterno" name="aMaterno" #aMaterno="ngModel" [(ngModel)]="usuario.aMaterno" disabled />
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Nombre de usuario
+          <div class="input-group mb-3">
+            <input class="form-control" id="nombreUsuario" name="nombreUsuario" #nombreUsuario="ngModel" [(ngModel)]="usuario.nombreUsuario"  disabled />
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <button type="button" (click)="registrarUsuario()">Cambiar contraseña</button>
+</div>

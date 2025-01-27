@@ -1,22 +1,24 @@
-import { Component, EventEmitter,Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, NgForm, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { ILogin } from '../../interfaces/login-interface';
 import { validarCamposRequeridos } from '../../../compartido/utilerias';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrl: './login.component.css',
-    standalone: true
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css',
+  standalone: true,
+  imports: [CommonModule,FormsModule]
 })
 export class LoginComponent {
   constructor(private router: Router,
     private authService: AuthService,
-  private toastr: ToastrService) {
+    private toastr: ToastrService) {
   }
 
   logform: ILogin = {} as ILogin;
